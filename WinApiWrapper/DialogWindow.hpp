@@ -1,0 +1,43 @@
+#pragma once 
+
+#ifndef __DIALOGWINDOW_HPP_INCLUDED__
+#define __DIALOGWINDOW_HPP_INCLUDED__
+
+#include "stdafx.h"
+#include "BaseWindow.hpp"
+
+namespace WinApiWrapper
+{
+
+	enum DialogWindowStyle : DWORD
+	{
+		DWS_RECT                    = WS_POPUP,
+		DWS_RECTWITH_BORDER         = WS_POPUP | WS_BORDER,
+		DWS_RECTWITH_SIZEBOX        = WS_POPUP | WS_BORDER | WS_SIZEBOX,
+		DWS_RECTWITH_CAPTION        = WS_POPUP | WS_CAPTION,
+		DWS_FIXED                   = WS_OVERLAPPED | WS_SYSMENU,
+		DWS_FIXED_WITH_MINBUTT      = WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX,
+		DWS_FIXED_WITH_MAXBUTT      = WS_OVERLAPPED | WS_SYSMENU | WS_MAXIMIZEBOX,
+		DWS_FIXED_WITH_MINMAXBUTT   = WS_OVERLAPPED | WS_SYSMENU | WS_MAXIMIZEBOX | WS_MINIMIZEBOX,
+		DWS_SIZIBLE                 = WS_OVERLAPPED | WS_SYSMENU | WS_SIZEBOX,
+		DWS_SIZIBLE_WITH_MINBUTT    = WS_OVERLAPPED | WS_SYSMENU | WS_SIZEBOX | WS_MINIMIZEBOX,
+		DWS_SIZIBLE_WITH_MAXBUTT    = WS_OVERLAPPED | WS_SYSMENU | WS_SIZEBOX | WS_MAXIMIZEBOX,
+		DWS_SIZIBLE_WITH_MINMAXBUTT = WS_OVERLAPPEDWINDOW
+	};
+
+	class DialogWindow : public BaseWindow
+	{
+	private:
+		static INT dlgCount_;
+
+		LPCTSTR getDlgWndClsName(HINSTANCE);
+	protected:
+		virtual LRESULT onCommand(UINT, WPARAM, LPARAM);
+	
+	public:
+		DialogWindow(DialogWindowStyle, DWORD, LPCTSTR, BaseWindow*, HMENU, HINSTANCE, CONST WindowRect&);
+		~DialogWindow();
+	};
+} /* namespace WinApiWrapper */
+
+#endif /* __DIALOGWINDOW_HPP_INCLUDED__ */
