@@ -74,7 +74,7 @@ namespace graphics
 		glLightfv(GL_LIGHT0, GL_POSITION, pos);
 		glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
 	}
-
+    
 	VOID Graphics::deleteGL()
 	{
 		if(hRC_)
@@ -98,8 +98,12 @@ namespace graphics
 	{
 		glColor3f(1.0, 0.0, 1.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		
+		glColor4f(1, 0, 0, 0.5);
+		GLUquadricObj *sphere = gluNewQuadric();
+		gluSphere(sphere, 0.5, 100, 100);
 
-		glTranslatef(gm_.x, gm_.y, gm_.z);
+		//glTranslatef(gm_.x, gm_.y, gm_.z);
 		//glScalef(gm_.scale, gm_.scale, gm_.scale);
 		//glRotatef(1, gm_.xrot, gm_.yrot, gm_.zrot);
 

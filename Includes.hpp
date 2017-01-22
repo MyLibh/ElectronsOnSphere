@@ -38,12 +38,17 @@
 
 #include <Windows.h>
 #include <gl\GL.h>
+#include <gl\GLU.h>
 
 #include <iostream>
+#include <fstream>
+#include <io.h>
+#include <fcntl.h>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
 
+#include "resource.h"
 #include "Noncopyable.hpp"
 
 #pragma endregion ¬ключаемые библиотеки

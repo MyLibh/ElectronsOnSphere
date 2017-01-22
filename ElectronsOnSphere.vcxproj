@@ -65,20 +65,20 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Includes.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WinApiWrapper\BaseWindow.cpp" />
-    <ClCompile Include="WinApiWrapper\DialogWindow.cpp" />
-    <ClCompile Include="WinApiWrapper\stdafx.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics.hpp" />
     <ClInclude Include="Includes.hpp" />
     <ClInclude Include="Noncopyable.hpp" />
-    <ClInclude Include="WinApiWrapper\BaseWindow.hpp" />
-    <ClInclude Include="WinApiWrapper\DialogWindow.hpp" />
-    <ClInclude Include="WinApiWrapper\stdafx.h" />
-    <ClInclude Include="WinApiWrapper\targetver.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ElectronsOnSphere.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

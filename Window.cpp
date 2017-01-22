@@ -1,75 +1,91 @@
 #include "Window.hpp"
 
-Window::Window(LPCTSTR className, DWORD style, LPCTSTR title, HINSTANCE hInstance, CONST WindowRect &crRect) :
-	BaseWindow(className, style, NULL, title, nullptr, nullptr, hInstance, crRect), 
-	window_(crRect)
-{ }
-
-LRESULT Window::onCreate(UINT msg, WPARAM wParam, LPARAM lParam) 
-{ 
-	HDC hDC = GetDC(hWnd_);
-
-	graphics::Graphics::initGL(hDC);
-
-	ReleaseDC(hWnd_, hDC);
-	return onMessageDefault(msg, wParam, lParam);
-}
-
-inline LRESULT Window::onResize(UINT msg, WPARAM wParam, LPARAM lParam) { graphics::Graphics::resize(LOWORD(lParam), HIWORD(wParam)); return onMessageDefault(msg, wParam, lParam); }
-
-inline LRESULT Window::onDestroy(UINT msg, WPARAM wParam, LPARAM lParam) { graphics::Graphics::deleteGL(); return onMessageDefault(msg, wParam, lParam); }
-
-ATOM registerClass(CONST std::string &rClassName, HINSTANCE hInst)
+INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM)
 {
-	WNDCLASSEX wcex = { sizeof(WNDCLASSEX) };
-
-	wcex.style			= CS_OWNDC | CS_HREDRAW | CS_VREDRAW;
-	wcex.lpfnWndProc	= Window::baseWndProc;
-	wcex.hInstance		= hInst;
-	wcex.hIcon			= LoadIcon(hInst, MAKEINTRESOURCE(IDI_APPLICATION));
-	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground	= reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
-	wcex.lpszClassName	= rClassName.c_str();
-	wcex.hIconSm		= LoadIcon(hInst, MAKEINTRESOURCE(IDI_APPLICATION));
-
-	return RegisterClassEx(&wcex);
-}
-
-MainLoopParameters::MainLoopParameters(HINSTANCE hInstance, CONST WindowRect &crRect) :
-	pWindow(nullptr),
-	className("ElectronsOnSphere")
-{
-	registerClass(className, hInstance);
-		
-	pWindow = new Window(className.c_str(), WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, className.c_str(), hInstance, crRect);
-	pWindow->show();
-}
-
-MainLoopParameters::~MainLoopParameters() { delete(pWindow); }
-
-INT MainLoop(LPMLFUNC func, MainLoopParameters *pParams)
-{
-	MSG  msg  = { };
-	HWND hWnd = pParams->pWindow->getHWND();
-
-	//ShowWindow(hWnd, pParams->nCmdShow);
-	//pParams->pWindow->update();
-
-#pragma warning(push)
-#pragma warning(disable:4127) // Избежание warning'a в строке "while (TRUE)"
-	while(TRUE && !GetAsyncKeyState(VK_ESCAPE))
+	INT_PTR result = 0;
+	switch(msg)
 	{
-		while(PeekMessage(&msg, hWnd, 0, 0, PM_NOREMOVE))
-			if(GetMessage(&msg, hWnd, 0, 0))
-			{
-				TranslateMessage(&msg);
-				DispatchMessage(&msg);
-			}
-			else return static_cast<INT>(msg.wParam);
-		 
-		func();
-	}
-#pragma warning(pop)
+	case WM_INITDIALOG: 
+		{
+			HICON hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APPICON));
+			SendMessageA(hWnd, WM_SETICON, NULL, reinterpret_cast<LPARAM>(hIcon));
 
-	return static_cast<INT>(msg.wParam);
+#ifndef NDEBUG
+		 	InitConsole(ConsoleMode::CM_OUT);
+#endif // NDEBUG
+		}
+		break;
+	case WM_PAINT:
+		{
+			PAINTSTRUCT ps;
+			HDC hDC = BeginPaint(hWnd, &ps);
+
+			std::cout << "f";
+			using namespace graphics;
+			Rectangle(hDC, 0, 0, 90, 90);
+			//HDC loading = reinterpret_cast<HDC>(LoadImageA(GetModuleHandle(nullptr), "Loading.bmp", IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR));
+			//BitBlt(hDC, 0, 0,800, 600, loading, 0, 0, SRCCOPY);
+			Graphics::initGL(hDC);
+			//DeleteObject(loading);
+			Graphics::display();
+
+			EndPaint(hWnd, &ps);
+		}
+		break;
+	case WM_COMMAND: 
+		switch(wParam)
+		{
+		default: break;
+		}
+		break; 
+	case WM_CLOSE: 
+		EndDialog(hWnd, NULL); 
+		break;
+	
+	default: break;
+	}
+	return result;
+}
+
+INT StartDialog(HINSTANCE hInstance)
+{
+	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), nullptr, DlgProc, NULL);
+	return 0;
+}
+
+HWND InitConsole(ConsoleMode mode)
+{
+	if(::AllocConsole()) 
+	{
+		INT hCrt = _open_osfhandle(reinterpret_cast<INT_PTR>(GetStdHandle(STD_OUTPUT_HANDLE)), _O_TEXT);
+		if(!hCrt) return FALSE;
+  
+		if(mode == ConsoleMode::CM_ALL    || mode == ConsoleMode::CM_OUT ||
+			mode == ConsoleMode::CM_IN_OUT || mode == ConsoleMode::CM_OUT_ERROR)
+		{
+			*stdout = *::_fdopen(hCrt, "w");
+			::setvbuf(stdout, NULL, _IONBF, 0);
+		}
+
+		if(mode == ConsoleMode::CM_ALL      || mode == ConsoleMode::CM_ERROR ||
+			mode == ConsoleMode::CM_IN_ERROR || mode == ConsoleMode::CM_OUT_ERROR)
+		{
+			*stderr = *::_fdopen(hCrt, "w");
+			::setvbuf(stderr, NULL, _IONBF, 0);
+		}
+
+		if(mode == ConsoleMode::CM_ALL    || mode == ConsoleMode::CM_IN ||
+			mode == ConsoleMode::CM_IN_OUT || mode == ConsoleMode::CM_IN_ERROR)
+		{
+			*stdin = *::_fdopen(hCrt, "r");
+			::setvbuf(stdin, NULL, _IONBF, 0);
+		}
+		std::ios::sync_with_stdio();
+	}
+	else return FALSE;
+	
+	HWND console = ::GetConsoleWindow();
+	::SetWindowPos(console, NULL, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
+
+	return console;
 }

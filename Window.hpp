@@ -4,45 +4,23 @@
 #define __WINDOW_HPP_INCLUDED__
 
 #include "Includes.hpp"
-#include "WinApiWrapper\BaseWindow.hpp"
 #include "Graphics.hpp"
 
-using WinApiWrapper::BaseWindow;
-using WinApiWrapper::WindowRect;
-
-class Window final : public BaseWindow, private NoncopyableFull
+enum ConsoleMode 
 {
-private:
-	WindowRect window_;
+	CM_ALL = 0,
 
-	LRESULT onCreate(UINT, WPARAM, LPARAM) final override;
-	LRESULT onResize(UINT, WPARAM, LPARAM) final override;
-	LRESULT onDestroy(UINT, WPARAM, LPARAM) final override;
-	LRESULT onPaint(UINT msg, WPARAM wParam, LPARAM lParam) final override { graphics::Graphics::display(); return onMessageDefault(msg, wParam, lParam); };
+	CM_OUT, 
+	CM_IN,
+	CM_ERROR,
 
-	friend ATOM registerClass(CONST std::string&, HINSTANCE);
-
-public:
-	Window(LPCTSTR, DWORD, LPCTSTR, HINSTANCE, CONST WindowRect&);
-	~Window() { };
-
-	inline CONST WindowRect __nothrow &getWindowRect() const { return window_; };
+	CM_IN_OUT,
+	CM_IN_ERROR,
+	CM_OUT_ERROR
 };
 
-struct MainLoopParameters
-{
-	Window      *pWindow;
-	std::string  className;
+HWND             InitConsole(ConsoleMode);
+INT_PTR CALLBACK DlgProc(HWND, UINT, WPARAM, LPARAM);
+INT              StartDialog(HINSTANCE);
 
-	CONST Window __nothrow &getWindow() const { return *pWindow; };
-
-	MainLoopParameters(HINSTANCE, CONST WindowRect&);
-	~MainLoopParameters();
-};
-	
-typedef void MLFUNC;
-typedef MLFUNC (*LPMLFUNC)();
-
-INT MainLoop(LPMLFUNC = nullptr, MainLoopParameters* = nullptr);
-
-#endif
+#endif // __WINDOW_HPP_INCLUDED__

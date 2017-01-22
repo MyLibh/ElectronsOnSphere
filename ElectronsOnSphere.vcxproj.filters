@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Заголовочные файлы\WinApiWrapper">
-      <UniqueIdentifier>{f7a456af-c692-4b9d-8850-90a0db4fe81f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\WinApiWrapper">
-      <UniqueIdentifier>{123f3727-e724-44d2-a1d5-295fe4c0c039}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Заголовочные файлы\Graphics">
       <UniqueIdentifier>{bd8c9708-fe0d-4750-9e90-7823b7445c93}</UniqueIdentifier>
     </Filter>
@@ -32,15 +26,6 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
-    <ClCompile Include="WinApiWrapper\BaseWindow.cpp">
-      <Filter>Файлы исходного кода\WinApiWrapper</Filter>
-    </ClCompile>
-    <ClCompile Include="WinApiWrapper\DialogWindow.cpp">
-      <Filter>Файлы исходного кода\WinApiWrapper</Filter>
-    </ClCompile>
-    <ClCompile Include="WinApiWrapper\stdafx.cpp">
-      <Filter>Файлы исходного кода\WinApiWrapper</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
       <Filter>Файлы исходного кода\Graphics</Filter>
@@ -56,23 +41,24 @@
     <ClInclude Include="Noncopyable.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="WinApiWrapper\targetver.h">
-      <Filter>Заголовочные файлы\WinApiWrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="WinApiWrapper\BaseWindow.hpp">
-      <Filter>Заголовочные файлы\WinApiWrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="WinApiWrapper\DialogWindow.hpp">
-      <Filter>Заголовочные файлы\WinApiWrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="WinApiWrapper\stdafx.h">
-      <Filter>Заголовочные файлы\WinApiWrapper</Filter>
-    </ClInclude>
     <ClInclude Include="Window.hpp">
       <Filter>Заголовочные файлы\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.hpp">
       <Filter>Заголовочные файлы\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ElectronsOnSphere.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>
