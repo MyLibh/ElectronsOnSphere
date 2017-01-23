@@ -1,6 +1,8 @@
 #include "Window.hpp"
 
-INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM)
+using namespace graphics;
+
+INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	INT_PTR result = 0;
 	switch(msg)
@@ -8,7 +10,17 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM)
 	case WM_INITDIALOG: 
 		{
 			HICON hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APPICON));
-			SendMessageA(hWnd, WM_SETICON, NULL, reinterpret_cast<LPARAM>(hIcon));
+			SendMessage(hWnd, WM_SETICON, NULL, reinterpret_cast<LPARAM>(hIcon));
+			SetFocus(hWnd);
+
+			HDC hDC = GetDC(hWnd);
+			//HBITMAP hbmLoading = reinterpret_cast<HBITMAP>(LoadImageA(GetModuleHandle(nullptr), "Loading.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE));
+			//HDC loading = CreateCompatibleDC(hbmLoading);
+			//BitBlt(hDC, 0, 0,800, 600, loading, 0, 0, SRCCOPY);
+			graphics::Graphics::setWindowPixelFormatDescriptor(hDC);
+			//DeleteObject(hbmLoading);
+			//DeleteObject(loading);
+			ReleaseDC(hWnd, hDC);
 
 #ifndef NDEBUG
 		 	InitConsole(ConsoleMode::CM_OUT);
@@ -20,24 +32,37 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM)
 			PAINTSTRUCT ps;
 			HDC hDC = BeginPaint(hWnd, &ps);
 
-			std::cout << "f";
-			using namespace graphics;
-			Rectangle(hDC, 0, 0, 90, 90);
-			//HDC loading = reinterpret_cast<HDC>(LoadImageA(GetModuleHandle(nullptr), "Loading.bmp", IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR));
-			//BitBlt(hDC, 0, 0,800, 600, loading, 0, 0, SRCCOPY);
-			Graphics::initGL(hDC);
-			//DeleteObject(loading);
-			Graphics::display();
+			graphics::Graphics::initGL(hDC);
+			//graphics::Graphics::resize(601, 300);
+			graphics::Graphics::display();
 
 			EndPaint(hWnd, &ps);
 		}
 		break;
 	case WM_COMMAND: 
-		switch(wParam)
+		switch(LOWORD(wParam))
 		{
+		case IDM_SAVE:
+			break;
+		case IDM_LOAD:
+			break;
+		case IDM_EXIT: 
+			EndDialog(hWnd, NULL);
+			break;
+
 		default: break;
 		}
 		break; 
+	case WM_NOTIFY:
+		switch(HIWORD(wParam))
+		{
+		case IDC_COEFSLIDER:
+			//std::cout << SendMessage(hWnd, TBM_GETPOS, NULL, NULL);
+			break;
+
+		default : break;
+		}
+		break;
 	case WM_CLOSE: 
 		EndDialog(hWnd, NULL); 
 		break;

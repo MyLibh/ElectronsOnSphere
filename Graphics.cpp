@@ -57,7 +57,7 @@ namespace graphics
 		static float pos[4] = { 3, 3, 3, 1 };
 		static float dir[3] = { -1, -1, -1 };
 		
-		setWindowPixelFormatDescriptor(hDC);
+		//setWindowPixelFormatDescriptor(hDC);
 		
 		hRC_ = wglCreateContext(hDC);
 		wglMakeCurrent(hDC, hRC_);
@@ -92,6 +92,7 @@ namespace graphics
 
 		glOrtho(-5, 5, -5, 5, 2, 12);
 		glMatrixMode(GL_MODELVIEW);
+		//gluPerspective();
 	}
 
 	VOID Graphics::display() 
@@ -100,7 +101,7 @@ namespace graphics
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		glColor4f(1, 0, 0, 0.5);
-		GLUquadricObj *sphere = gluNewQuadric();
+		static GLUquadricObj *sphere = gluNewQuadric();
 		gluSphere(sphere, 0.5, 100, 100);
 
 		//glTranslatef(gm_.x, gm_.y, gm_.z);

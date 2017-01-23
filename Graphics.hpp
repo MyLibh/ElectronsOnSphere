@@ -22,14 +22,14 @@ namespace graphics
 		static PIXELFORMATDESCRIPTOR pfd_;
 		static GraphicsManager       gm_;
 
-		static BOOL setWindowPixelFormatDescriptor(HDC);
-
 	public:
 		explicit Graphics() :
 			NoncopyableFull()
 		{ };
 
 		~Graphics() { };
+
+		static BOOL setWindowPixelFormatDescriptor(HDC);
 
 		static VOID initGL(HDC);
 		static VOID deleteGL();
