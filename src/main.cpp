@@ -1,5 +1,5 @@
 #include "Includes.hpp"
-#include "Window.hpp"
+#include "Graphics\Window.hpp"
 
 #define DEBUG
 

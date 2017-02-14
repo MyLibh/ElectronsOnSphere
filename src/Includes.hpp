@@ -27,6 +27,14 @@
     #pragma GCC diagnostic ignored "-Wold-style-cast"
     #pragma GCC diagnostic ignored "-Winline"
 
+	#define abstract
+	#define _In_
+	#define _In_opt_
+
+	#ifdef __STRICT_ANSI__
+		#undef __STRICT_ANSI__
+	#endif // __STRICT_ANSI__
+
 #endif // __GNUC__
 
 #ifdef __TXLIB_H_INCLUDED
@@ -45,7 +53,7 @@
 #include <fcntl.h>
 
 #define _USE_MATH_DEFINES
-#include <cmath>
+#include <math.h>
 
 #include "resource.h"
 #include "Noncopyable.hpp"
