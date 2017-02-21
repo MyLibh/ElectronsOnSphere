@@ -3,7 +3,7 @@
 
 #include "..\Includes.hpp"
 
-#include "NVector.h"
+#include "NVector.hpp"
 #include "Energy.h"
 #include "Saving.h"
 #include "PMessage.h"

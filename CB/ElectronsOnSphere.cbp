@@ -12,8 +12,17 @@
 				<Option type="1" />
 				<Option compiler="gnu_gcc_compiler__strict" />
 				<Compiler>
+					<Add option="-Weffc++" />
+					<Add option="-std=c++11" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="gdi32" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/ElectronsOnSphere" prefix_auto="1" extension_auto="1" />
@@ -31,16 +40,27 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../src/Graphics.cpp" />
-		<Unit filename="../src/Graphics.hpp" />
+		<Unit filename="../src/Graphics/Graphics.cpp" />
+		<Unit filename="../src/Graphics/Graphics.hpp" />
+		<Unit filename="../src/Graphics/Window.cpp" />
+		<Unit filename="../src/Graphics/Window.hpp" />
 		<Unit filename="../src/Includes.cpp" />
 		<Unit filename="../src/Includes.hpp" />
 		<Unit filename="../src/Noncopyable.hpp" />
+		<Unit filename="../src/Physics/Energy.h" />
+		<Unit filename="../src/Physics/NVector.cpp" />
+		<Unit filename="../src/Physics/NVector.hpp" />
+		<Unit filename="../src/Physics/PMessage.h" />
+		<Unit filename="../src/Physics/Physics.cpp" />
+		<Unit filename="../src/Physics/Physics.hpp" />
+		<Unit filename="../src/Physics/PhysicsDynamic.cpp" />
+		<Unit filename="../src/Physics/PhysicsDynamic.hpp" />
+		<Unit filename="../src/Physics/PhysicsStatic.cpp" />
+		<Unit filename="../src/Physics/PhysicsStatic.hpp" />
+		<Unit filename="../src/Physics/Saving.h" />
 		<Unit filename="../src/Resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="../src/Window.cpp" />
-		<Unit filename="../src/Window.hpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/resource.h" />
 		<Extensions>

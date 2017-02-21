@@ -1,0 +1,82 @@
+# depslib dependency file v1.0
+1487669160 source:c:\users\user\documents\github\electronsonsphere\src\physics\nvector.cpp
+	"NVector.hpp"
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\includes.cpp
+	"Includes.hpp"
+
+1487669926 c:\users\user\documents\github\electronsonsphere\src\includes.hpp
+	<Windows.h>
+	<gl\GL.h>
+	<gl\GLU.h>
+	<iostream>
+	<fstream>
+	<io.h>
+	<fcntl.h>
+	<math.h>
+	"Noncopyable.hpp"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\noncopyable.hpp
+
+1487669474 source:c:\users\user\documents\github\electronsonsphere\src\main.cpp
+	"Includes.hpp"
+	"Graphics\Window.hpp"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\physics\nvector.hpp
+	"..\Includes.hpp"
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\physics\physicsdynamic.cpp
+	"PhysicsDynamic.hpp"
+
+1487669189 c:\users\user\documents\github\electronsonsphere\src\physics\physicsdynamic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+	"PMessage.h"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\physics\pmessage.h
+	"Energy.h"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\physics\energy.h
+	"..\Includes.hpp"
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\graphics\graphics.cpp
+	"Graphics.hpp"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\graphics\graphics.hpp
+	"..\Includes.hpp"
+	"..\Noncopyable.hpp"
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\physics\physics.cpp
+	"Physics.hpp"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\physics\physics.hpp
+	"PhysicsDynamic.hpp"
+	"PhysicsStatic.hpp"
+
+1487669199 c:\users\user\documents\github\electronsonsphere\src\physics\physicsstatic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+	"Energy.h"
+	"Saving.h"
+	"PMessage.h"
+
+1487666489 c:\users\user\documents\github\electronsonsphere\src\physics\saving.h
+	"Energy.h"
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\physics\physicsstatic.cpp
+	"PhysicsStatic.hpp"
+
+1487669451 c:\users\user\documents\github\electronsonsphere\src\graphics\window.hpp
+	"..\Includes.hpp"
+	"Graphics.hpp"
+	"..\resource.h"
+
+1487669557 c:\users\user\documents\github\electronsonsphere\src\resource.h
+
+1487666489 source:c:\users\user\documents\github\electronsonsphere\src\resource.rc
+	"resource.h"
+	"afxres.h"
+
+1487669686 source:c:\users\user\documents\github\electronsonsphere\src\graphics\window.cpp
+	"Window.hpp"
+

@@ -5,12 +5,13 @@
 
 #include "..\Includes.hpp"
 #include "Graphics.hpp"
+#include "..\resource.h"
 
-enum ConsoleMode 
+enum ConsoleMode
 {
 	CM_ALL = 0,
 
-	CM_OUT, 
+	CM_OUT,
 	CM_IN,
 	CM_ERROR,
 

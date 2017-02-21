@@ -7,7 +7,7 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	INT_PTR result = 0;
 	switch(msg)
 	{
-	case WM_INITDIALOG: 
+	case WM_INITDIALOG:
 		{
 			HICON hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APPICON));
 			SendMessage(hWnd, WM_SETICON, NULL, reinterpret_cast<LPARAM>(hIcon));
@@ -39,20 +39,20 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			EndPaint(hWnd, &ps);
 		}
 		break;
-	case WM_COMMAND: 
+	case WM_COMMAND:
 		switch(LOWORD(wParam))
 		{
 		case IDM_SAVE:
 			break;
 		case IDM_LOAD:
 			break;
-		case IDM_EXIT: 
+		case IDM_EXIT:
 			EndDialog(hWnd, NULL);
 			break;
 
 		default: break;
 		}
-		break; 
+		break;
 	case WM_NOTIFY:
 		switch(HIWORD(wParam))
 		{
@@ -63,10 +63,10 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		default : break;
 		}
 		break;
-	case WM_CLOSE: 
-		EndDialog(hWnd, NULL); 
+	case WM_CLOSE:
+		EndDialog(hWnd, NULL);
 		break;
-	
+
 	default: break;
 	}
 	return result;
@@ -80,11 +80,11 @@ INT StartDialog(HINSTANCE hInstance)
 
 HWND InitConsole(ConsoleMode mode)
 {
-	if(::AllocConsole()) 
+	if(::AllocConsole())
 	{
 		INT hCrt = _open_osfhandle(reinterpret_cast<INT_PTR>(GetStdHandle(STD_OUTPUT_HANDLE)), _O_TEXT);
 		if(!hCrt) return FALSE;
-  
+
 		if(mode == ConsoleMode::CM_ALL    || mode == ConsoleMode::CM_OUT ||
 			mode == ConsoleMode::CM_IN_OUT || mode == ConsoleMode::CM_OUT_ERROR)
 		{
@@ -108,9 +108,9 @@ HWND InitConsole(ConsoleMode mode)
 		std::ios::sync_with_stdio();
 	}
 	else return FALSE;
-	
-	HWND console = ::GetConsoleWindow();
-	::SetWindowPos(console, NULL, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
 
-	return console;
+	//HWND console = ::GetConsoleWindow();
+	//::SetWindowPos(console, NULL, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
+
+	return 0;
 }

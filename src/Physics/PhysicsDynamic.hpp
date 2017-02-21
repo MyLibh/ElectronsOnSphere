@@ -3,7 +3,7 @@
 
 #include "..\Includes.hpp"
 
-#include "NVector.h"
+#include "NVector.hpp"
 #include "PMessage.h"
 
 CONST SIZE_T NUM_ELL = 5;

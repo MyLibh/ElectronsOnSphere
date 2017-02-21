@@ -1,4 +1,4 @@
-#include "NVector.h"
+#include "NVector.hpp"
 
 double atan_ (double x, double y)
     {
