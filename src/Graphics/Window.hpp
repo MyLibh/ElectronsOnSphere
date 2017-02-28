@@ -5,7 +5,6 @@
 
 #include "..\Includes.hpp"
 #include "Graphics.hpp"
-#include "..\resource.h"
 
 enum ConsoleMode
 {

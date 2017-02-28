@@ -38,9 +38,9 @@ class vec final
         y (sin(alf))
             {}
 
-        vec (double x, double y) :
-        x (x),
-        y (y)
+        vec (double x1, double y1) :
+        x (x1),
+        y (y1)
             {}
 
         void operator= (ftan tan1)

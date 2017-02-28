@@ -18,13 +18,13 @@
 
 #ifdef __GNUC__
 
-    #pragma GCC diagnostic ignored "-Wunknown-pragmas"
-
     #pragma GCC diagnostic push
 
     #pragma GCC optimize("no-strict-aliasing")
 
+    #pragma GCC diagnostic ignored "-Wunknown-pragmas"
     #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+    #pragma GCC diagnostic ignored "-Wconversion-null"
 
 	#define abstract
 	#define _In_
@@ -54,7 +54,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-//#include "resource.h"
+#include "wrapResource.hpp"
 #include "Noncopyable.hpp"
 
 //#pragma endregion ¬ключаемые библиотеки

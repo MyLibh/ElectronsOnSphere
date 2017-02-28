@@ -63,6 +63,9 @@
     <ClInclude Include="..\src\Physics\PhysicsStatic.hpp">
       <Filter>Заголовочные файлы\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\wrapResource.hpp">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">

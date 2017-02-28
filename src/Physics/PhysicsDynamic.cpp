@@ -38,7 +38,7 @@ namespace NPhysics
             return sum;
             }
 
-        void     physics_dynamic::PDset (size_t num, nvec* positions_)
+        void     physics_dynamic::PDset (size_t, nvec*)
             {
             std::cout << "\nnot realised\n";
             //ElectronsNum = num;

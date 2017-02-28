@@ -20,6 +20,8 @@ namespace NPhysics
 
                 vec      PDgetSpeed (size_t num) const;
 
+                physics_dynamic& operator= (const physics_dynamic&);
+
             protected:
                 PMESSAGE PDdoPhysicsDynamic ();
                 void     PDset (size_t num, nvec* positions);
@@ -28,7 +30,7 @@ namespace NPhysics
 
                 physics_dynamic () :
                     _ElectronsNum  (0),
-                    _Positions (NULL)
+                    _Positions (nullptr)
                     {
                     _ElectronsNum = NUM_ELL;
                     _Positions = new nvec [_ElectronsNum];//(nvec*) calloc(ElectronsNum, sizeof(nvec));

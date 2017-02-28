@@ -2,7 +2,7 @@
 
 using namespace graphics;
 
-INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM)
 {
 	INT_PTR result = 0;
 	switch(msg)
@@ -74,7 +74,7 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 INT StartDialog(HINSTANCE hInstance)
 {
-	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), nullptr, DlgProc, NULL);
+	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), nullptr, DlgProc, 0);
 	return 0;
 }
 
@@ -89,21 +89,21 @@ HWND InitConsole(ConsoleMode mode)
 			mode == ConsoleMode::CM_IN_OUT || mode == ConsoleMode::CM_OUT_ERROR)
 		{
 			*stdout = *::_fdopen(hCrt, "w");
-			::setvbuf(stdout, NULL, _IONBF, 0);
+			::setvbuf(stdout, nullptr, _IONBF, 0);
 		}
 
 		if(mode == ConsoleMode::CM_ALL      || mode == ConsoleMode::CM_ERROR ||
 			mode == ConsoleMode::CM_IN_ERROR || mode == ConsoleMode::CM_OUT_ERROR)
 		{
 			*stderr = *::_fdopen(hCrt, "w");
-			::setvbuf(stderr, NULL, _IONBF, 0);
+			::setvbuf(stderr, nullptr, _IONBF, 0);
 		}
 
 		if(mode == ConsoleMode::CM_ALL    || mode == ConsoleMode::CM_IN ||
 			mode == ConsoleMode::CM_IN_OUT || mode == ConsoleMode::CM_IN_ERROR)
 		{
 			*stdin = *::_fdopen(hCrt, "r");
-			::setvbuf(stdin, NULL, _IONBF, 0);
+			::setvbuf(stdin, nullptr, _IONBF, 0);
 		}
 		std::ios::sync_with_stdio();
 	}
@@ -112,5 +112,5 @@ HWND InitConsole(ConsoleMode mode)
 	//HWND console = ::GetConsoleWindow();
 	//::SetWindowPos(console, NULL, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
 
-	return 0;
+	return nullptr;
 }

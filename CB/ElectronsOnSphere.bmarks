@@ -1,73 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="..\src\Includes.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\wrapResource.hpp" open="1" top="0" tabpos="16">
+		<Cursor position="100" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Includes.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
-		<BrowseMarks positions="468" />
-		<Book_Marks positions="" />
-	</File>
-	<File name="..\src\Physics\NVector.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\resource.h" open="1" top="0" tabpos="11">
+		<Cursor position="306" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Noncopyable.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Physics\PhysicsDynamic.hpp" open="1" top="1" tabpos="8">
+		<Cursor position="218" topLine="0" />
+		<BrowseMarks positions="542" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="..\src\Physics\Physics.hpp" open="1" top="0" tabpos="15">
+		<Cursor position="164" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\resource.h" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Physics\PhysicsStatic.hpp" open="1" top="0" tabpos="9">
+		<Cursor position="229" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Physics\PhysicsStatic.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Graphics\Window.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="2762" topLine="0" />
+		<BrowseMarks positions="2841" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="..\src\Graphics\Graphics.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="2187" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Graphics\Graphics.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Includes.hpp" open="1" top="0" tabpos="5">
+		<Cursor position="1086" topLine="3" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Physics\PhysicsDynamic.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Graphics\Window.hpp" open="1" top="0" tabpos="13">
+		<Cursor position="135" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Graphics\Window.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Noncopyable.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="354" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Resource.rc" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Physics\NVector.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="3045" topLine="62" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Physics\Physics.hpp" open="1" top="1" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Includes.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="98" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\main.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Resource.rc" open="1" top="0" tabpos="14">
+		<Cursor position="2072" topLine="53" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Physics\NVector.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\main.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="25" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="..\src\Graphics\Window.hpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="..\src\Physics\NVector.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="24" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>

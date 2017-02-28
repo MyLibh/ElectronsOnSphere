@@ -41,12 +41,12 @@ namespace graphics
 
 	VOID Graphics::manage()
 	{
-		if(GetAsyncKeyState(VK_UP)) gm_.y += 0.1;
-		else if(GetAsyncKeyState(VK_DOWN)) gm_.y -= 0.1;
-		else if(GetAsyncKeyState(VK_LEFT)) gm_.x -= 0.1;
-		else if(GetAsyncKeyState(VK_RIGHT)) gm_.x += 0.1;
-		else if(GetAsyncKeyState('+')) gm_.scale += 0.1;
-		else if(GetAsyncKeyState('-')) gm_.scale -= 0.1;
+		if(GetAsyncKeyState(VK_UP)) gm_.y += 0.1f;
+		else if(GetAsyncKeyState(VK_DOWN)) gm_.y -= 0.1f;
+		else if(GetAsyncKeyState(VK_LEFT)) gm_.x -= 0.1f;
+		else if(GetAsyncKeyState(VK_RIGHT)) gm_.x += 0.1f;
+		else if(GetAsyncKeyState('+')) gm_.scale += 0.1f;
+		else if(GetAsyncKeyState('-')) gm_.scale -= 0.1f;
 		else if(GetAsyncKeyState('1')) gm_.xrot++;
 		else if(GetAsyncKeyState('3')) gm_.yrot++;
 		else if(GetAsyncKeyState('5')) gm_.zrot++;

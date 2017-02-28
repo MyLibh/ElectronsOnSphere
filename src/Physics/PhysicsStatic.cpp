@@ -28,7 +28,7 @@ namespace NPhysics
                 {
                 fp << "colvo electrons: " << ElectronsNum << ",\nenergy: " << PSgetPotentialEnergy (positions, ElectronsNum).getEnergy() << "\n\npositions:";
 
-                for (int i = 0; i < ElectronsNum; i++)
+                for (size_t i = 0; i < ElectronsNum; i++)
                     {
                     fp << "\n\npoint№" << i + 1 << "\n";
 
@@ -69,7 +69,7 @@ namespace NPhysics
                 {
                 fp << "colvo electrons: " << ElectronsNum << ",\nenergy: " << en.getEnergy() << "\n\npositions:";
 
-                for (int i = 0; i < ElectronsNum; i++)
+                for (size_t i = 0; i < ElectronsNum; i++)
                     {
                     fp << "\n\npoint¹" << i + 1 << "\n";
 
@@ -135,7 +135,7 @@ namespace NPhysics
             return PS_S_MINFALSE;
             }
 
-        void     physics_static::PSdoPhysicsStatic     (const nvec* positions, size_t ElectronsNum, PMESSAGE param)
+        void     physics_static::PSdoPhysicsStatic     (const nvec* positions, size_t ElectronsNum, PMESSAGE)
             {
             PSsaveWithComaringAsMin (positions, ElectronsNum);
             //cout << "do you want to save it?";
@@ -147,8 +147,8 @@ namespace NPhysics
         Energy   physics_static::PSgetPotentialEnergy  (const nvec* positions, size_t ElectronsNum) const
             {
             Energy energy (ElectronsNum);
-            for (int i = 0; i < ElectronsNum; i++)
-                for (int j = 0; j < i; j++)
+            for (size_t i = 0; i < ElectronsNum; i++)
+                for (size_t j = 0; j < i; j++)
                     {
                     double module = ((positions[i].getX() - positions[j].getX())*(positions[i].getX() - positions[j].getX()) +
                                      (positions[i].getY() - positions[j].getY())*(positions[i].getY() - positions[j].getY()));
