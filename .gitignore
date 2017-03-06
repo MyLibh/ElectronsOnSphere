@@ -45,7 +45,7 @@ $RECYCLE.BIN/
 
 # Мои игноры
 
-Debug/*
+Debug/
 
 Network Trash Folder
 Temporary Items
