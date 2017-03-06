@@ -24,9 +24,9 @@ HWND CreateTrackBar(HWND, UINT, UINT, UINT, UINT);
 
 //=====================================================================================================================
 
-class Graphics
+class Graphics : public NoncopyableFull
 {
-protected:
+private:
 	HWND        hWnd_;
 	HINSTANCE   hInstance_;
 	HDC         hDC_;
@@ -39,17 +39,16 @@ protected:
 
 	BOOL initWindow();
 	BOOL initGL();
-	VOID FPS(FLOAT);
+	VOID showFPS(FLOAT);
 	VOID shutdown();
+
+	friend class App;
 
 public:
 	Graphics(HINSTANCE);
-	~Graphics();
-
-	INT run();
+	~Graphics() { }
 
 	BOOL init();
-	VOID update(FLOAT);
 	VOID render();
 	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
 };

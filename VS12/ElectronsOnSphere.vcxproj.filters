@@ -63,6 +63,9 @@
     <ClInclude Include="..\src\resource.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\App.hpp">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="..\src\Graphics\Graphics.cpp">
       <Filter>Файлы исходного кода\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\App.cpp">
+      <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

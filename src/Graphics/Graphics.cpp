@@ -71,49 +71,6 @@ Graphics::Graphics(HINSTANCE hInst) :
 	gpApp = this;
 }
 
-Graphics::~Graphics()
-{
-}
-
-INT Graphics::run()
-{
-	DBG("Running app");
-
-	__int64 prevTime = 0;
-	QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&prevTime));
-	__int64 cps = 0;
-	QueryPerformanceFrequency(reinterpret_cast<LARGE_INTEGER*>(&cps));
-	float spc = 1.0f / cps;
-
-	MSG msg = { };
-	while(WM_QUIT != msg.message)
-	{
-		if(PeekMessage(&msg, nullptr, NULL, NULL, PM_REMOVE))
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-		else
-		{
-			__int64 cureTime = 0;
-			QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&cureTime));
-			FLOAT dt = (cureTime - prevTime) * spc;
-
-			update(dt);
-			render();
-			FPS(dt);
-
-			SwapBuffers(hDC_);
-
-			prevTime = cureTime;
-		}
-	}
-
-	shutdown();
-
-	return static_cast<INT>(msg.wParam);
-}
-
 BOOL Graphics::initWindow()
 {
 	DBG("Starting window initialization");
@@ -235,7 +192,7 @@ BOOL Graphics::init()
 	return TRUE;
 }
 
-VOID Graphics::FPS(FLOAT dt)
+VOID Graphics::showFPS(FLOAT dt)
 {
 	static FLOAT elapsed    = 0;
 	static INT   frameCount = 0;
@@ -257,7 +214,7 @@ VOID Graphics::FPS(FLOAT dt)
 
 }
 
-VOID Graphics::update(FLOAT)
+VOID Graphics::render()
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -286,11 +243,6 @@ VOID Graphics::update(FLOAT)
 	glPopMatrix();
 }
 
-VOID Graphics::render()
-{
-	
-}
-
 LRESULT Graphics::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch(msg)
@@ -315,6 +267,6 @@ LRESULT Graphics::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	default: return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
-	return 0;
+	return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
