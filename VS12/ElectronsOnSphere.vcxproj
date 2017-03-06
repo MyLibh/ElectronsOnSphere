@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Graphics\Graphics.hpp" />
-    <ClInclude Include="..\src\Graphics\Window.hpp" />
     <ClInclude Include="..\src\Includes.hpp" />
     <ClInclude Include="..\src\Noncopyable.hpp" />
     <ClInclude Include="..\src\Physics\Energy.h" />
@@ -27,7 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
-    <ClCompile Include="..\src\Graphics\Window.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Physics\NVector.cpp" />
@@ -39,7 +37,7 @@
     <Image Include="..\src\Res\ElectronsOnSphere.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\src\Resource.rc" />
+    <ResourceCompile Include="..\src\ElectronsOnSphere.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EE7ABF1C-ED54-43C7-A6F8-0B0C7F783EBD}</ProjectGuid>

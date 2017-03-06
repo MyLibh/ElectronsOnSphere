@@ -33,17 +33,8 @@
     <ClInclude Include="..\src\Noncopyable.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\resource.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Physics\Energy.h">
       <Filter>Заголовочные файлы\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Graphics\Graphics.hpp">
-      <Filter>Заголовочные файлы\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Graphics\Window.hpp">
-      <Filter>Заголовочные файлы\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Physics\NVector.h">
       <Filter>Заголовочные файлы\Physics</Filter>
@@ -66,6 +57,12 @@
     <ClInclude Include="..\src\wrapResource.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Graphics\Graphics.hpp">
+      <Filter>Заголовочные файлы\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\resource.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -73,12 +70,6 @@
     </ClCompile>
     <ClCompile Include="..\src\main.cpp">
       <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Graphics\Graphics.cpp">
-      <Filter>Файлы исходного кода\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Graphics\Window.cpp">
-      <Filter>Файлы исходного кода\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Physics\Physics.cpp">
       <Filter>Файлы исходного кода\Physics</Filter>
@@ -92,6 +83,9 @@
     <ClCompile Include="..\src\Physics\NVector.cpp">
       <Filter>Файлы исходного кода\Physics</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Graphics\Graphics.cpp">
+      <Filter>Файлы исходного кода\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\src\Res\ElectronsOnSphere.ico">
@@ -99,7 +93,7 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\src\Resource.rc">
+    <ResourceCompile Include="..\src\ElectronsOnSphere.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
   </ItemGroup>

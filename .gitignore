@@ -42,7 +42,11 @@ $RECYCLE.BIN/
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
-.Debug
+
+# Мои игноры
+
+Debug/*
+
 Network Trash Folder
 Temporary Items
 .apdisk

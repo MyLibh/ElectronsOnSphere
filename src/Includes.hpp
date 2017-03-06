@@ -1,6 +1,8 @@
 #ifndef __INCLUDES_HPP_INCLUDED__
 #define __INCLUDES_HPP_INCLUDED__
 
+#define DEBUG
+
 #ifdef _MSC_VER
 
     #pragma warning(push, 4)
@@ -40,7 +42,7 @@
 	#error Ќ»«я ё«ј“№ TXLib
 #endif // __TXLIB_H_INCLUDED
 
-//#pragma region INCLUDES
+#pragma region INCLUDES
 
 #include <Windows.h>
 #include <gl\GL.h>
@@ -51,13 +53,33 @@
 #include <io.h>
 #include <fcntl.h>
 
+#include <string>
+#include <iostream>
+#include <sstream>
+
 #define _USE_MATH_DEFINES
 #include <math.h>
 
 #include "wrapResource.hpp"
 #include "Noncopyable.hpp"
 
-//#pragma endregion ¬ключаемые библиотеки
+#pragma endregion ¬ключаемые библиотеки
+
+#ifdef DEBUG
+	
+	enum DBGMODE : INT
+	{
+		INFO  = 0,
+		FAIL 
+	};
+	
+	VOID DBG(std::string, DBGMODE = DBGMODE::INFO);
+
+#else
+
+#define DBG(inf, mode)
+
+#endif // DEBUG
 
 #ifdef _WINDOWS
 

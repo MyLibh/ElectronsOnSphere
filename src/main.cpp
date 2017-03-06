@@ -1,16 +1,19 @@
 #include "Includes.hpp"
-#include "Graphics\Window.hpp"
-
-#define DEBUG
+#include "Graphics\Graphics.hpp"
 
 INT APIENTRY WinMain(_In_     HINSTANCE hInstance,
                      _In_opt_ HINSTANCE,
                      _In_     LPTSTR,
                      _In_     INT)
 {
-	StartDialog(hInstance);
+	InitConsole();
+	Graphics graphics(hInstance);
+	if(!graphics.init()) return -1;
 
-	return 0;
+	INT result = graphics.run();
+
+	system("PAUSE");
+	return result;
 }
 
 

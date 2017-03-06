@@ -1,44 +1,55 @@
 #pragma once
 
-#ifndef __GRAPHICS_HPP_INCLUDED__
-#define __GRAPHICS_HPP_INCLUDED__
-
 #include "..\Includes.hpp"
-#include "..\Noncopyable.hpp"
 
-namespace graphics 
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+
+//=====================================================================================================================
+
+enum ConsoleMode
 {
-	struct GraphicsManager
-	{
-		GLfloat x, y, z;
-		GLfloat scale;
-		GLfloat xrot, yrot, zrot;
-	};
+	CM_ALL = 0,
 
-	class Graphics : public NoncopyableFull
-	{
-	private:
-		static HGLRC                 hRC_;
-		static PIXELFORMATDESCRIPTOR pfd_;
-		static GraphicsManager       gm_;
+	CM_OUT,
+	CM_IN,
+	CM_ERROR,
 
-	public:
-		explicit Graphics() :
-			NoncopyableFull()
-		{ };
+	CM_IN_OUT,
+	CM_IN_ERROR,
+	CM_OUT_ERROR
+};
 
-		~Graphics() { };
+HWND InitConsole(ConsoleMode = ConsoleMode::CM_ALL);
+HWND CreateTrackBar(HWND, UINT, UINT, UINT, UINT);
 
-		static BOOL setWindowPixelFormatDescriptor(HDC);
+//=====================================================================================================================
 
-		static VOID initGL(HDC);
-		static VOID deleteGL();
+class Graphics
+{
+protected:
+	HWND        hWnd_;
+	HINSTANCE   hInstance_;
+	HDC         hDC_;
+	HGLRC       hRC_;
+	UINT        width_,
+		        height_;
+	std::string title_;
+	FLOAT       fps_;
+	DWORD       wndStyle_;
 
-		static VOID resize(INT, INT);
+	BOOL initWindow();
+	BOOL initGL();
+	VOID FPS(FLOAT);
+	VOID shutdown();
 
-		static VOID display(/* CONST */);
-		static VOID manage();
-	};
-} // namespace graphics
+public:
+	Graphics(HINSTANCE);
+	~Graphics();
 
-#endif // __GRAPHICS_HPP_INCLUDED__
+	INT run();
+
+	BOOL init();
+	VOID update(FLOAT);
+	VOID render();
+	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
+};
