@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\App.hpp" />
+    <ClInclude Include="..\src\Config.hpp" />
     <ClInclude Include="..\src\Graphics\Graphics.hpp" />
     <ClInclude Include="..\src\Includes.hpp" />
     <ClInclude Include="..\src\Noncopyable.hpp" />
@@ -24,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\App.cpp" />
+    <ClCompile Include="..\src\Config.cpp" />
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />
@@ -67,7 +69,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>

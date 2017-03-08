@@ -22,10 +22,13 @@ namespace physics
 
 		size_t                   getNumberElectrons() const { return _Positions.size(); }
 		CONST std::vector<nvec> &getPositions() const { return _Positions; }
+		
 
 		PMESSAGE doPhysics();
-		VOID     load(CONST std::vector<nvec> &newPos) { _Positions = newPos; }
+		VOID     load(CONST std::vector<nvec> &newPos) { _Positions = newPos; }	
     };
+	
+	Energy GetPotentialEnergy(CONST std::vector<nvec>&);
 }
 
 #endif // __PHYSICS_HPP_INCLUDED__ }

@@ -44,6 +44,28 @@ namespace physics
 			if(i != num) sum += _Positions[num].strength(_Positions[i]);
             
         return sum * 0.001;
-     }
+    }
+	
+	Energy getPotentialEnergy(CONST std::vector<nvec> &crPositions) 
+    {
+        Energy energy (crPositions.size());
+        for(size_t i = 0; i < crPositions.size(); ++i)
+            for(size_t j = 0; j < i; ++j)
+            {
+                double module = ((crPositions[i].getX() - crPositions[j].getX()) * (crPositions[i].getX() - crPositions[j].getX()) +
+                                 (crPositions[i].getY() - crPositions[j].getY()) * (crPositions[i].getY() - crPositions[j].getY()));
+
+                if(fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
+                {
+                    module = MIN_NUM_FOR_DIVIDE;
+                    std::cerr << "ERROR";
+                }
+
+                module = 1 / module;
+                energy += module;
+            }
+
+    return energy;
+    }
 }
 

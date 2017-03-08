@@ -57,6 +57,9 @@
     <ClInclude Include="..\src\Physics\Physics.hpp">
       <Filter>Заголовочные файлы\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Config.hpp">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="..\src\Physics\Physics.cpp">
       <Filter>Файлы исходного кода\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Config.cpp">
+      <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
