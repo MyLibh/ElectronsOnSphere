@@ -3,13 +3,11 @@
 #include "Graphics\Graphics.hpp"
 #include "Physics\Physics.hpp"
 
-using NPhysics::physics;
-
 class App final : public NoncopyableFull
 {
 private:
 	Graphics graphics_;
-	physics  physics_;
+	physics::Physics  physics_;
 
 public:
 	App(HINSTANCE);

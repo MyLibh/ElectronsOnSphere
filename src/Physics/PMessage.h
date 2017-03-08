@@ -1,4 +1,4 @@
-#include "Energy.h"
+#include "Energy.hpp"
 
 #ifndef __PMESSAGE_H_INCLUDED__
 #define __PMESSAGE_H_INCLUDED__

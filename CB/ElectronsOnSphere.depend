@@ -83,3 +83,69 @@
 1488270542 c:\users\user\documents\github\electronsonsphere\src\wrapresource.hpp
 	"resource.h"
 
+1489002672 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp
+	"App.hpp"
+
+1488992724 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.hpp
+	"Graphics\Graphics.hpp"
+	"Physics\Physics.hpp"
+
+1489002944 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp
+	"..\Includes.hpp"
+	"..\Physics\NVector.hpp"
+
+1489003001 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\includes.hpp
+	<Windows.h>
+	<gl\GL.h>
+	<gl\GLU.h>
+	<iostream>
+	<fstream>
+	<io.h>
+	<fcntl.h>
+	<string>
+	<sstream>
+	<vector>
+	<math.h>
+	"wrapResource.hpp"
+	"Noncopyable.hpp"
+
+1488812900 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\wrapresource.hpp
+	"resource.h"
+
+1489001959 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\resource.h
+
+1488812900 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\noncopyable.hpp
+
+1489002901 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.hpp
+	"..\Includes.hpp"
+
+1489001298 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+	"PMessage.h"
+
+1488993872 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\pmessage.h
+	"Energy.hpp"
+
+1488812900 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\energy.hpp
+	"..\Includes.hpp"
+
+1488823838 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\includes.cpp
+	"Includes.hpp"
+
+1489001452 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp
+	"App.hpp"
+
+1488812900 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp
+	"NVector.hpp"
+
+1489001277 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp
+	"Physics.hpp"
+
+1489002788 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp
+	"Graphics.hpp"
+
+1489002559 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\electronsonsphere.rc
+	"resource.h"
+	"afxres.h"
+

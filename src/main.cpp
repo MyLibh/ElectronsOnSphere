@@ -5,9 +5,12 @@ INT APIENTRY WinMain(_In_     HINSTANCE hInstance,
                      _In_     LPTSTR,
                      _In_     INT)
 {
+#ifdef DEBUG
 	InitConsole();
+#endif // DEBUG
+	
 	App app(hInstance);
-	if(!app.init()) return -1;
+	if(!app.init()) return -MessageBox(nullptr, "Failed to start the program", "ERROR", MB_OK | MB_ICONERROR);
 
 	INT result = app.run();
 

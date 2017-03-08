@@ -27,6 +27,7 @@
     #pragma GCC diagnostic ignored "-Wunknown-pragmas"
     #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     #pragma GCC diagnostic ignored "-Wconversion-null"
+    #pragma GCC diagnostic ignored "-Weffc++"
 
 	#define abstract
 	#define _In_
@@ -54,8 +55,8 @@
 #include <fcntl.h>
 
 #include <string>
-#include <iostream>
 #include <sstream>
+#include <vector>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -65,22 +66,6 @@
 
 #pragma endregion ¬ключаемые библиотеки
 
-#ifdef DEBUG
-	
-	enum DBGMODE : INT
-	{
-		INFO  = 0,
-		FAIL 
-	};
-	
-	VOID DBG(std::string, DBGMODE = DBGMODE::INFO);
-
-#else
-
-#define DBG(inf, mode)
-
-#endif // DEBUG
-
 #ifdef _WINDOWS
 
 	#undef VOID
@@ -88,5 +73,22 @@
 	typedef void VOID;
 
 #endif // _WINDOWS
+
+#ifdef DEBUG
+
+	enum DBGMODE : INT
+	{
+		INFO  = 0,
+		FAIL
+	};
+
+	VOID DBG(std::string, DBGMODE = DBGMODE::INFO);
+
+#else
+
+#define DBG(inf, mode)
+#define DBG(inf)
+
+#endif // DEBUG
 
 #endif // __INCLUDES_HPP_INCLUDED__

@@ -50,11 +50,6 @@ HWND InitConsole(ConsoleMode mode)
 	return nullptr;
 }
 
-HWND CreateTrackBar(HWND hWnd, UINT min, UINT max, UINT minSel, UINT maxSel)
-{
-	return nullptr;
-}
-
 //=====================================================================================================================
 
 Graphics::Graphics(HINSTANCE hInst) :
@@ -83,9 +78,9 @@ BOOL Graphics::initWindow()
 	wcex.hCursor       = LoadCursor(nullptr, IDC_ARROW);
 	wcex.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
 	wcex.lpszClassName = "ElectronsOnSphere";
-	 wcex.hIconSm       = LoadIcon(nullptr, MAKEINTRESOURCE(IDI_ICON));
+    wcex.hIconSm       = LoadIcon(nullptr, MAKEINTRESOURCE(IDI_ICON));
 	wcex.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU1);
-	
+
 	if(!RegisterClassEx(&wcex))
 	{
 		DBG("Failed to register the window class", DBGMODE::FAIL);
@@ -93,7 +88,7 @@ BOOL Graphics::initWindow()
 		return FALSE;
 	}
 
-	RECT rect = {0, 0, width_, height_};
+	RECT rect = {0, 0, static_cast<long>(width_), static_cast<long>(height_)};
 	AdjustWindowRect(&rect, wndStyle_, FALSE);
 
 	auto width = rect.right - rect.left;
@@ -131,7 +126,7 @@ BOOL Graphics::initGL()
 	pfd.cStencilBits          = 8;
 
 	INT format = ChoosePixelFormat(hDC_, &pfd);
-	if(!SetPixelFormat(hDC_, format, &pfd)) 
+	if(!SetPixelFormat(hDC_, format, &pfd))
 	{
 		DBG("Faled to set pixel format", DBGMODE::FAIL);
 
@@ -150,20 +145,7 @@ BOOL Graphics::initGL()
 
 	glEnable(GL_ALPHA_TEST);
 	glEnable(GL_DEPTH_TEST);
-	//glEnable(GL_COLOR_MATERIAL);
-	//glEnable(GL_LIGHTING);
-	//glEnable(GL_LIGHT0);
-	//glEnable(GL_BLEND);
-	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	//glLightfv(GL_LIGHT0, GL_POSITION, pos);
-	//glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
 
-	/*if(glewInit())
-	{
-		std::cerr << "Failed to init GLEW\n";
-
-		return FALSE;
-	}*/
 	DBG("Ending OpenGl initialization");
 
 	return TRUE;
@@ -180,11 +162,11 @@ VOID Graphics::shutdown()
 	DBG("Ending shutdown");
 }
 
-BOOL Graphics::init() 
-{ 
+BOOL Graphics::init()
+{
 	DBG("Starting initialization");
 
-	if(!initWindow()) return FALSE; 
+	if(!initWindow()) return FALSE;
 	if(!initGL())     return FALSE;
 
 	DBG("Ending initialization");
@@ -196,7 +178,7 @@ VOID Graphics::showFPS(FLOAT dt)
 {
 	static FLOAT elapsed    = 0;
 	static INT   frameCount = 0;
-	
+
 	elapsed += dt;
 	frameCount++;
 	if(elapsed >= 1.0f)
@@ -214,33 +196,41 @@ VOID Graphics::showFPS(FLOAT dt)
 
 }
 
-VOID Graphics::render()
+VOID Graphics::render(CONST std::vector<nvec> &positions)
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glBegin(GL_LINES);
-		glColor3f(1.0, 0.0, 0.0);
-		glVertex3f(0.0, 0.0, 0.0);
-		glVertex3f(1.0, 0.0, 0.0);
+	GLUquadricObj *electron = gluNewQuadric();
+	for(size_t i = 0; i < positions.size(); ++i)
+	{
+		glPushMatrix();
+		glTranslatef(static_cast<FLOAT>(positions[i].getX()), static_cast<FLOAT>(positions[i].getY()), static_cast<FLOAT>(0));
+			glColor4f(1.0f, 0.0f, 0.0f, 1.0f); // Electron
+			gluSphere(electron, 0.05, 100, 100);
+		glPopMatrix();
+	}
+	gluDeleteQuadric(electron);
 
-		glColor3f(0.0, 1.0, 0.0);
-		glVertex3f(0.0, 0.0, 0.0);
-		glVertex3f(0.0, 1.0, 0.0);
+	GLUquadricObj *nucleus = gluNewQuadric();
+	gluQuadricDrawStyle(nucleus, GLU_LINE);
+	glColor4f(1.0f, 0.0f, 0.5f, 1.0f); // The nucleus of an atom
+	gluSphere(nucleus, 1, 500, 500);
+	gluDeleteQuadric(nucleus);
 
-		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(0.0, 0.0, 0.0);
-		glVertex3f(1.0, 1.0, 1.0);
-	glEnd();
+	/*glBegin(GL_LINES);
+		glColor3f(1.0f, 0.0f, 0.0f); // X-axis
+		glVertex3f(0.0f, 0.0f, 0.0f);
+		glVertex3f(1.0f, 0.0f, 0.0f);
 
-	glPushMatrix();
-		static FLOAT angle = 0.5f;
-		
-		glColor4f(1.0f, 0.0f, 0.5f, 1.0f);
-		static GLUquadricObj *sphere = gluNewQuadric();
-		glRotatef(angle, 1.0f, 0.0f, 0.0f);
-		gluSphere(sphere, 0.5, 100, 100);
-	glPopMatrix();
+		glColor3f(0.0f, 1.0f, 0.0f); // Y-axis
+		glVertex3f(0.0f, 0.0f, 0.0f);
+		glVertex3f(0.0f, 1.0f, 0.0f);
+
+		glColor3f(0.0f, 0.0f, 1.0f); // Z-axis
+		glVertex3f(0.0f, 0.0f, 0.0f);
+		glVertex3f(0.0f, 0.0f, 1.0f);
+	glEnd();*/
 }
 
 LRESULT Graphics::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)

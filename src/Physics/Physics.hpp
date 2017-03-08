@@ -1,21 +1,31 @@
 #ifndef __PHYSICS_HPP_INCLUDED__ //{
 #define __PHYSICS_HPP_INCLUDED__
 
-#include "PhysicsDynamic.hpp"
-#include "PhysicsStatic.hpp"
+#include "..\Includes.hpp"
 
-namespace NPhysics
+#include "NVector.hpp"
+#include "PMessage.h"
+
+namespace physics
+{
+    class Physics final : public NoncopyableFull
     {
-    class physics : protected NPhysicsDynamic::physics_dynamic, protected NPhysicsStatic::physics_static
-        {
-        public:
-            physics ()
-                {}
+    private:
+        std::vector<nvec> _Positions;
 
-            inline void  doPysics ();
-            inline nvec* getPositions ();
-        };
-    }
+        vec getSpeed(size_t);
+
+		VOID assignLocations(size_t);
+
+    public:
+        Physics();
+
+		size_t                   getNumberElectrons() const { return _Positions.size(); }
+		CONST std::vector<nvec> &getPositions() const { return _Positions; }
+
+		PMESSAGE doPhysics();
+		VOID     load(CONST std::vector<nvec> &newPos) { _Positions = newPos; }
+    };
+}
 
 #endif // __PHYSICS_HPP_INCLUDED__ }
-

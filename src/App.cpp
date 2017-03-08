@@ -2,7 +2,7 @@
 
 App::App(HINSTANCE hInstance) :
 	graphics_(hInstance),
-	physics_() 
+	physics_()
 { }
 
 INT App::run()
@@ -30,7 +30,7 @@ INT App::run()
 			FLOAT dt = (cureTime - prevTime) * spc;
 
 			update(dt);
-			graphics_.render();
+			graphics_.render(physics_.getPositions());
 			graphics_.showFPS(dt);
 
 			SwapBuffers(graphics_.hDC_);
@@ -46,6 +46,5 @@ INT App::run()
 
 VOID App::update(FLOAT)
 {
-	//Physics
-	//physics_.doPysics();
+	physics_.doPhysics();
 }

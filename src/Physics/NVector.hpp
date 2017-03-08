@@ -43,16 +43,20 @@ class vec final
         y (y1)
             {}
 
-        void operator= (ftan tan1)
+        vec &operator= (ftan tan1)
             {
             x = sqrt (1/(1 + tan1.tan*tan1.tan)) * ((tan1.half - 0.5 < 0)? 1:-1);
             y = sqrt (tan1.tan*tan1.tan/(1 + tan1.tan*tan1.tan)) * (((tan1.half - 0.5)*tan1.tan < 0)? 1:-1);
+
+            return *this;
             }
 
-        void operator= (vec vec_)
+        vec &operator= (vec vec_)
             {
             x = vec_.x;
             y = vec_.y;
+
+            return *this;
             }
 
         void operator*= (double module)
@@ -61,7 +65,9 @@ class vec final
             y *= module;
             }
 
-        void operator+= (vec vec_)
+		vec operator*(double module) const { return vec(x * module, y * module); }
+
+        void operator+= (const vec vec_)
             {
             x += vec_.x;
             y += vec_.y;
@@ -89,7 +95,7 @@ class nvec final
             ny (0)
             {}
 
-        vec strangth (nvec over)
+        vec strength (nvec over)
             {
             double module = ((nx - over.nx)*(nx - over.nx) + (ny - over.ny)*(ny - over.ny));
             vec vec_ ((nx - over.nx), (ny - over.ny));
@@ -120,21 +126,16 @@ class nvec final
             return nvec ((nx + vec_.x)/hypot(nx + vec_.x, ny + vec_.y), (ny + vec_.y)/hypot(nx + vec_.x, ny + vec_.y));
             }
 
-        void operator= (nvec vec_)
+        nvec &operator= (nvec vec_)
             {
             nx = vec_.nx;
             ny = vec_.ny;
+
+            return *this;
             }
 
-        const double getX () const
-            {
-            return nx;
-            }
-
-        const double getY () const
-            {
-            return ny;
-            }
+		double getX () const { return nx; }
+        double getY () const { return ny; }
     };
 
 #endif // __NVECTOR_H_INCLUDED__ }

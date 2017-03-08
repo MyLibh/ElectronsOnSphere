@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\Includes.hpp"
+#include "..\Physics\NVector.hpp"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -20,11 +21,10 @@ enum ConsoleMode
 };
 
 HWND InitConsole(ConsoleMode = ConsoleMode::CM_ALL);
-HWND CreateTrackBar(HWND, UINT, UINT, UINT, UINT);
 
 //=====================================================================================================================
 
-class Graphics : public NoncopyableFull
+class Graphics final : public NoncopyableFull
 {
 private:
 	HWND        hWnd_;
@@ -49,6 +49,6 @@ public:
 	~Graphics() { }
 
 	BOOL init();
-	VOID render();
+	VOID render(CONST std::vector<nvec>&);
 	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
 };
