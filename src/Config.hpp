@@ -5,6 +5,6 @@
 
 std::string ParseForSave();
 
-BOOL SaveConfige(CONST std::vector<nvec>&);
-BOOL LoadConfig(std::string, std::vector<nvec>&);
+BOOL              SaveConfig(CONST std::vector<nvec>&);
+std::vector<nvec> LoadConfig(CONST std::string&);
 

@@ -1,10 +1,10 @@
 #include "Physics.hpp"
 
-#ifdef __PHYSICS_VER__ 
+#ifdef __PHYSICS_VER__
     #error physics ver defined
 #else
     #define __PHYSICS_VER__ 1.1
-#endif // __PHYSICS_VER__ 
+#endif // __PHYSICS_VER__
 
 namespace physics
 {
@@ -37,16 +37,16 @@ namespace physics
 		return ((big)? PD_R_DOSTATIC : PD_R_EMPTY);
      }
 
-    vec Physics::getSpeed(size_t num) 
+    vec Physics::getSpeed(size_t num)
     {
         vec sum;
         for(size_t i = 0; i < _Positions.size(); ++i)
 			if(i != num) sum += _Positions[num].strength(_Positions[i]);
-            
+
         return sum * 0.001;
     }
-	
-	Energy getPotentialEnergy(CONST std::vector<nvec> &crPositions) 
+
+	Energy GetPotentialEnergy(CONST std::vector<nvec> &crPositions)
     {
         Energy energy (crPositions.size());
         for(size_t i = 0; i < crPositions.size(); ++i)

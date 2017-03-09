@@ -1,4 +1,4 @@
-#ifndef __PHYSICS_HPP_INCLUDED__ //{
+#ifndef __PHYSICS_HPP_INCLUDED__ 
 #define __PHYSICS_HPP_INCLUDED__
 
 #include "..\Includes.hpp"
@@ -8,6 +8,8 @@
 
 namespace physics
 {
+	Energy GetPotentialEnergy(CONST std::vector<nvec>&);
+
     class Physics final : public NoncopyableFull
     {
     private:
@@ -15,20 +17,19 @@ namespace physics
 
         vec getSpeed(size_t);
 
-		VOID assignLocations(size_t);
-
     public:
         Physics();
 
 		size_t                   getNumberElectrons() const { return _Positions.size(); }
-		CONST std::vector<nvec> &getPositions() const { return _Positions; }
+		CONST std::vector<nvec> &getPositions()       const { return _Positions; }
 		
 
 		PMESSAGE doPhysics();
 		VOID     load(CONST std::vector<nvec> &newPos) { _Positions = newPos; }	
+		VOID     assignLocations(size_t);
     };
 	
-	Energy GetPotentialEnergy(CONST std::vector<nvec>&);
+	
 }
 
-#endif // __PHYSICS_HPP_INCLUDED__ }
+#endif // __PHYSICS_HPP_INCLUDED__ 

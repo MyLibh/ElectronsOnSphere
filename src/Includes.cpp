@@ -7,8 +7,8 @@
 
 	VOID DBG(std::string inf, DBGMODE mode)
 	{
-		if(mode == DBGMODE::FAIL) system("color 0C");
-		else                      system("color 0F");
+		if(mode == DBGMODE::FAIL) system("color 0F");
+		else                      system("color 0C");
 
 		std::cout << ((mode == DBGMODE::INFO)? "[INFO]\t" : "[ERROR]\t") << __TIME__ << "\t" << inf << std::endl;
 	}

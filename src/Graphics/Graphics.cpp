@@ -1,18 +1,5 @@
 #include "Graphics.hpp"
 
-namespace
-{
-	Graphics *gpApp = nullptr;
-}
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	if(gpApp) return gpApp->wndProc(hWnd, msg, wParam, lParam);
-	else return DefWindowProc(hWnd, msg, wParam, lParam);
-}
-
-//=====================================================================================================================
-
 HWND InitConsole(ConsoleMode mode)
 {
 	if(::AllocConsole())
@@ -57,23 +44,21 @@ Graphics::Graphics(HINSTANCE hInst) :
 	hInstance_(hInst),
 	hDC_(nullptr),
 	hRC_(nullptr),
-	width_(900),
+	width_(1000),
 	height_(900),
 	title_("Electrons on sphere"),
 	fps_(0.0f),
 	wndStyle_(WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX)
-{
-	gpApp = this;
-}
+{ }
 
-BOOL Graphics::initWindow()
+BOOL Graphics::initWindow(WNDPROC wndFunc)
 {
 	DBG("Starting window initialization");
 
 	WNDCLASSEX wcex    = { sizeof(WNDCLASSEX) };
 	wcex.style         = CS_HREDRAW | CS_VREDRAW;
 	wcex.hInstance     = hInstance_;
-	wcex.lpfnWndProc   = WndProc;
+	wcex.lpfnWndProc   = wndFunc;
 	wcex.hIcon         = LoadIcon(nullptr, MAKEINTRESOURCE(IDI_ICON));
 	wcex.hCursor       = LoadCursor(nullptr, IDC_ARROW);
 	wcex.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
@@ -145,6 +130,10 @@ BOOL Graphics::initGL()
 
 	glEnable(GL_ALPHA_TEST);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_BLEND);
 
 	DBG("Ending OpenGl initialization");
 
@@ -162,12 +151,12 @@ VOID Graphics::shutdown()
 	DBG("Ending shutdown");
 }
 
-BOOL Graphics::init()
+BOOL Graphics::init(WNDPROC wndFunc)
 {
 	DBG("Starting initialization");
 
-	if(!initWindow()) return FALSE;
-	if(!initGL())     return FALSE;
+	if(!initWindow(wndFunc)) return FALSE;
+	if(!initGL())            return FALSE;
 
 	DBG("Ending initialization");
 
@@ -196,10 +185,14 @@ VOID Graphics::showFPS(FLOAT dt)
 
 }
 
-VOID Graphics::render(CONST std::vector<nvec> &positions)
+VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positions)
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glPushMatrix();
+	glRotatef(crControl.angle, crControl.xrot, crControl.yrot, crControl.zrot);
+	glTranslatef(crControl.xtr, crControl.ytr, crControl.ztr);	
 
 	GLUquadricObj *electron = gluNewQuadric();
 	for(size_t i = 0; i < positions.size(); ++i)
@@ -214,11 +207,13 @@ VOID Graphics::render(CONST std::vector<nvec> &positions)
 
 	GLUquadricObj *nucleus = gluNewQuadric();
 	gluQuadricDrawStyle(nucleus, GLU_LINE);
-	glColor4f(1.0f, 0.0f, 0.5f, 1.0f); // The nucleus of an atom
+	glColor4f(1.0f, 0.0f, 0.5f, 0.1f); // The nucleus of an atom
 	gluSphere(nucleus, 1, 500, 500);
 	gluDeleteQuadric(nucleus);
+	glPopMatrix();
 
-	/*glBegin(GL_LINES);
+	glPushMatrix();
+	glBegin(GL_LINES);
 		glColor3f(1.0f, 0.0f, 0.0f); // X-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);
 		glVertex3f(1.0f, 0.0f, 0.0f);
@@ -230,33 +225,9 @@ VOID Graphics::render(CONST std::vector<nvec> &positions)
 		glColor3f(0.0f, 0.0f, 1.0f); // Z-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);
 		glVertex3f(0.0f, 0.0f, 1.0f);
-	glEnd();*/
+	glEnd();
+	glPopMatrix();
 }
 
-LRESULT Graphics::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	switch(msg)
-	{
-	case WM_COMMAND:
-		switch(LOWORD(wParam))
-		{
-		case ID_SAVE:
-			break;
-		case ID_LOAD:
-			break;
-		case ID_EXIT:
-			PostQuitMessage(0);
-			break;
 
-		default: break;
-		}
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		break;
-
-	default: return DefWindowProc(hWnd, msg, wParam, lParam);
-	}
-
-	return DefWindowProc(hWnd, msg, wParam, lParam);
-}
 

@@ -2,8 +2,7 @@
 
 #include "..\Includes.hpp"
 #include "..\Physics\NVector.hpp"
-
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+#include "..\Control.hpp"
 
 //=====================================================================================================================
 
@@ -37,7 +36,7 @@ private:
 	FLOAT       fps_;
 	DWORD       wndStyle_;
 
-	BOOL initWindow();
+	BOOL initWindow(WNDPROC);
 	BOOL initGL();
 	VOID showFPS(FLOAT);
 	VOID shutdown();
@@ -48,7 +47,7 @@ public:
 	Graphics(HINSTANCE);
 	~Graphics() { }
 
-	BOOL init();
-	VOID render(CONST std::vector<nvec>&);
-	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
+	BOOL init(WNDPROC);
+	VOID render(CONST Control&, CONST std::vector<nvec>&);
 };
+

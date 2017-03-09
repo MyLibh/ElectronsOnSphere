@@ -58,6 +58,8 @@
 		</Compiler>
 		<Unit filename="../src/App.cpp" />
 		<Unit filename="../src/App.hpp" />
+		<Unit filename="../src/Config.cpp" />
+		<Unit filename="../src/Config.hpp" />
 		<Unit filename="../src/ElectronsOnSphere.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

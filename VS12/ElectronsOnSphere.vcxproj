@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="..\src\App.hpp" />
     <ClInclude Include="..\src\Config.hpp" />
+    <ClInclude Include="..\src\Control.hpp" />
     <ClInclude Include="..\src\Graphics\Graphics.hpp" />
     <ClInclude Include="..\src\Includes.hpp" />
     <ClInclude Include="..\src\Noncopyable.hpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Physics\Energy.cpp" />
     <ClCompile Include="..\src\Physics\NVector.cpp" />
     <ClCompile Include="..\src\Physics\Physics.cpp" />
   </ItemGroup>
@@ -94,7 +96,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties RESOURCE_FILE="Resource.rc" />
+      <UserProperties RESOURCE_FILE="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
