@@ -10,7 +10,7 @@ namespace physics
 {
 	Physics::Physics() :
 		_Positions()
-    { assignLocations(5); }
+    { assignLocations(8); }
 
 	VOID Physics::assignLocations(size_t num)
 	{

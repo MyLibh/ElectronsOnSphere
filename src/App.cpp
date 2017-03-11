@@ -24,7 +24,7 @@ INT App::run()
 	float spc = 1.0f / cps;
 
 	MSG msg = { };
-	while(WM_QUIT != msg.message)
+	while(WM_QUIT != msg.message && !GetAsyncKeyState(VK_ESCAPE))
 	{
 		if(PeekMessage(&msg, nullptr, NULL, NULL, PM_REMOVE))
 		{

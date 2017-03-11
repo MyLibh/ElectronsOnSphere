@@ -144,14 +144,14 @@
 1489069853 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp
 	"Physics.hpp"
 
-1489069732 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp
+1489273863 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp
 	"Graphics.hpp"
 
 1489066672 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\electronsonsphere.rc
 	"resource.h"
 	"afxres.h"
 
-1489069406 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\control.hpp
+1489274088 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\control.hpp
 	"Includes.hpp"
 
 1489040089 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.hpp

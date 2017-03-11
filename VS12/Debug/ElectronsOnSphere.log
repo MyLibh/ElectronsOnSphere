@@ -1,4 +1,4 @@
-﻿Построение начато 09.03.2017 17:28:52.
+﻿Построение начато 12.03.2017 2:26:05.
      1>Проект "C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\ElectronsOnSphere.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Graphics\Graphics.cpp
@@ -18,4 +18,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.51
+Затраченное время: 00:00:01.60

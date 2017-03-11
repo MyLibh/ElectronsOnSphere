@@ -60,6 +60,7 @@
 		<Unit filename="../src/App.hpp" />
 		<Unit filename="../src/Config.cpp" />
 		<Unit filename="../src/Config.hpp" />
+		<Unit filename="../src/Control.hpp" />
 		<Unit filename="../src/ElectronsOnSphere.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
@@ -73,8 +74,6 @@
 		<Unit filename="../src/Physics/PMessage.h" />
 		<Unit filename="../src/Physics/Physics.cpp" />
 		<Unit filename="../src/Physics/Physics.hpp" />
-		<Unit filename="../src/Physics/PhysicsDynamic.cpp" />
-		<Unit filename="../src/Physics/PhysicsStatic.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/resource.h" />
 		<Unit filename="../src/wrapResource.hpp" />

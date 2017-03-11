@@ -44,7 +44,7 @@ Graphics::Graphics(HINSTANCE hInst) :
 	hInstance_(hInst),
 	hDC_(nullptr),
 	hRC_(nullptr),
-	width_(1000),
+	width_(900),
 	height_(900),
 	title_("Electrons on sphere"),
 	fps_(0.0f),
@@ -126,14 +126,20 @@ BOOL Graphics::initGL()
 		return FALSE;
 	}
 
-	glClearColor(1.0, 1.0, 1.0, 0.0);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-	glEnable(GL_ALPHA_TEST);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_BLEND);
+	FLOAT pos[4] = { 3, 3, 3, 1 };
+    FLOAT dir[3] = { -1, -1, -1 };
+
+    glEnable(GL_ALPHA_TEST);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glLightfv(GL_LIGHT0, GL_POSITION, pos);
+    glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
 
 	DBG("Ending OpenGl initialization");
 
@@ -192,15 +198,17 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 
 	glPushMatrix();
 	glRotatef(crControl.angle, crControl.xrot, crControl.yrot, crControl.zrot);
-	glTranslatef(crControl.xtr, crControl.ytr, crControl.ztr);	
+	glTranslatef(crControl.xtr, crControl.ytr, crControl.ztr);
 
+	static CONST FLOAT radius = 0.05f;
 	GLUquadricObj *electron = gluNewQuadric();
 	for(size_t i = 0; i < positions.size(); ++i)
 	{
 		glPushMatrix();
-		glTranslatef(static_cast<FLOAT>(positions[i].getX()), static_cast<FLOAT>(positions[i].getY()), static_cast<FLOAT>(0));
+		glTranslatef(static_cast<FLOAT>(positions[i].getX()) - ((positions[i].getX() < 0)? -radius : radius),
+                     static_cast<FLOAT>(positions[i].getY()) - ((positions[i].getY() < 0)? -radius : radius), 0.0f);
 			glColor4f(1.0f, 0.0f, 0.0f, 1.0f); // Electron
-			gluSphere(electron, 0.05, 100, 100);
+			gluSphere(electron, radius, 100, 100);
 		glPopMatrix();
 	}
 	gluDeleteQuadric(electron);
@@ -208,21 +216,22 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	GLUquadricObj *nucleus = gluNewQuadric();
 	gluQuadricDrawStyle(nucleus, GLU_LINE);
 	glColor4f(1.0f, 0.0f, 0.5f, 0.1f); // The nucleus of an atom
-	gluSphere(nucleus, 1, 500, 500);
+	gluSphere(nucleus, 1 - radius, 500, 500);
 	gluDeleteQuadric(nucleus);
 	glPopMatrix();
 
 	glPushMatrix();
+	glTranslatef(0.0f, 0.0f, -1.0f);
 	glBegin(GL_LINES);
-		glColor3f(1.0f, 0.0f, 0.0f); // X-axis
+		glColor3f(1.0f, 1.0f, 0.0f); // X-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);
 		glVertex3f(1.0f, 0.0f, 0.0f);
 
-		glColor3f(0.0f, 1.0f, 0.0f); // Y-axis
+		glColor3f(0.0f, 1.0f, 1.0f); // Y-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);
 		glVertex3f(0.0f, 1.0f, 0.0f);
 
-		glColor3f(0.0f, 0.0f, 1.0f); // Z-axis
+		glColor3f(0.0f, 1.0f, 0.0f); // Z-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);
 		glVertex3f(0.0f, 0.0f, 1.0f);
 	glEnd();
