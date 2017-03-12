@@ -14,6 +14,7 @@
     <ClInclude Include="..\src\App.hpp" />
     <ClInclude Include="..\src\Config.hpp" />
     <ClInclude Include="..\src\Control.hpp" />
+    <ClInclude Include="..\src\Graphics\Color.hpp" />
     <ClInclude Include="..\src\Graphics\Graphics.hpp" />
     <ClInclude Include="..\src\Includes.hpp" />
     <ClInclude Include="..\src\Noncopyable.hpp" />
@@ -27,6 +28,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\App.cpp" />
     <ClCompile Include="..\src\Config.cpp" />
+    <ClCompile Include="..\src\Graphics\Color.cpp" />
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />

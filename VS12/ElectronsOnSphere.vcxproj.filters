@@ -63,6 +63,9 @@
     <ClInclude Include="..\src\Control.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Graphics\Color.hpp">
+      <Filter>Заголовочные файлы\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="..\src\Physics\Energy.cpp">
       <Filter>Файлы исходного кода\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Color.cpp">
+      <Filter>Файлы исходного кода\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

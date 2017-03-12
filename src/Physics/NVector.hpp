@@ -3,7 +3,7 @@
 
 #include "..\Includes.hpp"
 
-#define MIN_NUM_FOR_DIVIDE 0.000001
+CONST double MIN_NUM_FOR_DIVIDE = 0.000001;
 
 double atan_ (double x, double y);
 

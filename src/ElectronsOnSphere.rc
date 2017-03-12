@@ -62,8 +62,15 @@ BEGIN
     POPUP "Настройки"
     BEGIN
         MENUITEM "Количество электронов",       ID_NUM
-        MENUITEM "Цвет электронов",             ID_COLOR
+        POPUP "Цвета"
+        BEGIN
+            MENUITEM "Фон",                         ID_COLORBCKGRND
+            MENUITEM SEPARATOR
+            MENUITEM "Ядро",                        ID_COLRNUCLEUS
+            MENUITEM "Электроны",                   ID_COLORELECTORNS
+        END
     END
+    MENUITEM "Справка",                     0
 END
 
 

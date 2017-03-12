@@ -37,6 +37,7 @@
 					<Add library="gdi32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
+					<Add library="Comdlg32" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -64,6 +65,8 @@
 		<Unit filename="../src/ElectronsOnSphere.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="../src/Graphics/Color.cpp" />
+		<Unit filename="../src/Graphics/Color.hpp" />
 		<Unit filename="../src/Graphics/Graphics.cpp" />
 		<Unit filename="../src/Graphics/Graphics.hpp" />
 		<Unit filename="../src/Includes.cpp" />

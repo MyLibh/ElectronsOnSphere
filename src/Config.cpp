@@ -1,15 +1,10 @@
 #include "Config.hpp"
 
-std::string ParseForSave()
-{
-	return std::string("Save\\test.txt");
-}
-
-BOOL SaveConfig(CONST std::vector<nvec> &crPositions)
+BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> &crPositions)
 {
 	DBG("Start saving");
 
-	std::ofstream config(ParseForSave());
+	std::ofstream config(filename);
 	if(!config.is_open())
 	{
 		DBG("Failed to create config file", DBGMODE::FAIL);
@@ -22,7 +17,7 @@ BOOL SaveConfig(CONST std::vector<nvec> &crPositions)
 		   << "Energy: " << physics::GetPotentialEnergy(crPositions).getEnergy() << std::endl 
 		   << "Positions:\n";
 
-	config << "X" << "Y" << "Z" << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
+	config << "X Y" /* Z"*/ << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
 	for(size_t i = 0; i < crPositions.size(); ++i)
 		config << crPositions[i].getX() << crPositions[i].getY() /* << crPositions[i].getZ() */ << std::endl;
 	
@@ -50,7 +45,7 @@ std::vector<nvec> LoadConfig(CONST std::string &crFilename)
 	do
 	{
 		config >> str;
-	} while(str != "X");
+	} while(str != "Y");
 
 	while(!config.eof())
 	{

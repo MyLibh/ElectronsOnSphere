@@ -7,9 +7,33 @@
 
 	VOID DBG(std::string inf, DBGMODE mode)
 	{
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>((0 << 4) | ((mode == DBGMODE::FAIL)? 4 : 15)));
+		switch(mode)
+		{
+		case DBGMODE::INFO:
+		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>((0 << 4) | 15));
+			std::cout << "[INFO]\t";
+			break;
+		}
 
-		std::cout << ((mode == DBGMODE::INFO)? "[INFO]\t" : "[ERROR]\t") << __TIME__ << "\t" << inf << std::endl;
+		case DBGMODE::FAIL:
+		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>((0 << 4) | 4));
+			std::cout << "[ERROR]\t";
+			break;
+		}
+
+		case DBGMODE::STATUS:
+		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>((0 << 4) | 2));
+			std::cout << "[STATUS]\t";
+			break;
+		}
+
+		default: break;
+		};
+
+		std::cout << __TIME__ << "\t" << inf << std::endl;
 	}
 
 #endif // DEBUG

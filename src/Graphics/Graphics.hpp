@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\Includes.hpp"
+#include "Color.hpp"
 #include "..\Physics\NVector.hpp"
 #include "..\Control.hpp"
 
@@ -36,6 +37,9 @@ private:
 	FLOAT       fps_;
 	DWORD       wndStyle_;
 
+	Color4f     nucleusColor_,
+				electronsColor_;
+
 	BOOL initWindow(WNDPROC);
 	BOOL initGL();
 	VOID showFPS(FLOAT);
@@ -48,6 +52,10 @@ public:
 	~Graphics() { }
 
 	CONST HWND &getHWND() const { return hWnd_; }
+	CONST HINSTANCE &getHINSTANCE() const { return hInstance_; }
+
+	VOID setNucleusColor(CONST Color4f crColor) { nucleusColor_ = crColor; }
+	VOID setElectronsColor(CONST Color4f crColor) { electronsColor_ = crColor; }
 
 	BOOL init(WNDPROC);
 	VOID render(CONST Control&, CONST std::vector<nvec>&);

@@ -15,7 +15,7 @@ App::App(HINSTANCE hInstance) :
 
 INT App::run()
 {
-	DBG("Running app");
+	DBG("Running app", DBGMODE::STATUS);
 
 	__int64 prevTime = 0;
 	QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&prevTime));
@@ -49,7 +49,7 @@ INT App::run()
 	}
 
 	ShowWindow(graphics_.getHWND(), SW_HIDE);
-	SetFocus(GetConsoleWindow());
+	//SetFocus(GetConsoleWindow());
 
 	graphics_.shutdown();
 
@@ -66,23 +66,69 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	switch(msg)
 	{
 	case WM_COMMAND:
+	{
 		switch(LOWORD(wParam))
 		{
 		case ID_SAVE:
-			SaveConfig(physics_.getPositions());
+		{
+			CHAR filename[MAX_PATH] = "";
+
+			OPENFILENAME of = { OPENFILENAME_SIZE_VERSION_400A };
+			of.hwndOwner    = graphics_.getHWND();
+			of.lpstrFilter  = "Text Files (*.txt)\0";
+			of.lpstrFile    = filename;
+			of.nMaxFile     = MAX_PATH;
+			of.Flags        = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+			of.lpstrDefExt  = "txt";
+
+			GetSaveFileName(&of);
+
+			SaveConfig(filename, physics_.getPositions());
+
 			break;
+		}
 		case ID_LOAD:
-			physics_.load(LoadConfig("Save\\1.txt"));
+		{
+			CHAR filename[MAX_PATH] = "";
+
+			OPENFILENAME of    = { OPENFILENAME_SIZE_VERSION_400A };
+			of.hwndOwner       = graphics_.getHWND();
+			of.hInstance       = graphics_.getHINSTANCE();
+			of.lpstrFilter     = "Text Files only(*.txt*)\0*.txt*\0";
+			of.nFilterIndex    = 1;
+			of.lpstrFile       = filename;
+			of.nMaxFile        = MAX_PATH;
+			of.lpstrInitialDir = nullptr;
+			of.Flags           = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+
+			while(!GetOpenFileName(&of));
+
+			physics_.load(LoadConfig(filename));
+
 			break;
+		}
 		case ID_EXIT:
 			PostQuitMessage(0);
 			break;
+
 		case ID_NUM:
 			physics_.assignLocations(rand() % 10);
 			break;
 
+		case ID_COLORBCKGRND:
+			glClearColor(GetChoosenColor(graphics_.getHWND()));
+			break;
+		case ID_COLRNUCLEUS:
+			graphics_.setNucleusColor(GetChoosenColor(graphics_.getHWND()));
+			break;
+		case ID_COLORELECTORNS:
+			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND()));
+			break;
+
 		default: return DefWindowProc(hWnd, msg, wParam, lParam);
 		}
+		break;
+	}
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
@@ -90,6 +136,17 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	default: return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return 0;
 }
 
+Color4f GetChoosenColor(HWND hWnd)
+{
+	CHOOSECOLOR color = { sizeof(CHOOSECOLOR) };
+	color.hwndOwner = hWnd;
+
+	COLORREF cust_colors[16] = { };
+	color.lpCustColors = cust_colors;
+	while(!ChooseColor(&color));
+
+	return Color4f(color.rgbResult);
+}

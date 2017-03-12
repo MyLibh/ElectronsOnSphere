@@ -48,12 +48,14 @@ Graphics::Graphics(HINSTANCE hInst) :
 	height_(900),
 	title_("Electrons on sphere"),
 	fps_(0.0f),
-	wndStyle_(WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX)
+	wndStyle_(WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX),
+	nucleusColor_(1.0f, 0.0f, 0.5f, 0.1f),
+	electronsColor_(1.0f, 0.0f, 0.0f, 1.0f)
 { }
 
 BOOL Graphics::initWindow(WNDPROC wndFunc)
 {
-	DBG("Starting window initialization");
+	DBG("Starting window initialization", DBGMODE::STATUS);
 
 	WNDCLASSEX wcex    = { sizeof(WNDCLASSEX) };
 	wcex.style         = CS_HREDRAW | CS_VREDRAW;
@@ -91,14 +93,14 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 
 	ShowWindow(hWnd_, SW_SHOW);
 
-	DBG("Ending OpenGl initialization");
+	DBG("Ending OpenGl initialization", DBGMODE::STATUS);
 
 	return TRUE;
 }
 
 BOOL Graphics::initGL()
 {
-	DBG("Starting OpenGl initialization");
+	DBG("Starting OpenGl initialization", DBGMODE::STATUS);
 	hDC_ = GetDC(hWnd_);
 
 	PIXELFORMATDESCRIPTOR pfd = { sizeof(PIXELFORMATDESCRIPTOR) };
@@ -140,30 +142,30 @@ BOOL Graphics::initGL()
     glLightfv(GL_LIGHT0, GL_POSITION, pos);
     glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
 
-	DBG("Ending OpenGl initialization");
+	DBG("Ending OpenGl initialization", DBGMODE::STATUS);
 
 	return TRUE;
 }
 
 VOID Graphics::shutdown()
 {
-	DBG("Starting shutdown");
+	DBG("Starting shutdown", DBGMODE::STATUS);
 
 	wglMakeCurrent(nullptr, nullptr);
 	wglDeleteContext(hRC_);
 	ReleaseDC(hWnd_, hDC_);
 
-	DBG("Ending shutdown");
+	DBG("Ending shutdown", DBGMODE::STATUS);
 }
 
 BOOL Graphics::init(WNDPROC wndFunc)
 {
-	DBG("Starting initialization");
+	DBG("Starting initialization", DBGMODE::STATUS);
 
 	if(!initWindow(wndFunc)) return FALSE;
 	if(!initGL())            return FALSE;
 
-	DBG("Ending initialization");
+	DBG("Ending initialization", DBGMODE::STATUS);
 
 	return TRUE;
 }
@@ -206,7 +208,7 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 		glPushMatrix();
 		glTranslatef(static_cast<FLOAT>(positions[i].getX()) - ((positions[i].getX() < 0)? -radius : radius),
                      static_cast<FLOAT>(positions[i].getY()) - ((positions[i].getY() < 0)? -radius : radius), 0.0f);
-			glColor4f(1.0f, 0.0f, 0.0f, 1.0f); // Electron
+			glColor4f(electronsColor_); // Electron
 			gluSphere(electron, radius, 100, 100);
 		glPopMatrix();
 	}
@@ -214,7 +216,7 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 
 	GLUquadricObj *nucleus = gluNewQuadric();
 	gluQuadricDrawStyle(nucleus, GLU_LINE);
-	glColor4f(1.0f, 0.0f, 0.5f, 0.1f); // The nucleus of an atom
+	glColor4f(nucleusColor_); // The nucleus of an atom
 	gluSphere(nucleus, 1 - radius, 500, 500);
 	gluDeleteQuadric(nucleus);
 	glPopMatrix();

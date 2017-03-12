@@ -37,6 +37,9 @@
 		#undef __STRICT_ANSI__
 	#endif // __STRICT_ANSI__
 
+    #define CDSIZEOF_STRUCT(structname, member)  (((int)((LPBYTE)(&((structname*)0)->member) - ((LPBYTE)((structname*)0)))) + sizeof(((structname*)0)->member))
+    #define OPENFILENAME_SIZE_VERSION_400A  CDSIZEOF_STRUCT(OPENFILENAMEA,lpTemplateName)
+
 #endif // __GNUC__
 
 #ifdef __TXLIB_H_INCLUDED
@@ -50,6 +53,7 @@
 #include <gl\GLU.h>
 
 #include <ctime>
+#include <commdlg.h>
 
 #include <iostream>
 #include <fstream>
@@ -80,7 +84,8 @@
 
 	enum DBGMODE : INT
 	{
-		INFO  = 0,
+		INFO    = 0,
+		STATUS,
 		FAIL
 	};
 

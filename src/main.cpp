@@ -10,7 +10,7 @@ INT APIENTRY WinMain(_In_     HINSTANCE hInstance,
 #endif // DEBUG
 	
 	system("cls");
-	srand(static_cast<unsigned int>(time(0)));
+	srand(static_cast<UINT>(time(nullptr)));
 	
 	App app(hInstance);
 	if(!app.init()) return -MessageBox(nullptr, "Failed to start the program", "ERROR", MB_OK | MB_ICONERROR);

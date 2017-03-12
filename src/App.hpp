@@ -15,13 +15,13 @@ private:
 
 public:
 	App(HINSTANCE);
-	~App() { DBG("Closing app"); }
+	~App() { DBG("Closing app", DBGMODE::STATUS); }
 
 	VOID update(FLOAT);
-	INT run(); 
+	INT run();
 	BOOL init() { return graphics_.init(WndProc); };
 
 	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
 };
 
-
+Color4f GetChoosenColor(HWND);
