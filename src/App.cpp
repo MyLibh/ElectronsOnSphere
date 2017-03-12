@@ -49,7 +49,7 @@ INT App::run()
 	}
 
 	ShowWindow(graphics_.getHWND(), SW_HIDE);
-	//SetFocus(GetConsoleWindow());
+	SetFocus(GetConsoleWindow());
 
 	graphics_.shutdown();
 
@@ -123,6 +123,9 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			break;
 		case ID_COLORELECTORNS:
 			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND()));
+			break;
+		case ID_COLORSPHERE:
+			graphics_.setSphereColor(GetChoosenColor(graphics_.getHWND()));
 			break;
 
 		default: return DefWindowProc(hWnd, msg, wParam, lParam);

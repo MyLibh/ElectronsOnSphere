@@ -49,8 +49,9 @@ Graphics::Graphics(HINSTANCE hInst) :
 	title_("Electrons on sphere"),
 	fps_(0.0f),
 	wndStyle_(WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX),
-	nucleusColor_(1.0f, 0.0f, 0.5f, 0.1f),
-	electronsColor_(1.0f, 0.0f, 0.0f, 1.0f)
+	nucleusColor_(1.0f, 0.0f, 0.0f, 1.0f),
+	electronsColor_(1.0f, 0.0f, 0.0f, 1.0f),
+	sphereColor_(1.0f, 0.0f, 0.5f, 0.1f)
 { }
 
 BOOL Graphics::initWindow(WNDPROC wndFunc)
@@ -197,8 +198,9 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glPushMatrix();
+	
 	glRotatef(crControl.angle, crControl.xrot, crControl.yrot, crControl.zrot);
+	glPushMatrix();
 	glTranslatef(crControl.xtr, crControl.ytr, crControl.ztr);
 
 	static CONST FLOAT radius = 0.05f;
@@ -215,14 +217,22 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	gluDeleteQuadric(electron);
 
 	GLUquadricObj *nucleus = gluNewQuadric();
-	gluQuadricDrawStyle(nucleus, GLU_LINE);
 	glColor4f(nucleusColor_); // The nucleus of an atom
-	gluSphere(nucleus, 1 - radius, 500, 500);
+	gluSphere(nucleus, radius * 4.0f, 200, 200);
 	gluDeleteQuadric(nucleus);
 	glPopMatrix();
 
+	GLUquadricObj *sphere = gluNewQuadric();
+	gluQuadricDrawStyle(sphere, GLU_LINE);
+	glColor4f(sphereColor_); // Sphere
+	gluSphere(sphere, 1 - radius, 500, 500);
+	gluDeleteQuadric(sphere);
+	glPopMatrix();	
+
 	glPushMatrix();
+	glLoadIdentity();
 	glTranslatef(0.0f, 0.0f, -1.0f);
+	glLineWidth(5.0f);
 	glBegin(GL_LINES);
 		glColor3f(1.0f, 1.0f, 0.0f); // X-axis
 		glVertex3f(0.0f, 0.0f, 0.0f);

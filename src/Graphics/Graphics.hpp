@@ -38,7 +38,8 @@ private:
 	DWORD       wndStyle_;
 
 	Color4f     nucleusColor_,
-				electronsColor_;
+				electronsColor_,
+				sphereColor_;
 
 	BOOL initWindow(WNDPROC);
 	BOOL initGL();
@@ -56,6 +57,7 @@ public:
 
 	VOID setNucleusColor(CONST Color4f crColor) { nucleusColor_ = crColor; }
 	VOID setElectronsColor(CONST Color4f crColor) { electronsColor_ = crColor; }
+	VOID setSphereColor(CONST Color4f crColor) { sphereColor_ = crColor; }
 
 	BOOL init(WNDPROC);
 	VOID render(CONST Control&, CONST std::vector<nvec>&);

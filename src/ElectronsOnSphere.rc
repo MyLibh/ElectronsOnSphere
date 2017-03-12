@@ -68,9 +68,11 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "Ядро",                        ID_COLRNUCLEUS
             MENUITEM "Электроны",                   ID_COLORELECTORNS
+            MENUITEM "Cфера",                       ID_COLORSPHERE
         END
     END
-    MENUITEM "Справка",                     0
+    MENUITEM "Справка",                     ID_40014
+    MENUITEM "Авторы",                      0
 END
 
 
@@ -82,6 +84,41 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDI_ICON                ICON                    "Res\\EOS_big.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 279, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Авторы"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,222,116,50,14
+    LTEXT           "Данная программа написана учениками Лицея ""Вторая Школа""",IDC_STATIC,23,7,217,16
+    LTEXT           "Copyright (C) 2017 A&&A Corporation",IDC_STATIC,21,82,206,11
+END
+
 #endif    // Русский (Россия) resources
 /////////////////////////////////////////////////////////////////////////////
 

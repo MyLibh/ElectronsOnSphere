@@ -37,8 +37,9 @@
 		#undef __STRICT_ANSI__
 	#endif // __STRICT_ANSI__
 
-    #define CDSIZEOF_STRUCT(structname, member)  (((int)((LPBYTE)(&((structname*)0)->member) - ((LPBYTE)((structname*)0)))) + sizeof(((structname*)0)->member))
+    #define CDSIZEOF_STRUCT(structname, member)  (((int)((LPBYTE)(&((structname*)nullptr)->member) - ((LPBYTE)((structname*)nullptr)))) + sizeof(((structname*)nullptr)->member))
     #define OPENFILENAME_SIZE_VERSION_400A  CDSIZEOF_STRUCT(OPENFILENAMEA,lpTemplateName)
+    #define _WIN32_WINNT 0x0500
 
 #endif // __GNUC__
 

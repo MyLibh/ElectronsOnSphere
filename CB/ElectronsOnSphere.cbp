@@ -57,6 +57,9 @@
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 		</Compiler>
+		<Linker>
+			<Add library="Kernel32" />
+		</Linker>
 		<Unit filename="../src/App.cpp" />
 		<Unit filename="../src/App.hpp" />
 		<Unit filename="../src/Config.cpp" />

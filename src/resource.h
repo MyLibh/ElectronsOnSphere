@@ -4,6 +4,7 @@
 //
 #define IDR_MENU1                       101
 #define IDI_ICON                        102
+#define IDD_ABOUT                       104
 #define ID_SAVE                         40001
 #define ID_LOAD                         40002
 #define ID_EXIT                         40003
@@ -17,13 +18,17 @@
 #define ID_COLORBCKGRND                 40011
 #define ID_COLRNUCLEUS                  40012
 #define ID_COLORELECTORNS               40013
+#define ID_40014                        40014
+#define ID_40015                        40015
+#define ID_COLORSPHERE                  40016
+#define IDC_STATIC                      -1
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        104
-#define _APS_NEXT_COMMAND_VALUE         40014
+#define _APS_NEXT_RESOURCE_VALUE        105
+#define _APS_NEXT_COMMAND_VALUE         40017
 #define _APS_NEXT_CONTROL_VALUE         1002
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
