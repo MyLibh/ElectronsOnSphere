@@ -91,13 +91,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\src\Res\ElectronsOnSphere.ico">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="..\src\ElectronsOnSphere.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\src\Res\EOS_big.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>

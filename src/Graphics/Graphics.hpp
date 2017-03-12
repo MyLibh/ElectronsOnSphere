@@ -47,6 +47,8 @@ public:
 	Graphics(HINSTANCE);
 	~Graphics() { }
 
+	CONST HWND &getHWND() const { return hWnd_; }
+
 	BOOL init(WNDPROC);
 	VOID render(CONST Control&, CONST std::vector<nvec>&);
 };

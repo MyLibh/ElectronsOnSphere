@@ -19,7 +19,7 @@ BOOL SaveConfig(CONST std::vector<nvec> &crPositions)
 
 	config << __TIME__ << std::endl                                                           \
 		   << "Number of electrons: " << crPositions.size() << std::endl                      \
-		   //<< "Energy: " << physics::GetPotentialEnergy(crPositions).getEnergy() << std::endl 
+		   << "Energy: " << physics::GetPotentialEnergy(crPositions).getEnergy() << std::endl 
 		   << "Positions:\n";
 
 	config << "X" << "Y" << "Z" << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)

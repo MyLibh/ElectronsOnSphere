@@ -49,6 +49,8 @@
 #include <gl\GL.h>
 #include <gl\GLU.h>
 
+#include <ctime>
+
 #include <iostream>
 #include <fstream>
 #include <io.h>

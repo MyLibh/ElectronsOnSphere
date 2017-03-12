@@ -7,8 +7,7 @@
 
 	VOID DBG(std::string inf, DBGMODE mode)
 	{
-		if(mode == DBGMODE::FAIL) system("color 0F");
-		else                      system("color 0C");
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>((0 << 4) | ((mode == DBGMODE::FAIL)? 4 : 15)));
 
 		std::cout << ((mode == DBGMODE::INFO)? "[INFO]\t" : "[ERROR]\t") << __TIME__ << "\t" << inf << std::endl;
 	}

@@ -62,3 +62,5 @@ VS12/Debug/ElectronsOnSphere.pdb
 *.idb
 *.tlog
 *.exe
+*.exe
+*.tlog

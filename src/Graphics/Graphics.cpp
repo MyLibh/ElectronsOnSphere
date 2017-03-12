@@ -59,11 +59,11 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 	wcex.style         = CS_HREDRAW | CS_VREDRAW;
 	wcex.hInstance     = hInstance_;
 	wcex.lpfnWndProc   = wndFunc;
-	wcex.hIcon         = LoadIcon(nullptr, MAKEINTRESOURCE(IDI_ICON));
+	wcex.hIcon         = LoadIcon(hInstance_, MAKEINTRESOURCE(IDI_ICON));
 	wcex.hCursor       = LoadCursor(nullptr, IDC_ARROW);
 	wcex.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
 	wcex.lpszClassName = "ElectronsOnSphere";
-    wcex.hIconSm       = LoadIcon(nullptr, MAKEINTRESOURCE(IDI_ICON));
+    wcex.hIconSm       = LoadIcon(hInstance_, MAKEINTRESOURCE(IDI_ICON));
 	wcex.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU1);
 
 	if(!RegisterClassEx(&wcex))
@@ -89,7 +89,6 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 		return FALSE;
 	}
 
-	//InitConsole();
 	ShowWindow(hWnd_, SW_SHOW);
 
 	DBG("Ending OpenGl initialization");
