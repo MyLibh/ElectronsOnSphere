@@ -1,3 +1,6 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+
 #include "Graphics.hpp"
 
 HWND InitConsole(ConsoleMode mode)
@@ -94,7 +97,7 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 
 	ShowWindow(hWnd_, SW_SHOW);
 
-	DBG("Ending OpenGl initialization", DBGMODE::STATUS);
+	DBG("Ending window initialization", DBGMODE::STATUS);
 
 	return TRUE;
 }
@@ -198,7 +201,7 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	
+
 	glRotatef(crControl.angle, crControl.xrot, crControl.yrot, crControl.zrot);
 	glPushMatrix();
 	glTranslatef(crControl.xtr, crControl.ytr, crControl.ztr);
@@ -227,7 +230,7 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	glColor4f(sphereColor_); // Sphere
 	gluSphere(sphere, 1 - radius, 500, 500);
 	gluDeleteQuadric(sphere);
-	glPopMatrix();	
+	glPopMatrix();
 
 	glPushMatrix();
 	glLoadIdentity();

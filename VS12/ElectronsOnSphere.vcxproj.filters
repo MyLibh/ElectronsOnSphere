@@ -89,9 +89,6 @@
     <ClCompile Include="..\src\Config.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Physics\Energy.cpp">
-      <Filter>Файлы исходного кода\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Graphics\Color.cpp">
       <Filter>Файлы исходного кода\Graphics</Filter>
     </ClCompile>

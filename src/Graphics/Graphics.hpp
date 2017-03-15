@@ -55,9 +55,9 @@ public:
 	CONST HWND &getHWND() const { return hWnd_; }
 	CONST HINSTANCE &getHINSTANCE() const { return hInstance_; }
 
-	VOID setNucleusColor(CONST Color4f crColor) { nucleusColor_ = crColor; }
-	VOID setElectronsColor(CONST Color4f crColor) { electronsColor_ = crColor; }
-	VOID setSphereColor(CONST Color4f crColor) { sphereColor_ = crColor; }
+	VOID setNucleusColor(CONST Color4f &crColor) { nucleusColor_ = crColor; }
+	VOID setElectronsColor(CONST Color4f &crColor) { electronsColor_ = crColor; }
+	VOID setSphereColor(CONST Color4f &crColor) { sphereColor_ = crColor; }
 
 	BOOL init(WNDPROC);
 	VOID render(CONST Control&, CONST std::vector<nvec>&);

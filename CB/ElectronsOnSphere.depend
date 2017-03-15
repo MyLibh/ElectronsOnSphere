@@ -83,7 +83,7 @@
 1488270542 c:\users\user\documents\github\electronsonsphere\src\wrapresource.hpp
 	"resource.h"
 
-1489354790 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp
+1489579675 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp
 	"App.hpp"
 
 1489348902 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.hpp
@@ -91,7 +91,7 @@
 	"Physics\Physics.hpp"
 	"Config.hpp"
 
-1489354700 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp
+1489582058 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp
 	"..\Includes.hpp"
 	"Color.hpp"
 	"..\Physics\NVector.hpp"
@@ -121,7 +121,7 @@
 
 1488812900 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\noncopyable.hpp
 
-1489334819 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.hpp
+1489581757 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.hpp
 	"..\Includes.hpp"
 
 1489066990 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.hpp
@@ -135,19 +135,19 @@
 1489037883 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\energy.hpp
 	"..\Includes.hpp"
 
-1489348507 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\includes.cpp
+1489579675 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\includes.cpp
 	"Includes.hpp"
 
-1489336474 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp
+1489579675 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp
 	"App.hpp"
 
-1488812900 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp
+1489579675 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp
 	"NVector.hpp"
 
-1489274250 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp
+1489581571 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp
 	"Physics.hpp"
 
-1489354956 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp
+1489582149 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp
 	"Graphics.hpp"
 
 1489354752 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\electronsonsphere.rc
@@ -161,12 +161,12 @@
 	"Includes.hpp"
 	"Physics\Physics.hpp"
 
-1489347505 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp
+1489579955 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp
 	"Config.hpp"
 
 1489336408 c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.hpp
 	"..\Includes.hpp"
 
-1489336401 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp
+1489579675 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp
 	"Color.hpp"
 

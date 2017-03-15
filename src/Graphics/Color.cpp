@@ -1,3 +1,6 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+
 #include "Color.hpp"
 
 Color4f::Color4f(FLOAT red, FLOAT green, FLOAT blue, FLOAT alpha) :

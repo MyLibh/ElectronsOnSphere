@@ -32,7 +32,6 @@
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Physics\Energy.cpp" />
     <ClCompile Include="..\src\Physics\NVector.cpp" />
     <ClCompile Include="..\src\Physics\Physics.cpp" />
   </ItemGroup>

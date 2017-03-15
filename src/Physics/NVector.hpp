@@ -43,7 +43,7 @@ class vec final
         y (y1)
             {}
 
-        vec &operator= (ftan tan1)
+        vec &operator= (const ftan &tan1)
             {
             x = sqrt (1/(1 + tan1.tan*tan1.tan)) * ((tan1.half - 0.5 < 0)? 1:-1);
             y = sqrt (tan1.tan*tan1.tan/(1 + tan1.tan*tan1.tan)) * (((tan1.half - 0.5)*tan1.tan < 0)? 1:-1);
@@ -51,7 +51,7 @@ class vec final
             return *this;
             }
 
-        vec &operator= (vec vec_)
+        vec &operator= (const vec &vec_)
             {
             x = vec_.x;
             y = vec_.y;
@@ -67,7 +67,7 @@ class vec final
 
 		vec operator*(double module) const { return vec(x * module, y * module); }
 
-        void operator+= (const vec vec_)
+        void operator+= (const vec &vec_)
             {
             x += vec_.x;
             y += vec_.y;
