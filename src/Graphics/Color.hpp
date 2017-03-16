@@ -14,6 +14,9 @@ struct Color4f
 	Color4f(CONST Color4f&);
 
 	Color4f& operator=(CONST Color4f&);
+
+	BOOL operator==(CONST Color4f&) const;
+	BOOL operator!=(CONST Color4f&) const;
 };
 
 VOID glColor4f(CONST Color4f&);

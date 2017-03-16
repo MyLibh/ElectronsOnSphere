@@ -50,7 +50,7 @@ END
 // Menu
 //
 
-IDR_MENU1 MENU
+IDR_MENU MENU
 BEGIN
     POPUP "Файл"
     BEGIN
@@ -70,9 +70,10 @@ BEGIN
             MENUITEM "Электроны",                   ID_COLORELECTORNS
             MENUITEM "Cфера",                       ID_COLORSPHERE
         END
+        MENUITEM "Управление",                  40021, GRAYED
     END
-    MENUITEM "Справка",                     ID_40014
-    MENUITEM "Авторы",                      0
+    MENUITEM "Помощь",                      ID_MANAGMENTHELP
+    MENUITEM "Авторы",                      ID_ABOUT
 END
 
 
@@ -93,12 +94,20 @@ IDI_ICON                ICON                    "Res\\EOS_big.ico"
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO
 BEGIN
-    IDD_ABOUT, DIALOG
+    IDD_ABOUTBOX, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 272
         TOPMARGIN, 7
         BOTTOMMARGIN, 130
+    END
+
+    IDD_HELPBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -109,14 +118,27 @@ END
 // Dialog
 //
 
-IDD_ABOUT DIALOGEX 0, 0, 279, 137
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ABOUTBOX DIALOGEX 0, 0, 279, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Авторы"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+FONT 8, "Showcard Gothic", 400, 0, 0x0
 BEGIN
     DEFPUSHBUTTON   "ОК",IDOK,222,116,50,14
-    LTEXT           "Данная программа написана учениками Лицея ""Вторая Школа""",IDC_STATIC,23,7,217,16
-    LTEXT           "Copyright (C) 2017 A&&A Corporation",IDC_STATIC,21,82,206,11
+    LTEXT           "Данная программа написана учениками Лицея ""Вторая Школа""",IDC_STATIC,27,15,217,10
+    LTEXT           "  Copyright (C) 2017 <<A&&A Corporation>>",IDC_STATIC,16,117,151,11,SS_SUNKEN
+    LTEXT           "Кристев Алексей 9Б",IDC_STATIC,24,44,203,9
+    LTEXT           "Голигузов Алексей 9Б",IDC_STATIC,23,57,118,8
+    LTEXT           "Преподаватель: Дединский Илья Рудольфович",IDC_STATIC,23,77,163,8
+END
+
+IDD_HELPBOX DIALOGEX 0, 0, 309, 335
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Помощь"
+FONT 9, "Arial Narrow", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,252,314,50,14
+    LTEXT           "Управление",IDC_STATIC,116,18,44,8
+    LTEXT           "1)  '+' и '-' отвечают за изменение угла вращения",IDC_STATIC,47,39,200,11
 END
 
 #endif    // Русский (Россия) resources

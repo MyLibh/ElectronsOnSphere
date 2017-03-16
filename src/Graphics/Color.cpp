@@ -34,6 +34,18 @@ Color4f& Color4f::operator=(CONST Color4f &crColor)
 	return *this;
 }
 
+BOOL Color4f::operator==(CONST Color4f &crColor) const
+{
+	return (r == crColor.r &&
+		    g == crColor.g &&
+			b == crColor.b &&
+			a == crColor.a);
+}
+
+BOOL Color4f::operator!=(CONST Color4f &crColor) const { return !(*this == crColor); }
+
+//========================================================================================================
+
 VOID glColor4f(CONST Color4f &crColor) { glColor4f(crColor.r, crColor.g, crColor.b, crColor.a); }
 
 VOID glClearColor(CONST Color4f &crColor) { glClearColor(crColor.r, crColor.g, crColor.b, crColor.a); }

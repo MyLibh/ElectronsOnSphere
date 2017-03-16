@@ -34,8 +34,8 @@ HWND InitConsole(ConsoleMode mode)
 	}
 	else return FALSE;
 
-	//HWND console = ::GetConsoleWindow();
-	//::SetWindowPos(console, NULL, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
+	HWND console = GetConsoleWindow();
+	SetWindowPos(console, nullptr, 0, 0, 700, 500, SWP_NOSIZE | SWP_NOZORDER);
 
 	return nullptr;
 }
@@ -70,7 +70,7 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 	wcex.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
 	wcex.lpszClassName = "ElectronsOnSphere";
     wcex.hIconSm       = LoadIcon(hInstance_, MAKEINTRESOURCE(IDI_ICON));
-	wcex.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU1);
+	wcex.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU);
 
 	if(!RegisterClassEx(&wcex))
 	{
@@ -193,7 +193,6 @@ VOID Graphics::showFPS(FLOAT dt)
 		elapsed = 0.0f;
 		frameCount = 0;
 	}
-
 }
 
 VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positions)
@@ -223,7 +222,6 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	glColor4f(nucleusColor_); // The nucleus of an atom
 	gluSphere(nucleus, radius * 4.0f, 200, 200);
 	gluDeleteQuadric(nucleus);
-	glPopMatrix();
 
 	GLUquadricObj *sphere = gluNewQuadric();
 	gluQuadricDrawStyle(sphere, GLU_LINE);

@@ -72,6 +72,12 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 		switch(LOWORD(wParam))
 		{
+		case ID_MANAGMENTHELP:
+			DialogBox(graphics_.getHINSTANCE(), MAKEINTRESOURCE(IDD_HELPBOX), hWnd, StdDialog);
+            break;
+		case ID_ABOUT:
+			DialogBox(graphics_.getHINSTANCE(), MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, StdDialog);
+            break;
 		case ID_SAVE:
 		{
 			CHAR filename[MAX_PATH] = "";
@@ -84,9 +90,7 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			of.Flags        = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
 			of.lpstrDefExt  = "txt";
 
-			GetSaveFileName(&of);
-
-			SaveConfig(filename, physics_.getPositions());
+			if(GetSaveFileName(&of)) SaveConfig(filename, physics_.getPositions());
 
 			break;
 		}
@@ -104,9 +108,7 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			of.lpstrInitialDir = nullptr;
 			of.Flags           = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
 
-			while(!GetOpenFileName(&of));
-
-			physics_.load(LoadConfig(filename));
+			if(GetOpenFileName(&of)) physics_.load(LoadConfig(filename));
 
 			break;
 		}
@@ -152,7 +154,24 @@ Color4f GetChoosenColor(HWND hWnd)
 
 	COLORREF cust_colors[16] = { };
 	color.lpCustColors = cust_colors;
-	while(!ChooseColor(&color));
 
-	return Color4f(color.rgbResult);
+	return ((ChooseColor(&color))? Color4f(color.rgbResult) : DO_NOT_CHANGE_COLOR);
+}
+
+INT_PTR CALLBACK StdDialog(HWND hDlg, UINT message, WPARAM wParam, LPARAM)
+{
+    switch(message)
+    {
+	case WM_INITDIALOG:
+        return static_cast<INT_PTR>(TRUE);
+
+    case WM_COMMAND:
+        if(LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
+        {
+            EndDialog(hDlg, LOWORD(wParam));
+            return static_cast<INT_PTR>(TRUE);
+        }
+        break;
+    }
+    return static_cast<INT_PTR>(FALSE);
 }

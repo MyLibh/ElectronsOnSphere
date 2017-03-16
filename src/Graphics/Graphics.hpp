@@ -24,6 +24,8 @@ HWND InitConsole(ConsoleMode = ConsoleMode::CM_ALL);
 
 //=====================================================================================================================
 
+CONST Color4f DO_NOT_CHANGE_COLOR = Color4f(-1.0f, -1.0f, -1.0f, -1.0f);
+
 class Graphics final : public NoncopyableFull
 {
 private:
@@ -55,9 +57,9 @@ public:
 	CONST HWND &getHWND() const { return hWnd_; }
 	CONST HINSTANCE &getHINSTANCE() const { return hInstance_; }
 
-	VOID setNucleusColor(CONST Color4f &crColor) { nucleusColor_ = crColor; }
-	VOID setElectronsColor(CONST Color4f &crColor) { electronsColor_ = crColor; }
-	VOID setSphereColor(CONST Color4f &crColor) { sphereColor_ = crColor; }
+	VOID setNucleusColor(CONST Color4f &crColor)   { if(crColor != DO_NOT_CHANGE_COLOR) nucleusColor_ = crColor; }
+	VOID setElectronsColor(CONST Color4f &crColor) { if(crColor != DO_NOT_CHANGE_COLOR) electronsColor_ = crColor; }
+	VOID setSphereColor(CONST Color4f &crColor)    { if(crColor != DO_NOT_CHANGE_COLOR) sphereColor_ = crColor; }
 
 	BOOL init(WNDPROC);
 	VOID render(CONST Control&, CONST std::vector<nvec>&);
