@@ -116,9 +116,15 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			PostQuitMessage(0);
 			break;
 
-		case ID_NUM:
-			physics_.assignLocations(rand() % 10);
+		case ID_NUMRAND:
+			physics_.assignLocations(rand() % 15);
 			break;
+		case ID_NUMSET:
+		{
+			INT_PTR num = DialogBox(graphics_.getHINSTANCE(), MAKEINTRESOURCE(IDD_SETNUMBOX), hWnd, SetNumDialog);
+			if(num >= 1) physics_.assignLocations(num);
+			break;
+		}
 
 		case ID_COLORBCKGRND:
 			glClearColor(GetChoosenColor(graphics_.getHWND()));
@@ -127,7 +133,7 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			graphics_.setNucleusColor(GetChoosenColor(graphics_.getHWND()));
 			break;
 		case ID_COLORELECTORNS:
-			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND()));
+			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND())); 
 			break;
 		case ID_COLORSPHERE:
 			graphics_.setSphereColor(GetChoosenColor(graphics_.getHWND()));
@@ -158,9 +164,9 @@ Color4f GetChoosenColor(HWND hWnd)
 	return ((ChooseColor(&color))? Color4f(color.rgbResult) : DO_NOT_CHANGE_COLOR);
 }
 
-INT_PTR CALLBACK StdDialog(HWND hDlg, UINT message, WPARAM wParam, LPARAM)
+INT_PTR CALLBACK StdDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM)
 {
-    switch(message)
+    switch(msg)
     {
 	case WM_INITDIALOG:
         return static_cast<INT_PTR>(TRUE);
@@ -172,6 +178,31 @@ INT_PTR CALLBACK StdDialog(HWND hDlg, UINT message, WPARAM wParam, LPARAM)
             return static_cast<INT_PTR>(TRUE);
         }
         break;
+
+	default: return static_cast<INT_PTR>(FALSE);
     }
-    return static_cast<INT_PTR>(FALSE);
+    return static_cast<INT_PTR>(TRUE);
+}
+
+INT_PTR CALLBACK SetNumDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM)
+{
+    switch(msg)
+    {
+	case WM_INITDIALOG:
+        return static_cast<INT_PTR>(TRUE);
+
+    case WM_COMMAND:
+        if(LOWORD(wParam) == IDOK)
+		{
+			CHAR num[10] = { };
+
+            GetDlgItemText(hDlg, IDC_EDIT, num, 10);
+            if(!strlen(num)) MessageBox(hDlg, "Поле ввода пусто", "Ошибка", MB_OK | MB_ICONERROR);
+            else EndDialog(hDlg, atoi(num));
+			
+		}
+		else if(LOWORD(wParam) == IDCANCEL) EndDialog(hDlg, -1);
+		
+    default: return static_cast<INT_PTR>(FALSE);
+    }
 }

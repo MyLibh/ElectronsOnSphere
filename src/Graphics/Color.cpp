@@ -36,10 +36,11 @@ Color4f& Color4f::operator=(CONST Color4f &crColor)
 
 BOOL Color4f::operator==(CONST Color4f &crColor) const
 {
-	return (r == crColor.r &&
-		    g == crColor.g &&
-			b == crColor.b &&
-			a == crColor.a);
+    static CONST FLOAT epsilon = 0.01f;
+	return (fabs(r - crColor.r) < epsilon &&
+		    fabs(g - crColor.g) < epsilon &&
+            fabs(b - crColor.b) < epsilon &&
+            fabs(a - crColor.a) < epsilon);
 }
 
 BOOL Color4f::operator!=(CONST Color4f &crColor) const { return !(*this == crColor); }

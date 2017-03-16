@@ -61,7 +61,11 @@ BEGIN
     END
     POPUP "Настройки"
     BEGIN
-        MENUITEM "Количество электронов",       ID_NUM
+        POPUP "Количество электронов"
+        BEGIN
+            MENUITEM "Рандомно (до 15)",            ID_NUMRAND
+            MENUITEM "Установить",                  ID_NUMSET
+        END
         POPUP "Цвета"
         BEGIN
             MENUITEM "Фон",                         ID_COLORBCKGRND
@@ -139,6 +143,15 @@ BEGIN
     DEFPUSHBUTTON   "ОК",IDOK,252,314,50,14
     LTEXT           "Управление",IDC_STATIC,116,18,44,8
     LTEXT           "1)  '+' и '-' отвечают за изменение угла вращения",IDC_STATIC,47,39,200,11
+END
+
+IDD_SETNUMBOX DIALOGEX 10, 10, 210, 60
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройка"
+FONT 8, "Tahoma"
+BEGIN
+  CONTROL L"Введите количество электронов",IDC_EDIT,"EDIT",WS_BORDER,10,10,190,15
+  DEFPUSHBUTTON   "ОК",IDOK,154,35,46,15
 END
 
 #endif    // Русский (Россия) resources

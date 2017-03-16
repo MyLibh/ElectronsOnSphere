@@ -102,7 +102,7 @@ class nvec final
 
             if (fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
                 {
-                module = ((rand()%10) + 10)/7;
+                module = static_cast<double>((rand() % 10 + 10) / 7);
                 vec_ = vec (rand());
                 }
 

@@ -52,7 +52,7 @@
     <SolutionPath />
     <SolutionVersion>Independent</SolutionVersion>
     <PlogVersion>4</PlogVersion>
-    <ModificationDate>2017-03-15T12:47:47.8624899Z</ModificationDate>
+    <ModificationDate>2017-03-16T19:30:17.7866973Z</ModificationDate>
   </Solution_Path>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -92,7 +92,7 @@
     <Analyzer>4</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -112,7 +112,7 @@
     <Analyzer>4</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -132,7 +132,7 @@
     <Analyzer>4</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -152,7 +152,7 @@
     <Analyzer>5</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -172,7 +172,7 @@
     <Analyzer>5</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -192,47 +192,47 @@
     <Analyzer>5</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\nvector.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\physics\physics.cpp</AnalyzedSourceFiles>
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
-    <Level>3</Level>
+    <Level>2</Level>
     <DefaultOrder>8</DefaultOrder>
-    <ErrorCode>V122</ErrorCode>
-    <Message>Memsize type is used in the struct/class.</Message>
+    <ErrorCode>V128</ErrorCode>
+    <Message>The 'crPositions.size()' variable of the memsize type is written to a stream. Consider verifying the compatibility of 32 and 64 bit versions of the application in the context of a stored data.</Message>
     <Project />
-    <ShortFile>graphics.hpp</ShortFile>
-    <Line>30</Line>
+    <ShortFile>config.cpp</ShortFile>
+    <Line>18</Line>
     <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>11496</CodePrev>
-    <CodeCurrent>64277</CodeCurrent>
-    <CodeNext>60811337</CodeNext>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\config.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>878538230</CodeCurrent>
+    <CodeNext>3741360695</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles />
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
-    <Level>3</Level>
+    <Level>1</Level>
     <DefaultOrder>9</DefaultOrder>
-    <ErrorCode>V122</ErrorCode>
-    <Message>Memsize type is used in the struct/class.</Message>
+    <ErrorCode>V004</ErrorCode>
+    <Message>Diagnostics from the 64-bit rule set are not entirely accurate without the appropriate 64-bit compiler. Consider utilizing 64-bit compiler if possible.</Message>
     <Project />
-    <ShortFile>graphics.hpp</ShortFile>
-    <Line>31</Line>
+    <ShortFile xml:space="preserve"> </ShortFile>
+    <Line>1</Line>
     <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>64277</CodePrev>
-    <CodeCurrent>60811337</CodeCurrent>
-    <CodeNext>14409</CodeNext>
+    <File xml:space="preserve"> </File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>0</CodeCurrent>
+    <CodeNext>0</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+    <AnalyzedSourceFiles />
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
@@ -245,9 +245,9 @@
     <Line>32</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>60811337</CodePrev>
-    <CodeCurrent>14409</CodeCurrent>
-    <CodeNext>59513</CodeNext>
+    <CodePrev>11496</CodePrev>
+    <CodeCurrent>64277</CodeCurrent>
+    <CodeNext>60811337</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
     <LineExtension />
@@ -265,6 +265,46 @@
     <Line>33</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
+    <CodePrev>64277</CodePrev>
+    <CodeCurrent>60811337</CodeCurrent>
+    <CodeNext>14409</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>12</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project />
+    <ShortFile>graphics.hpp</ShortFile>
+    <Line>34</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
+    <CodePrev>60811337</CodePrev>
+    <CodeCurrent>14409</CodeCurrent>
+    <CodeNext>59513</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>13</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project />
+    <ShortFile>graphics.hpp</ShortFile>
+    <Line>35</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
     <CodePrev>14409</CodePrev>
     <CodeCurrent>59513</CodeCurrent>
     <CodeNext>112178</CodeNext>
@@ -276,68 +316,8 @@
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
-    <Level>2</Level>
-    <DefaultOrder>12</DefaultOrder>
-    <ErrorCode>V801</ErrorCode>
-    <Message>Decreased performance. It is better to redefine the first function argument as a reference. Consider replacing 'const .. crColor' with 'const .. &amp;crColor'.</Message>
-    <Project />
-    <ShortFile>graphics.hpp</ShortFile>
-    <Line>58</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>0</CodePrev>
-    <CodeCurrent>2364620051</CodeCurrent>
-    <CodeNext>3436152791</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>5</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
-    <Level>2</Level>
-    <DefaultOrder>13</DefaultOrder>
-    <ErrorCode>V801</ErrorCode>
-    <Message>Decreased performance. It is better to redefine the first function argument as a reference. Consider replacing 'const .. crColor' with 'const .. &amp;crColor'.</Message>
-    <Project />
-    <ShortFile>graphics.hpp</ShortFile>
-    <Line>59</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>2364620051</CodePrev>
-    <CodeCurrent>3436152791</CodeCurrent>
-    <CodeNext>440994153</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>5</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
-    <Level>2</Level>
-    <DefaultOrder>14</DefaultOrder>
-    <ErrorCode>V801</ErrorCode>
-    <Message>Decreased performance. It is better to redefine the first function argument as a reference. Consider replacing 'const .. crColor' with 'const .. &amp;crColor'.</Message>
-    <Project />
-    <ShortFile>graphics.hpp</ShortFile>
-    <Line>60</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.hpp</File>
-    <CodePrev>3436152791</CodePrev>
-    <CodeCurrent>440994153</CodeCurrent>
-    <CodeNext>0</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>5</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp*c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</AnalyzedSourceFiles>
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>15</DefaultOrder>
+    <DefaultOrder>14</DefaultOrder>
     <ErrorCode>V202</ErrorCode>
     <Message>Explicit conversion from memsize type to 32-bit integer type: static_cast&lt; INT &gt; (msg.wParam)</Message>
     <Project />
@@ -357,7 +337,7 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>16</DefaultOrder>
+    <DefaultOrder>15</DefaultOrder>
     <ErrorCode>V202</ErrorCode>
     <Message>Explicit conversion from memsize type to 32-bit integer type: (DWORD)(wParam)</Message>
     <Project />
@@ -377,12 +357,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>17</DefaultOrder>
+    <DefaultOrder>16</DefaultOrder>
     <ErrorCode>V206</ErrorCode>
     <Message>Explicit conversion from 'type **' to 'unsigned char *'.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>79</Line>
+    <Line>85</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -397,12 +377,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>18</DefaultOrder>
+    <DefaultOrder>17</DefaultOrder>
     <ErrorCode>V202</ErrorCode>
     <Message>Explicit conversion from memsize type to 32-bit integer type.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>79</Line>
+    <Line>85</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -417,12 +397,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>1</Level>
-    <DefaultOrder>19</DefaultOrder>
+    <DefaultOrder>18</DefaultOrder>
     <ErrorCode>V220</ErrorCode>
     <Message>Suspicious sequence of types castings: memsize -&gt; 32-bit integer -&gt; memsize.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>79</Line>
+    <Line>85</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -437,12 +417,32 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>2</Level>
-    <DefaultOrder>20</DefaultOrder>
+    <DefaultOrder>19</DefaultOrder>
     <ErrorCode>V104</ErrorCode>
     <Message>Implicit type conversion to memsize type in an arithmetic expression.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>79</Line>
+    <Line>85</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>818468200</CodeCurrent>
+    <CodeNext>3635797942</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>20</DefaultOrder>
+    <ErrorCode>V206</ErrorCode>
+    <Message>Explicit conversion from 'type **' to 'unsigned char *'.</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>101</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -458,31 +458,11 @@
     <FavIcon>false</FavIcon>
     <Level>3</Level>
     <DefaultOrder>21</DefaultOrder>
-    <ErrorCode>V206</ErrorCode>
-    <Message>Explicit conversion from 'type **' to 'unsigned char *'.</Message>
-    <Project />
-    <ShortFile>app.cpp</ShortFile>
-    <Line>97</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
-    <CodePrev>0</CodePrev>
-    <CodeCurrent>818468200</CodeCurrent>
-    <CodeNext>3635797942</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>1</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles />
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
-    <Level>3</Level>
-    <DefaultOrder>22</DefaultOrder>
     <ErrorCode>V202</ErrorCode>
     <Message>Explicit conversion from memsize type to 32-bit integer type.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>97</Line>
+    <Line>101</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -497,12 +477,32 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>1</Level>
-    <DefaultOrder>23</DefaultOrder>
+    <DefaultOrder>22</DefaultOrder>
     <ErrorCode>V220</ErrorCode>
     <Message>Suspicious sequence of types castings: memsize -&gt; 32-bit integer -&gt; memsize.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>97</Line>
+    <Line>101</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>818468200</CodeCurrent>
+    <CodeNext>3635797942</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>23</DefaultOrder>
+    <ErrorCode>V104</ErrorCode>
+    <Message>Implicit type conversion to memsize type in an arithmetic expression.</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>101</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
     <CodePrev>0</CodePrev>
@@ -518,35 +518,15 @@
     <FavIcon>false</FavIcon>
     <Level>2</Level>
     <DefaultOrder>24</DefaultOrder>
-    <ErrorCode>V104</ErrorCode>
-    <Message>Implicit type conversion to memsize type in an arithmetic expression.</Message>
-    <Project />
-    <ShortFile>app.cpp</ShortFile>
-    <Line>97</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
-    <CodePrev>0</CodePrev>
-    <CodeCurrent>818468200</CodeCurrent>
-    <CodeNext>3635797942</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>1</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles />
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
-    <Level>2</Level>
-    <DefaultOrder>25</DefaultOrder>
     <ErrorCode>V106</ErrorCode>
-    <Message>Implicit type conversion first argument 'rand() % 10' of function 'assignLocations' to memsize type.</Message>
+    <Message>Implicit type conversion first argument 'rand() % 15' of function 'assignLocations' to memsize type.</Message>
     <Project />
     <ShortFile>app.cpp</ShortFile>
-    <Line>118</Line>
+    <Line>120</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
-    <CodePrev>70452</CodePrev>
-    <CodeCurrent>2535958743</CodeCurrent>
+    <CodePrev>1128002</CodePrev>
+    <CodeCurrent>2535958723</CodeCurrent>
     <CodeNext>2337</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
@@ -556,18 +536,58 @@
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
-    <Level>1</Level>
-    <DefaultOrder>26</DefaultOrder>
-    <ErrorCode>V004</ErrorCode>
-    <Message>Diagnostics from the 64-bit rule set are not entirely accurate without the appropriate 64-bit compiler. Consider utilizing 64-bit compiler if possible.</Message>
+    <Level>3</Level>
+    <DefaultOrder>25</DefaultOrder>
+    <ErrorCode>V202</ErrorCode>
+    <Message>Explicit conversion from memsize type to 32-bit integer type: (DWORD)(wParam)</Message>
     <Project />
-    <ShortFile xml:space="preserve"> </ShortFile>
-    <Line>1</Line>
+    <ShortFile>app.cpp</ShortFile>
+    <Line>175</Line>
     <FalseAlarm>false</FalseAlarm>
-    <File xml:space="preserve"> </File>
-    <CodePrev>0</CodePrev>
-    <CodeCurrent>0</CodeCurrent>
-    <CodeNext>0</CodeNext>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>1138098</CodePrev>
+    <CodeCurrent>2418369773</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>26</DefaultOrder>
+    <ErrorCode>V202</ErrorCode>
+    <Message>Explicit conversion from memsize type to 32-bit integer type: (DWORD)(wParam)</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>177</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3297397932</CodeCurrent>
+    <CodeNext>517839651</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>27</DefaultOrder>
+    <ErrorCode>V202</ErrorCode>
+    <Message>Explicit conversion from memsize type to 32-bit integer type: (DWORD)(wParam)</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>195</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>1138098</CodePrev>
+    <CodeCurrent>789156947</CodeCurrent>
+    <CodeNext>123</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
     <LineExtension />
@@ -577,12 +597,132 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>2</Level>
-    <DefaultOrder>27</DefaultOrder>
+    <DefaultOrder>28</DefaultOrder>
+    <ErrorCode>V2001</ErrorCode>
+    <Message>Consider using the extended version of the MessageBox function here: MessageBoxEx.</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>200</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>2710819398</CodePrev>
+    <CodeCurrent>1275627599</CodeCurrent>
+    <CodeNext>2720310461</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>29</DefaultOrder>
+    <ErrorCode>V202</ErrorCode>
+    <Message>Explicit conversion from memsize type to 32-bit integer type: (DWORD)(wParam)</Message>
+    <Project />
+    <ShortFile>app.cpp</ShortFile>
+    <Line>204</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\app.cpp</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>359550511</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>30</DefaultOrder>
+    <ErrorCode>V550</ErrorCode>
+    <Message>An odd precise comparison: r == crColor.r. It's probably better to use a comparison with defined precision: fabs(A - B) &lt; Epsilon.</Message>
+    <Project />
+    <ShortFile>color.cpp</ShortFile>
+    <Line>39</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>91256210</CodeCurrent>
+    <CodeNext>1037766</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>31</DefaultOrder>
+    <ErrorCode>V550</ErrorCode>
+    <Message>An odd precise comparison: g == crColor.g. It's probably better to use a comparison with defined precision: fabs(A - B) &lt; Epsilon.</Message>
+    <Project />
+    <ShortFile>color.cpp</ShortFile>
+    <Line>40</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp</File>
+    <CodePrev>91256210</CodePrev>
+    <CodeCurrent>1037766</CodeCurrent>
+    <CodeNext>1013202</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>32</DefaultOrder>
+    <ErrorCode>V550</ErrorCode>
+    <Message>An odd precise comparison: b == crColor.b. It's probably better to use a comparison with defined precision: fabs(A - B) &lt; Epsilon.</Message>
+    <Project />
+    <ShortFile>color.cpp</ShortFile>
+    <Line>41</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp</File>
+    <CodePrev>1037766</CodePrev>
+    <CodeCurrent>1013202</CodeCurrent>
+    <CodeNext>988637</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>33</DefaultOrder>
+    <ErrorCode>V550</ErrorCode>
+    <Message>An odd precise comparison: a == crColor.a. It's probably better to use a comparison with defined precision: fabs(A - B) &lt; Epsilon.</Message>
+    <Project />
+    <ShortFile>color.cpp</ShortFile>
+    <Line>42</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\color.cpp</File>
+    <CodePrev>1013202</CodePrev>
+    <CodeCurrent>988637</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>34</DefaultOrder>
     <ErrorCode>V2001</ErrorCode>
     <Message>Consider using the extended version of the AdjustWindowRect function here: AdjustWindowRectEx.</Message>
     <Project />
     <ShortFile>graphics.cpp</ShortFile>
-    <Line>91</Line>
+    <Line>83</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp</File>
     <CodePrev>3453038054</CodePrev>
@@ -597,12 +737,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>28</DefaultOrder>
+    <DefaultOrder>35</DefaultOrder>
     <ErrorCode>V126</ErrorCode>
     <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
     <Project />
     <ShortFile>graphics.cpp</ShortFile>
-    <Line>90</Line>
+    <Line>82</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp</File>
     <CodePrev>0</CodePrev>
@@ -617,12 +757,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>2</Level>
-    <DefaultOrder>29</DefaultOrder>
+    <DefaultOrder>36</DefaultOrder>
     <ErrorCode>V2001</ErrorCode>
     <Message>Consider using the extended version of the GetDC function here: GetDCEx.</Message>
     <Project />
     <ShortFile>graphics.cpp</ShortFile>
-    <Line>116</Line>
+    <Line>108</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp</File>
     <CodePrev>1712021127</CodePrev>
@@ -637,12 +777,12 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>2</Level>
-    <DefaultOrder>30</DefaultOrder>
+    <DefaultOrder>37</DefaultOrder>
     <ErrorCode>V112</ErrorCode>
     <Message>Dangerous magic number 32 used: ...= 32;.</Message>
     <Project />
     <ShortFile>graphics.cpp</ShortFile>
-    <Line>122</Line>
+    <Line>114</Line>
     <FalseAlarm>false</FalseAlarm>
     <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\graphics.cpp</File>
     <CodePrev>2895264012</CodePrev>
@@ -656,8 +796,28 @@
   </PVS-Studio_Analysis_Log>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>38</DefaultOrder>
+    <ErrorCode>V813</ErrorCode>
+    <Message>Decreased performance. The 'inf' argument should probably be rendered as a constant reference.</Message>
+    <Project />
+    <ShortFile>includes.cpp</ShortFile>
+    <Line>11</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\includes.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>671993931</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
     <Level>3</Level>
-    <DefaultOrder>31</DefaultOrder>
+    <DefaultOrder>39</DefaultOrder>
     <ErrorCode>V202</ErrorCode>
     <Message>Explicit conversion from memsize type to 32-bit integer type: static_cast&lt; UINT &gt; (time(nullptr))</Message>
     <Project />
@@ -670,26 +830,6 @@
     <CodeNext>0</CodeNext>
     <TrialMessage>false</TrialMessage>
     <Analyzer>1</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles />
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
-    <Level>2</Level>
-    <DefaultOrder>32</DefaultOrder>
-    <ErrorCode>V2001</ErrorCode>
-    <Message>Consider using the extended version of the MessageBox function here: MessageBoxEx.</Message>
-    <Project />
-    <ShortFile>main.cpp</ShortFile>
-    <Line>19</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\main.cpp</File>
-    <CodePrev>14381221</CodePrev>
-    <CodeCurrent>2037639481</CodeCurrent>
-    <CodeNext>0</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>6</Analyzer>
     <LineExtension />
     <Retired>false</Retired>
     <AnalyzedSourceFiles />

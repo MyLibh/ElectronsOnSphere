@@ -6,6 +6,7 @@
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK StdDialog(HWND, UINT, WPARAM, LPARAM);
+INT_PTR CALLBACK SetNumDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM);
 
 class App final : public NoncopyableFull
 {

@@ -90,7 +90,7 @@
 		FAIL
 	};
 
-	VOID DBG(std::string, DBGMODE = DBGMODE::INFO);
+	VOID DBG(CONST std::string&, DBGMODE = DBGMODE::INFO);
 
 #else
 

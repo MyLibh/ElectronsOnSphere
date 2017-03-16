@@ -8,7 +8,7 @@
 
 #ifdef DEBUG
 
-	VOID DBG(std::string inf, DBGMODE mode)
+	VOID DBG(CONST std::string &crInf, DBGMODE mode)
 	{
 		switch(mode)
 		{
@@ -36,7 +36,7 @@
 		default: break;
 		};
 
-		std::cout << __TIME__ << "\t" << inf << std::endl;
+		std::cout << __TIME__ << "\t" << crInf << std::endl;
 	}
 
 #endif // DEBUG
