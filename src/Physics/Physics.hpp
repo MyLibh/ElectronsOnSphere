@@ -2,9 +2,8 @@
 #define __PHYSICS_HPP_INCLUDED__
 
 #include "..\Includes.hpp"
-
 #include "NVector.hpp"
-#include "PMessage.h"
+#include "Energy.hpp"
 
 namespace physics
 {
@@ -24,9 +23,9 @@ namespace physics
 		CONST std::vector<nvec> &getPositions()       const { return _Positions; }
 		
 
-		PMESSAGE doPhysics();
-		VOID     load(CONST std::vector<nvec> &newPos) { _Positions = newPos; }	
-		VOID     assignLocations(size_t);
+		VOID doPhysics();
+		VOID load(CONST std::vector<nvec> &crPos) { _Positions = crPos; }	
+		VOID assignLocations(size_t);
     };
 	
 	

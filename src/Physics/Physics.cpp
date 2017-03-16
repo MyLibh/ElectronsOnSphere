@@ -29,15 +29,10 @@ namespace physics
 		}
 	}
 
-    PMESSAGE Physics::doPhysics()
+    VOID Physics::doPhysics()
     {
-        bool big = false;
-        for(size_t i = 0; i < _Positions.size(); ++i)
-        {
-            if (false) big = true;
-            _Positions[i] = _Positions[i] + getSpeed(i);
-        }
-		return ((big)? PD_R_DOSTATIC : PD_R_EMPTY);
+        for(size_t i = 0; i < _Positions.size(); ++i) _Positions[i] = _Positions[i] + getSpeed(i);
+        
      }
 
     vec Physics::getSpeed(size_t num)

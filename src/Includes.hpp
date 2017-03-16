@@ -47,8 +47,6 @@
 	#error Ќ»«я ё«ј“№ TXLib
 #endif // __TXLIB_H_INCLUDED
 
-#pragma region INCLUDES
-
 #include <Windows.h>
 #include <gl\GL.h>
 #include <gl\GLU.h>
@@ -70,8 +68,6 @@
 
 #include "wrapResource.hpp"
 #include "Noncopyable.hpp"
-
-#pragma endregion ¬ключаемые библиотеки
 
 #ifdef _WINDOWS
 

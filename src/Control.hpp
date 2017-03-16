@@ -4,7 +4,7 @@
 
 struct Control
 {
-	enum Buttons : SIZE_T
+	enum Buttons
 	{
 		XTRM = 0,
 		XTRP,

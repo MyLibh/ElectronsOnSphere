@@ -33,9 +33,6 @@
     <ClInclude Include="..\src\Noncopyable.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Physics\PMessage.h">
-      <Filter>Заголовочные файлы\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\wrapResource.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>

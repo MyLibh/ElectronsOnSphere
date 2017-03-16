@@ -109,9 +109,9 @@ BEGIN
     IDD_HELPBOX, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 302
+        RIGHTMARGIN, 292
         TOPMARGIN, 7
-        BOTTOMMARGIN, 328
+        BOTTOMMARGIN, 158
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -135,23 +135,30 @@ BEGIN
     LTEXT           "Преподаватель: Дединский Илья Рудольфович",IDC_STATIC,23,77,163,8
 END
 
-IDD_HELPBOX DIALOGEX 0, 0, 309, 335
+IDD_HELPBOX DIALOGEX 0, 0, 299, 165
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Помощь"
-FONT 9, "Arial Narrow", 400, 0, 0x0
+FONT 14, "Arial Narrow", 400, 0, 0xCC
 BEGIN
-    DEFPUSHBUTTON   "ОК",IDOK,252,314,50,14
+    DEFPUSHBUTTON   "ОК",IDOK,242,144,50,14
     LTEXT           "Управление",IDC_STATIC,116,18,44,8
     LTEXT           "1)  '+' и '-' отвечают за изменение угла вращения",IDC_STATIC,47,39,200,11
+    LTEXT           "2)  'VK_LEFT' и 'VK_RIGHT' отвечают за изменение сдвига по X",IDC_STATIC,47,49,220,11
+    LTEXT           "3)  'VK_UP' и 'VK_DOWN' отвечают за изменение сдвига по Y",IDC_STATIC,46,60,200,11
+    LTEXT           "4)  'DEL' и 'END' отвечают за изменение сдвига по Z",IDC_STATIC,46,71,200,11
+    LTEXT           "5)  'A' и 'D' отвечают за изменение вектора поворота по X",IDC_STATIC,46,82,200,11
+    LTEXT           "6)  'W' и 'S' отвечают за изменение вектора поворота по Y",IDC_STATIC,46,92,200,11
+    LTEXT           "6)  'Q' и 'E' отвечают за изменение вектора поворота по Z",IDC_STATIC,46,102,200,11
+    LTEXT           "7)  'VK_ESCAPE' отвечает за выход из программы",IDC_STATIC,46,112,200,11
 END
 
 IDD_SETNUMBOX DIALOGEX 10, 10, 210, 60
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Настройка"
-FONT 8, "Tahoma"
+FONT 8, "Tahoma", 0, 0, 0x1
 BEGIN
-  CONTROL L"Введите количество электронов",IDC_EDIT,"EDIT",WS_BORDER,10,10,190,15
-  DEFPUSHBUTTON   "ОК",IDOK,154,35,46,15
+    EDITTEXT        IDC_EDIT,10,10,190,15,NOT WS_TABSTOP
+    DEFPUSHBUTTON   "ОК",IDOK,154,35,46,15
 END
 
 #endif    // Русский (Россия) resources

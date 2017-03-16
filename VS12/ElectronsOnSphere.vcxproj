@@ -21,7 +21,6 @@
     <ClInclude Include="..\src\Physics\Energy.hpp" />
     <ClInclude Include="..\src\Physics\NVector.hpp" />
     <ClInclude Include="..\src\Physics\Physics.hpp" />
-    <ClInclude Include="..\src\Physics\PMessage.h" />
     <ClInclude Include="..\src\resource.h" />
     <ClInclude Include="..\src\wrapResource.hpp" />
   </ItemGroup>
