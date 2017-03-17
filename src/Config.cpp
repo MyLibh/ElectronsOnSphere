@@ -21,8 +21,8 @@ BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> &crPositions)
 		   << "Positions:\n";
 
 	config << "X Y" /* Z"*/ << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
-	for(size_t i = 0; i < crPositions.size(); ++i)
-		config << crPositions[i].getX() << crPositions[i].getY() /* << crPositions[i].getZ() */ << std::endl;
+	for(auto pos : crPositions)
+		config << pos.getX() << pos.getY() /* << pos.getZ() */ << std::endl;
 	
 	config.close();
 

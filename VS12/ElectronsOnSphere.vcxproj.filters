@@ -63,6 +63,9 @@
     <ClInclude Include="..\src\Graphics\Color.hpp">
       <Filter>Заголовочные файлы\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Graphics\Dialogs.hpp">
+      <Filter>Заголовочные файлы\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -87,6 +90,9 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Graphics\Color.cpp">
+      <Filter>Файлы исходного кода\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Dialogs.cpp">
       <Filter>Файлы исходного кода\Graphics</Filter>
     </ClCompile>
   </ItemGroup>

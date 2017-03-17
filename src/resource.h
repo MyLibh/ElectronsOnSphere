@@ -7,7 +7,16 @@
 #define IDI_ICON                        102
 #define IDD_ABOUTBOX                    104
 #define IDD_SETNUMBOX                   105
-#define IDC_PROGRESS1                   1003
+#define IDD_DISPLAY                     106
+#define IDC_C_ALF                       1013
+#define IDC_C_ROTX                      1014
+#define IDC_C_ROTY                      1015
+#define IDC_C_ROTZ                      1016
+#define IDC_C_TRX                       1017
+#define IDC_C_TRY                       1018
+#define IDC_C_TRZ                       1019
+#define IDC_C_ENERGY                    1020
+#define IDC_C_COORDS                    1021
 #define ID_SAVE                         40001
 #define ID_LOAD                         40002
 #define ID_EXIT                         40003
@@ -24,14 +33,15 @@
 #define IDC_OK                          40023
 #define ID_NUMRAND                      40024
 #define ID_NUMSET                       40025
+#define ID_DISPLAY                      40027
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        106
-#define _APS_NEXT_COMMAND_VALUE         40026
-#define _APS_NEXT_CONTROL_VALUE         1004
+#define _APS_NEXT_RESOURCE_VALUE        107
+#define _APS_NEXT_COMMAND_VALUE         40028
+#define _APS_NEXT_CONTROL_VALUE         1022
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

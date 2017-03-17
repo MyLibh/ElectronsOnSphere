@@ -8,7 +8,7 @@ namespace
 	App *gpApp = nullptr;
 };
 
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) { return ((gpApp)? gpApp->wndProc(hWnd, msg, wParam, lParam) : DefWindowProc(hWnd, msg, wParam, lParam)); }
+ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) { return ((gpApp)? gpApp->wndProc(hWnd, msg, wParam, lParam) : DefWindowProc(hWnd, msg, wParam, lParam)); }
 
 App::App(HINSTANCE hInstance) :
 	graphics_(hInstance),
@@ -45,7 +45,7 @@ INT App::run()
 			graphics_.showFPS(dt);
 			control_.manage();
 
-			SwapBuffers(graphics_.hDC_);
+			SwapBuffers(graphics_.getHDC());
 
 			prevTime = cureTime;
 		}
@@ -133,10 +133,14 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			graphics_.setNucleusColor(GetChoosenColor(graphics_.getHWND()));
 			break;
 		case ID_COLORELECTORNS:
-			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND())); 
+			graphics_.setElectronsColor(GetChoosenColor(graphics_.getHWND()));
 			break;
 		case ID_COLORSPHERE:
 			graphics_.setSphereColor(GetChoosenColor(graphics_.getHWND()));
+			break;
+
+		case ID_DISPLAY:
+			DialogBox(graphics_.getHINSTANCE(), MAKEINTRESOURCE(IDD_DISPLAY), hWnd, SetDisplayDialog);
 			break;
 
 		default: return DefWindowProc(hWnd, msg, wParam, lParam);
@@ -153,56 +157,4 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-Color4f GetChoosenColor(HWND hWnd)
-{
-	CHOOSECOLOR color = { sizeof(CHOOSECOLOR) };
-	color.hwndOwner = hWnd;
 
-	COLORREF cust_colors[16] = { };
-	color.lpCustColors = cust_colors;
-
-	return ((ChooseColor(&color))? Color4f(color.rgbResult) : DO_NOT_CHANGE_COLOR);
-}
-
-INT_PTR CALLBACK StdDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM)
-{
-    switch(msg)
-    {
-	case WM_INITDIALOG:
-        return static_cast<INT_PTR>(TRUE);
-
-    case WM_COMMAND:
-        if(LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return static_cast<INT_PTR>(TRUE);
-        }
-        break;
-
-	default: return static_cast<INT_PTR>(FALSE);
-    }
-    return static_cast<INT_PTR>(TRUE);
-}
-
-INT_PTR CALLBACK SetNumDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM)
-{
-    switch(msg)
-    {
-	case WM_INITDIALOG:
-        return static_cast<INT_PTR>(TRUE);
-
-    case WM_COMMAND:
-        if(LOWORD(wParam) == IDOK)
-		{
-			CHAR num[10] = { };
-
-            GetDlgItemText(hDlg, IDC_EDIT, num, 10);
-            if(!strlen(num)) MessageBox(hDlg, "Поле ввода пусто", "Ошибка", MB_OK | MB_ICONERROR);
-            else EndDialog(hDlg, atoi(num));
-			
-		}
-		else if(LOWORD(wParam) == IDCANCEL) EndDialog(hDlg, -1);
-		
-    default: return static_cast<INT_PTR>(FALSE);
-    }
-}

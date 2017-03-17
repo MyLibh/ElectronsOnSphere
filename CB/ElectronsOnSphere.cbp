@@ -44,7 +44,7 @@
 				<Option output="bin/Release/ElectronsOnSphere" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
-				<Option compiler="gnu_gcc_compiler__strict" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -70,6 +70,8 @@
 		</Unit>
 		<Unit filename="../src/Graphics/Color.cpp" />
 		<Unit filename="../src/Graphics/Color.hpp" />
+		<Unit filename="../src/Graphics/Dialogs.cpp" />
+		<Unit filename="../src/Graphics/Dialogs.hpp" />
 		<Unit filename="../src/Graphics/Graphics.cpp" />
 		<Unit filename="../src/Graphics/Graphics.hpp" />
 		<Unit filename="../src/Includes.cpp" />

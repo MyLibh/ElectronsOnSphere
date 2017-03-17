@@ -2,11 +2,10 @@
 
 #include "Graphics\Graphics.hpp"
 #include "Physics\Physics.hpp"
+#include "Graphics\Dialogs.hpp"
 #include "Config.hpp"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK StdDialog(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK SetNumDialog(HWND hDlg, UINT msg, WPARAM wParam, LPARAM);
 
 class App final : public NoncopyableFull
 {
@@ -26,4 +25,4 @@ public:
 	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
 };
 
-Color4f GetChoosenColor(HWND);
+

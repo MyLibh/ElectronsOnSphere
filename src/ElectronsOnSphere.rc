@@ -75,6 +75,7 @@ BEGIN
             MENUITEM "Cфера",                       ID_COLORSPHERE
         END
         MENUITEM "Управление",                  40021, GRAYED
+        MENUITEM "Показ",                       ID_DISPLAY
     END
     MENUITEM "Помощь",                      ID_MANAGMENTHELP
     MENUITEM "Авторы",                      ID_ABOUT
@@ -112,6 +113,14 @@ BEGIN
         RIGHTMARGIN, 292
         TOPMARGIN, 7
         BOTTOMMARGIN, 158
+    END
+
+    IDD_DISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 17
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -159,6 +168,24 @@ FONT 8, "Tahoma", 0, 0, 0x1
 BEGIN
     EDITTEXT        IDC_EDIT,10,10,190,15,NOT WS_TABSTOP
     DEFPUSHBUTTON   "ОК",IDOK,154,35,46,15
+END
+
+IDD_DISPLAY DIALOGEX 0, 0, 251, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройки показа"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Применить",IDOK,141,121,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,194,121,50,14
+    CONTROL         "Система координат",IDC_C_COORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,17,83,10
+    CONTROL         "Угол поворота",IDC_C_ALF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,42,66,10
+    CONTROL         "Поворот по X",IDC_C_ROTX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,55,61,10
+    CONTROL         "Поворот по Y",IDC_C_ROTY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,66,61,10
+    CONTROL         "Поворот по Z",IDC_C_ROTZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,76,61,10
+    CONTROL         "Сдвиг по X",IDC_C_TRX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,97,53,10
+    CONTROL         "Сдвиг по Y",IDC_C_TRY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,108,53,10
+    CONTROL         "Сдвиг по Z",IDC_C_TRZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,118,53,10
+    CONTROL         "Потенциальная энергия",IDC_C_ENERGY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,17,97,10
 END
 
 #endif    // Русский (Россия) resources

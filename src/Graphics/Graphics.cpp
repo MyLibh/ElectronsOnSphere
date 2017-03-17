@@ -42,13 +42,18 @@ HWND InitConsole(ConsoleMode mode)
 
 //=====================================================================================================================
 
+UINT Graphics::width_  = 900;
+UINT Graphics::height_ = 900;
+
+UINT Graphics::base_ = 0;
+
+BOOL Graphics::visibility_[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
 Graphics::Graphics(HINSTANCE hInst) :
 	hWnd_(nullptr),
 	hInstance_(hInst),
 	hDC_(nullptr),
 	hRC_(nullptr),
-	width_(900),
-	height_(900),
 	title_("Electrons on sphere"),
 	fps_(0.0f),
 	wndStyle_(WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX),
@@ -79,12 +84,12 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 		return FALSE;
 	}
 
-	RECT rect = {0, 0, static_cast<long>(width_), static_cast<long>(height_)};
+	RECT rect = {0, 0, static_cast<long>(Graphics::width_), static_cast<long>(Graphics::height_)};
 	AdjustWindowRect(&rect, wndStyle_, FALSE);
 
 	auto width = rect.right - rect.left;
 	auto height = rect.bottom - rect.top;
-	auto x = (GetSystemMetrics(SM_CXSCREEN) - width) / 2;
+	auto x = (GetSystemMetrics(SM_CXSCREEN) -  width) / 2;
 	auto y = (GetSystemMetrics(SM_CYSCREEN) - height) / 2;
 
 	hWnd_ = CreateWindowA("ElectronsOnSphere", title_.c_str(), wndStyle_, x, y, width, height, nullptr, nullptr, hInstance_, NULL);
@@ -146,6 +151,10 @@ BOOL Graphics::initGL()
     glLightfv(GL_LIGHT0, GL_POSITION, pos);
     glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
 
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+
+	BuildFont(hDC_);
+
 	DBG("Ending OpenGl initialization", DBGMODE::STATUS);
 
 	return TRUE;
@@ -155,6 +164,7 @@ VOID Graphics::shutdown()
 {
 	DBG("Starting shutdown", DBGMODE::STATUS);
 
+	DeleteFont();
 	wglMakeCurrent(nullptr, nullptr);
 	wglDeleteContext(hRC_);
 	ReleaseDC(hWnd_, hDC_);
@@ -195,11 +205,10 @@ VOID Graphics::showFPS(FLOAT dt)
 	}
 }
 
-VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positions)
+VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &crPositions)
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 
 	glRotatef(crControl.angle, crControl.xrot, crControl.yrot, crControl.zrot);
 	glPushMatrix();
@@ -207,11 +216,11 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 
 	static CONST FLOAT radius = 0.05f;
 	GLUquadricObj *electron = gluNewQuadric();
-	for(size_t i = 0; i < positions.size(); ++i)
+	for(auto pos : crPositions)
 	{
 		glPushMatrix();
-		glTranslatef(static_cast<FLOAT>(positions[i].getX()) - ((positions[i].getX() < 0)? -radius : radius),
-                     static_cast<FLOAT>(positions[i].getY()) - ((positions[i].getY() < 0)? -radius : radius), 0.0f);
+		glTranslatef(static_cast<FLOAT>(pos.getX()) - ((pos.getX() < 0)? -radius : radius),
+                     static_cast<FLOAT>(pos.getY()) - ((pos.getY() < 0)? -radius : radius), 0.0f);
 			glColor4f(electronsColor_); // Electron
 			gluSphere(electron, radius, 100, 100);
 		glPopMatrix();
@@ -230,25 +239,98 @@ VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &positio
 	gluDeleteQuadric(sphere);
 	glPopMatrix();
 
+	if(Graphics::visibility_[Graphics::NUMBER_OF_ELEMENTS - 1])
+	{
+		glPushMatrix();
+		glLoadIdentity();
+		glTranslatef(0.0f, 0.0f, -1.0f);
+		glLineWidth(5.0f);
+		glBegin(GL_LINES);
+			glColor3f(1.0f, 1.0f, 0.0f); // X-axis
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(1.0f, 0.0f, 0.0f);
+
+			glColor3f(0.0f, 1.0f, 1.0f); // Y-axis
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(0.0f, 1.0f, 0.0f);
+
+			glColor3f(0.0f, 1.0f, 0.0f); // Z-axis
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(0.0f, 0.0f, 1.0f);
+		glEnd();
+		glPopMatrix();
+	}
+
+	Graphics::drawInfo(crControl, crPositions.size());
+}
+
+VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
+{
 	glPushMatrix();
 	glLoadIdentity();
-	glTranslatef(0.0f, 0.0f, -1.0f);
-	glLineWidth(5.0f);
-	glBegin(GL_LINES);
-		glColor3f(1.0f, 1.0f, 0.0f); // X-axis
-		glVertex3f(0.0f, 0.0f, 0.0f);
-		glVertex3f(1.0f, 0.0f, 0.0f);
 
-		glColor3f(0.0f, 1.0f, 1.0f); // Y-axis
-		glVertex3f(0.0f, 0.0f, 0.0f);
-		glVertex3f(0.0f, 1.0f, 0.0f);
+	FLOAT x = -0.99f,
+		  y =  0.95f,
+		  z = -1.0f;
 
-		glColor3f(0.0f, 1.0f, 0.0f); // Z-axis
-		glVertex3f(0.0f, 0.0f, 0.0f);
-		glVertex3f(0.0f, 0.0f, 1.0f);
-	glEnd();
+	static CONST FLOAT dy = 0.05f;
+
+	std::string info[Graphics::NUMBER_OF_ELEMENTS] =
+	{
+		"Alfa: ",
+		"Rotation X: ",
+		"Rotation Y: ",
+		"Rotation Z: ",
+		"Translation X: ",
+		"Translation Y: ",
+		"Translation Z: ",
+		"Potential Energy: ",
+		"Electrons: "
+	};
+
+	info[0] += std::to_string(crControl.angle);
+	info[1] += std::to_string(crControl.xrot);
+	info[2] += std::to_string(crControl.yrot);
+	info[3] += std::to_string(crControl.zrot);
+	info[4] += std::to_string(crControl.xtr);
+	info[5] += std::to_string(crControl.ytr);
+	info[6] += std::to_string(crControl.ztr);
+	info[7] += std::to_string(0);
+	info[8] += std::to_string(num);
+
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	for(SIZE_T i = 0; i < Graphics::NUMBER_OF_ELEMENTS; ++i)
+		if(Graphics::visibility_[i] || i == Graphics::NUMBER_OF_ELEMENTS - 1)
+		{
+			glRasterPos3f(x, y, z);
+			Graphics::drawText(info[i]);
+
+			y -= dy;
+		}
+
 	glPopMatrix();
 }
+
+VOID Graphics::drawText(CONST std::string &crText)
+{
+	glPushAttrib(GL_LIST_BIT);
+	glListBase(Graphics::base_ - 32);
+	glCallLists(crText.length(), GL_UNSIGNED_BYTE, crText.c_str());
+	glPopAttrib();
+}
+
+VOID BuildFont(HDC hDC)
+{
+	Graphics::base_ = glGenLists(96);
+
+	HFONT font = CreateFont(24, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_TT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, FF_DONTCARE | DEFAULT_PITCH, "Courier New");
+
+	SelectObject(hDC, font);
+	wglUseFontBitmaps(hDC, 32, 96, Graphics::base_);
+}
+
+VOID DeleteFont() { glDeleteLists(Graphics::base_, 96); }
+
 
 
 
