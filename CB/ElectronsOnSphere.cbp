@@ -79,9 +79,12 @@
 		<Unit filename="../src/Noncopyable.hpp" />
 		<Unit filename="../src/Physics/NVector.cpp" />
 		<Unit filename="../src/Physics/NVector.hpp" />
-		<Unit filename="../src/Physics/PMessage.h" />
 		<Unit filename="../src/Physics/Physics.cpp" />
 		<Unit filename="../src/Physics/Physics.hpp" />
+		<Unit filename="../src/Physics/PhysicsDynamic.cpp" />
+		<Unit filename="../src/Physics/PhysicsDynamic.hpp" />
+		<Unit filename="../src/Physics/PhysicsStatic.cpp" />
+		<Unit filename="../src/Physics/PhysicsStatic.hpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/resource.h" />
 		<Unit filename="../src/wrapResource.hpp" />

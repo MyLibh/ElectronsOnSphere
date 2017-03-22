@@ -179,3 +179,322 @@
 1489771241 source:c:\users\aleksei goliguzov\documents\github\electronsonsphere\src\graphics\dialogs.cpp
 	"Dialogs.hpp"
 
+1490101501 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\electronsonsphere.rc
+	"resource.h"
+	"afxres.h"
+
+1490101428 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\resource.h
+
+1490101223 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\color.cpp
+	"Color.hpp"
+
+1490101219 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\color.hpp
+	"..\Includes.hpp"
+
+1490101351 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\includes.hpp
+	<Windows.h>
+	<gl\GL.h>
+	<gl\GLU.h>
+	<ctime>
+	<commdlg.h>
+	<iostream>
+	<fstream>
+	<io.h>
+	<fcntl.h>
+	<string>
+	<sstream>
+	<vector>
+	<math.h>
+	"wrapResource.hpp"
+	"Noncopyable.hpp"
+
+1490101156 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\wrapresource.hpp
+	"resource.h"
+
+1490101408 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\noncopyable.hpp
+
+1490101229 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\dialogs.cpp
+	"Dialogs.hpp"
+
+1490101226 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\dialogs.hpp
+	"..\Includes.hpp"
+	"Graphics.hpp"
+	"..\Control.hpp"
+
+1490105338 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\graphics.hpp
+	"..\Includes.hpp"
+	"Color.hpp"
+	"..\Physics\NVector.hpp"
+	"..\Control.hpp"
+
+1490130975 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\nvector.hpp
+	"..\Includes.hpp"
+
+1490125046 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\control.hpp
+	"Includes.hpp"
+
+1490101351 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\includes.cpp
+	"Includes.hpp"
+
+1490101327 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\main.cpp
+	"App.hpp"
+
+1490105173 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\app.hpp
+	"Graphics\Graphics.hpp"
+	"Physics\Physics.hpp"
+	"Graphics\Dialogs.hpp"
+	"Config.hpp"
+
+1490131301 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physics.hpp
+	"PhysicsDynamic.hpp"
+	"PhysicsStatic.hpp"
+
+1490128707 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physicsdynamic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490101301 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\pmessage.h
+	"Energy.h"
+
+1490101450 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\energy.h
+	"..\Includes.hpp"
+
+1490128245 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physicsstatic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490101277 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\saving.h
+	"Energy.h"
+
+1490128128 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\config.hpp
+	"Includes.hpp"
+	"Physics\Physics.hpp"
+
+1490101282 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\nvector.cpp
+	"NVector.hpp"
+
+1490128128 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\config.cpp
+	"Config.hpp"
+
+1490131513 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\app.cpp
+	"App.hpp"
+
+1490128504 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physicsstatic.cpp
+	"PhysicsStatic.hpp"
+
+1490107063 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\graphics\graphics.cpp
+	"Graphics.hpp"
+
+1490131259 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physics.cpp
+	"Physics.hpp"
+
+1490130494 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.0\src\physics\physicsdynamic.cpp
+	"PhysicsDynamic.hpp"
+
+1490131513 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\app.cpp
+	"App.hpp"
+
+1490105173 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\app.hpp
+	"Graphics\Graphics.hpp"
+	"Physics\Physics.hpp"
+	"Graphics\Dialogs.hpp"
+	"Config.hpp"
+
+1490105338 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\graphics.hpp
+	"..\Includes.hpp"
+	"Color.hpp"
+	"..\Physics\NVector.hpp"
+	"..\Control.hpp"
+
+1490212090 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\includes.hpp
+	<Windows.h>
+	<gl\GL.h>
+	<gl\GLU.h>
+	<ctime>
+	<commdlg.h>
+	<iostream>
+	<fstream>
+	<io.h>
+	<fcntl.h>
+	<string>
+	<sstream>
+	<vector>
+	<math.h>
+	"wrapResource.hpp"
+	"Noncopyable.hpp"
+
+1490101156 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\wrapresource.hpp
+	"resource.h"
+
+1490101428 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\resource.h
+
+1490101408 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\noncopyable.hpp
+
+1490101219 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\color.hpp
+	"..\Includes.hpp"
+
+1490214085 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\nvector.hpp
+	"..\Includes.hpp"
+
+1490125046 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\control.hpp
+	"Includes.hpp"
+
+1490131301 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physics.hpp
+	"PhysicsDynamic.hpp"
+	"PhysicsStatic.hpp"
+
+1490214613 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physicsdynamic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490128245 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physicsstatic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490101226 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\dialogs.hpp
+	"..\Includes.hpp"
+	"Graphics.hpp"
+	"..\Control.hpp"
+
+1490128128 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\config.hpp
+	"Includes.hpp"
+	"Physics\Physics.hpp"
+
+1490213379 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\config.cpp
+	"Config.hpp"
+
+1490101501 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\electronsonsphere.rc
+	"resource.h"
+	"afxres.h"
+
+1490101223 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\color.cpp
+	"Color.hpp"
+
+1490101229 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\dialogs.cpp
+	"Dialogs.hpp"
+
+1490107063 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\graphics\graphics.cpp
+	"Graphics.hpp"
+
+1490101351 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\includes.cpp
+	"Includes.hpp"
+
+1490214703 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\main.cpp
+	"TXLib.h"
+	"App.hpp"
+
+1490214092 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\nvector.cpp
+	"NVector.hpp"
+
+1490131259 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physics.cpp
+	"Physics.hpp"
+
+1490214034 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physicsdynamic.cpp
+	"PhysicsDynamic.hpp"
+
+1490128504 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physicsstatic.cpp
+	"PhysicsStatic.hpp"
+
+1490131513 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.cpp
+	"App.hpp"
+
+1490105173 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.hpp
+	"Graphics\Graphics.hpp"
+	"Physics\Physics.hpp"
+	"Graphics\Dialogs.hpp"
+	"Config.hpp"
+
+1490105338 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\graphics.hpp
+	"..\Includes.hpp"
+	"Color.hpp"
+	"..\Physics\NVector.hpp"
+	"..\Control.hpp"
+
+1490212090 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\includes.hpp
+	<Windows.h>
+	<gl\GL.h>
+	<gl\GLU.h>
+	<ctime>
+	<commdlg.h>
+	<iostream>
+	<fstream>
+	<io.h>
+	<fcntl.h>
+	<string>
+	<sstream>
+	<vector>
+	<math.h>
+	"wrapResource.hpp"
+	"Noncopyable.hpp"
+
+1490101156 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\wrapresource.hpp
+	"resource.h"
+
+1490101428 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\resource.h
+
+1490101408 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\noncopyable.hpp
+
+1490101219 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\color.hpp
+	"..\Includes.hpp"
+
+1490214085 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\nvector.hpp
+	"..\Includes.hpp"
+
+1490125046 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\control.hpp
+	"Includes.hpp"
+
+1490131301 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.hpp
+	"PhysicsDynamic.hpp"
+	"PhysicsStatic.hpp"
+
+1490214613 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490128245 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.hpp
+	"..\Includes.hpp"
+	"NVector.hpp"
+
+1490101226 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\dialogs.hpp
+	"..\Includes.hpp"
+	"Graphics.hpp"
+	"..\Control.hpp"
+
+1490128128 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\config.hpp
+	"Includes.hpp"
+	"Physics\Physics.hpp"
+
+1490215277 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\config.cpp
+	"Config.hpp"
+
+1490101501 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\electronsonsphere.rc
+	"resource.h"
+	"afxres.h"
+
+1490101223 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\color.cpp
+	"Color.hpp"
+
+1490101229 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\dialogs.cpp
+	"Dialogs.hpp"
+
+1490217030 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\graphics.cpp
+	"Graphics.hpp"
+
+1490101351 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\includes.cpp
+	"Includes.hpp"
+
+1490216492 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\main.cpp
+	"App.hpp"
+
+1490214092 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\nvector.cpp
+	"NVector.hpp"
+
+1490131259 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.cpp
+	"Physics.hpp"
+
+1490214034 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.cpp
+	"PhysicsDynamic.hpp"
+
+1490128504 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.cpp
+	"PhysicsStatic.hpp"
+
