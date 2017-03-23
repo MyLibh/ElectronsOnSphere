@@ -81,7 +81,7 @@ public:
 	VOID setSphereColor(CONST Color4f &crColor)    { if(crColor != DO_NOT_CHANGE_COLOR) sphereColor_    = crColor; }
 
 	BOOL init(WNDPROC);
-	VOID render(CONST Control&, CONST std::vector<nvec>&);
+	VOID render(CONST Control&, CONST std::vector<nvec>);
 	VOID showFPS(FLOAT);
 	VOID shutdown();
 

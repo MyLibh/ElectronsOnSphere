@@ -1,34 +1,26 @@
-#ifndef __PHYSICS_HPP_INCLUDED__ 
+#ifndef __PHYSICS_HPP_INCLUDED__ //{
 #define __PHYSICS_HPP_INCLUDED__
 
-#include "..\Includes.hpp"
-#include "NVector.hpp"
-#include "Energy.hpp"
+#include "PhysicsDynamic.hpp"
+#include "PhysicsStatic.hpp"
 
-namespace physics
-{
-	Energy GetPotentialEnergy(CONST std::vector<nvec>&);
-
-    class Physics final : public NoncopyableFull
+namespace NPhysics
     {
-    private:
-        std::vector<nvec> _Positions;
+    vec Strangth(nvec v_to, nvec v_from);
 
-        vec getSpeed(size_t);
+    class physics : protected NPhysicsDynamic::physics_dynamic, protected NPhysicsStatic::physics_static
+        {
+        public:
+            physics ()
+                {}
 
-    public:
-        Physics();
+            void doPhysics ();
+            double getPotentialEnergy ();
+            std::vector<nvec> getVector ();
+            void setVector (std::vector<nvec> positions);
+            void setVectorRandom (size_t num);
+        };
+    }
 
-		size_t                   getNumberElectrons() const { return _Positions.size(); }
-		CONST std::vector<nvec> &getPositions()       const { return _Positions; }
-		
+#endif // __PHYSICS_HPP_INCLUDED__ }
 
-		VOID doPhysics();
-		VOID load(CONST std::vector<nvec> &crPos) { _Positions = crPos; }	
-		VOID assignLocations(size_t);
-    };
-	
-	
-}
-
-#endif // __PHYSICS_HPP_INCLUDED__ 

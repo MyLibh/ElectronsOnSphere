@@ -205,7 +205,7 @@ VOID Graphics::showFPS(FLOAT dt)
 	}
 }
 
-VOID Graphics::render(CONST Control &crControl, CONST std::vector<nvec> &crPositions)
+VOID Graphics::render(CONST Control &crControl, std::vector<nvec> crPositions)
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -288,15 +288,15 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
 		"Electrons: "
 	};
 
-	info[0] += std::to_string(crControl.angle);
+	/*info[0] += std::to_string(crControl.angle);
 	info[1] += std::to_string(crControl.xrot);
 	info[2] += std::to_string(crControl.yrot);
 	info[3] += std::to_string(crControl.zrot);
-	info[4] += std::to_string(crControl.xtr);
-	info[5] += std::to_string(crControl.ytr);
+	info[4] += std::to_string(crControl.xtr);*/
+	info[5] += crControl.ytr;  /*
 	info[6] += std::to_string(crControl.ztr);
 	info[7] += std::to_string(0);
-	info[8] += std::to_string(num);
+	info[8] += std::to_string(num);   */
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	for(SIZE_T i = 0; i < Graphics::NUMBER_OF_ELEMENTS; ++i)
