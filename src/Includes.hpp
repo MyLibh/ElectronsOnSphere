@@ -44,7 +44,7 @@
 #endif // __GNUC__
 
 #ifdef __TXLIB_H_INCLUDED
-	#error Õ»«ﬂ ﬁ«¿“‹ TXLib
+	//#error Õ»«ﬂ ﬁ«¿“‹ TXLib
 #endif // __TXLIB_H_INCLUDED
 
 #include <Windows.h>

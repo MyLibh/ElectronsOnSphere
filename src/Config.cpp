@@ -3,7 +3,7 @@
 
 #include "Config.hpp"
 
-BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> &crPositions)
+BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> crPositions, double energy)
 {
 	DBG("Start saving");
 
@@ -17,13 +17,13 @@ BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> &crPositions)
 
 	config << __TIME__ << std::endl                                                           \
 		   << "Number of electrons: " << crPositions.size() << std::endl                      \
-		   << "Energy: " << physics::GetPotentialEnergy(crPositions).getEnergy() << std::endl 
+		   << "Energy: " << energy << std::endl
 		   << "Positions:\n";
 
-	config << "X Y" /* Z"*/ << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
+	config << "X Y Z" << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
 	for(auto pos : crPositions)
-		config << pos.getX() << pos.getY() /* << pos.getZ() */ << std::endl;
-	
+		config << pos.getX() << pos.getY() << pos.getZ() << std::endl;
+
 	config.close();
 
 	DBG("End saving");
@@ -43,7 +43,7 @@ std::vector<nvec> LoadConfig(CONST std::string &crFilename)
 
 		return positions;
 	}
-	
+
 	std::string str;
 	do
 	{
@@ -52,14 +52,14 @@ std::vector<nvec> LoadConfig(CONST std::string &crFilename)
 
 	while(!config.eof())
 	{
-		double x = 0, 
-			   y = 0;
-			   // z = 0;
-		config >> x >> y /* >> z */;
+		double x = 0,
+			   y = 0,
+			   z = 0;
+		config >> x >> y >> z;
 
-		positions.push_back(nvec(x, y));
+		positions.push_back(nvec(x, y, z));
 	}
-	
+
 	config.close();
 
 	DBG("End loading");

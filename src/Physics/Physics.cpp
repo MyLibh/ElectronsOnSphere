@@ -1,69 +1,43 @@
-// This is an open source non-commercial project. Dear PVS-Studio, please check it.
-// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
-
 #include "Physics.hpp"
 
-#ifdef __PHYSICS_VER__
+#ifdef __PHYSICS_VER__ //{
+
     #error physics ver defined
+
 #else
-    #define __PHYSICS_VER__ 1.1
-#endif // __PHYSICS_VER__
 
-namespace physics
-{
-	Physics::Physics() :
-		_Positions()
-    { assignLocations(8); }
+    #define __PHYSICS_VER__ 1.9
 
-	VOID Physics::assignLocations(size_t num)
-	{
-		std::vector<nvec> tmp(num);
-		_Positions.swap(tmp);
+#endif                 //}
 
-		for(size_t i = 0; i < num; ++i)
-		{
-			double alf = rand();
-			_Positions[i] = nvec (alf);
 
-			SleepEx(0, FALSE);
-		}
-	}
-
-    VOID Physics::doPhysics()
+namespace NPhysics
     {
-        for(size_t i = 0; i < _Positions.size(); ++i) _Positions[i] = _Positions[i] + getSpeed(i);
-        
-     }
+    void physics::doPhysics()
+        {
+        PDdoPhysicsDynamic ();
+        }
 
-    vec Physics::getSpeed(size_t num)
-    {
-        vec sum;
-        for(size_t i = 0; i < _Positions.size(); ++i)
-			if(i != num) sum += _Positions[num].strength(_Positions[i]);
+    std::vector<nvec> physics::getVector()
+        {
+        return PDgetVector();
+        }
 
-        return sum * 0.001;
+    double physics::getPotentialEnergy ()
+        {
+        return PSgetPotentialEnergy (PDgetVector ());
+        }
+
+    void physics::setVector (std::vector<nvec> positions)
+        {
+        PDset (positions);
+        }
+
+    void physics::setVectorRandom (size_t num)
+        {
+        PDsetRandom (num);
+        }
     }
 
-	Energy GetPotentialEnergy(CONST std::vector<nvec> &crPositions)
-    {
-        Energy energy (crPositions.size());
-        for(size_t i = 0; i < crPositions.size(); ++i)
-            for(size_t j = 0; j < i; ++j)
-            {
-                double module = ((crPositions[i].getX() - crPositions[j].getX()) * (crPositions[i].getX() - crPositions[j].getX()) +
-                                 (crPositions[i].getY() - crPositions[j].getY()) * (crPositions[i].getY() - crPositions[j].getY()));
 
-                if(fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
-                {
-                    module = MIN_NUM_FOR_DIVIDE;
-                    std::cerr << "ERROR";
-                }
-
-                module = 1 / module;
-                energy += module;
-            }
-
-    return energy;
-    }
-}
 

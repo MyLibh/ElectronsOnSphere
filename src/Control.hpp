@@ -42,9 +42,9 @@ public:
 
 	Control() :
 		xrot(),
-		yrot(0.5f),
+		yrot(0),
 		zrot(),
-		angle(0.05f),
+		angle(0),
 		xtr(),
 		ytr(),
 		ztr()
