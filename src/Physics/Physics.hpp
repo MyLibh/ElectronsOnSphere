@@ -6,7 +6,7 @@
 
 namespace PHYSICS
     {
-    vec Strangth(nvec v_to, nvec v_from);
+    vec Strength(nvec v_to, nvec v_from);
 
     class Physics : private PhysicsDynamic, private PhysicsStatic
         {
@@ -20,7 +20,7 @@ namespace PHYSICS
 
             void doPhysics ();
             double getPotentialEnergy ();
-            const std::vector<nvec>& getPositions ();
+            const std::vector<nvec> &getPositions ();
             void setPositions (std::vector<nvec> positions);
             void setPositionsRandom (size_t num);
             void setSpeedCoefficient (double value);
