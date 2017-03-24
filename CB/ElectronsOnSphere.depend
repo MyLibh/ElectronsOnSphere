@@ -395,10 +395,10 @@
 1490128504 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\tests\3d test #1\src\physics\physicsstatic.cpp
 	"PhysicsStatic.hpp"
 
-1490131513 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.cpp
+1490372004 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.cpp
 	"App.hpp"
 
-1490105173 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.hpp
+1490374655 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\app.hpp
 	"Graphics\Graphics.hpp"
 	"Physics\Physics.hpp"
 	"Graphics\Dialogs.hpp"
@@ -437,21 +437,21 @@
 1490101219 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\color.hpp
 	"..\Includes.hpp"
 
-1490214085 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\nvector.hpp
+1490376334 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\nvector.hpp
 	"..\Includes.hpp"
 
-1490125046 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\control.hpp
+1490290074 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\control.hpp
 	"Includes.hpp"
 
-1490131301 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.hpp
+1490374902 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.hpp
 	"PhysicsDynamic.hpp"
 	"PhysicsStatic.hpp"
 
-1490214613 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.hpp
+1490375278 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.hpp
 	"..\Includes.hpp"
 	"NVector.hpp"
 
-1490128245 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.hpp
+1490375071 c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.hpp
 	"..\Includes.hpp"
 	"NVector.hpp"
 
@@ -477,7 +477,7 @@
 1490101229 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\dialogs.cpp
 	"Dialogs.hpp"
 
-1490217030 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\graphics.cpp
+1490290915 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\graphics\graphics.cpp
 	"Graphics.hpp"
 
 1490101351 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\includes.cpp
@@ -489,12 +489,12 @@
 1490214092 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\nvector.cpp
 	"NVector.hpp"
 
-1490131259 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.cpp
+1490374683 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physics.cpp
 	"Physics.hpp"
 
-1490214034 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.cpp
+1490375313 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsdynamic.cpp
 	"PhysicsDynamic.hpp"
 
-1490128504 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.cpp
+1490375071 source:c:\users\Алексей\desktop\programing\a&a corporation files\electrons on shere\project\ver2.1\src\physics\physicsstatic.cpp
 	"PhysicsStatic.hpp"
 
