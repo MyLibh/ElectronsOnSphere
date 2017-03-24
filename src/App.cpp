@@ -41,7 +41,7 @@ INT App::run()
 			FLOAT dt = (cureTime - prevTime) * spc;
 
 			update(dt);
-			graphics_.render(control_, physics_.getVector());
+			graphics_.render(control_, physics_.getPositions());
 			graphics_.showFPS(dt);
 			control_.manage();
 
@@ -90,7 +90,7 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			of.Flags        = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
 			of.lpstrDefExt  = "txt";
 
-			if(GetSaveFileName(&of)) SaveConfig(filename, physics_.getVector(), physics_.getPotentialEnergy());
+			if(GetSaveFileName(&of)) SaveConfig(filename, physics_.getPositions(), physics_.getPotentialEnergy());
 
 			break;
 		}
@@ -108,7 +108,7 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			of.lpstrInitialDir = nullptr;
 			of.Flags           = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
 
-			if(GetOpenFileName(&of)) physics_.setVector(LoadConfig(filename));
+			if(GetOpenFileName(&of)) physics_.setPositions(LoadConfig(filename));
 
 			break;
 		}
@@ -117,12 +117,12 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			break;
 
 		case ID_NUMRAND:
-			physics_.setVectorRandom(rand() % 15);
+			physics_.setPositionsRandom(rand() % 15);
 			break;
 		case ID_NUMSET:
 		{
 			INT_PTR num = DialogBox(graphics_.getHINSTANCE(), MAKEINTRESOURCE(IDD_SETNUMBOX), hWnd, SetNumDialog);
-			if(num >= 1) physics_.setVectorRandom(num);
+			if(num >= 1) physics_.setPositionsRandom(num);
 			break;
 		}
 
