@@ -66,6 +66,15 @@
     <ClInclude Include="..\src\Graphics\Dialogs.hpp">
       <Filter>Заголовочные файлы\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Physics\Energy.h">
+      <Filter>Заголовочные файлы\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Physics\PhysicsDynamic.hpp">
+      <Filter>Заголовочные файлы\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Physics\PhysicsStatic.hpp">
+      <Filter>Заголовочные файлы\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Includes.cpp">
@@ -94,6 +103,15 @@
     </ClCompile>
     <ClCompile Include="..\src\Graphics\Dialogs.cpp">
       <Filter>Файлы исходного кода\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Physics\Energy.cpp">
+      <Filter>Файлы исходного кода\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Physics\PhysicsDynamic.cpp">
+      <Filter>Файлы исходного кода\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Physics\PhysicsStatic.cpp">
+      <Filter>Файлы исходного кода\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

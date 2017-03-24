@@ -289,7 +289,7 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
 		"Electrons: "
 	};
 
-	/*info[0] += std::to_string(crControl.angle);
+	info[0] += std::to_string(crControl.angle);
 	info[1] += std::to_string(crControl.xrot);
 	info[2] += std::to_string(crControl.yrot);
 	info[3] += std::to_string(crControl.zrot);
@@ -297,7 +297,7 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
 	info[5] += std::to_string(crControl.ytr);
 	info[6] += std::to_string(crControl.ztr);
 	info[7] += std::to_string(0);
-	info[8] += std::to_string(num);   */
+	info[8] += std::to_string(num);   
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	for(SIZE_T i = 0; i < Graphics::NUMBER_OF_ELEMENTS; ++i)

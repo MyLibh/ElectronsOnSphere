@@ -1,7 +1,12 @@
-﻿Построение начато 17.03.2017 20:16:35.
+﻿Построение начато 24.03.2017 21:43:11.
      1>Проект "C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\ElectronsOnSphere.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\Graphics\Dialogs.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\App.cpp ..\src\Graphics\Dialogs.cpp ..\src\Graphics\Graphics.cpp ..\src\main.cpp
+         App.cpp
+         Создание кода...
+         Пропуск... (изменения не обнаружены)
+         main.cpp
+         Graphics.cpp
          Dialogs.cpp
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.lib" /MACHINE:X86 Debug\ElectronsOnSphere.res
@@ -12,11 +17,14 @@
          Debug\Graphics.obj
          Debug\Includes.obj
          Debug\main.obj
+         Debug\Energy.obj
          Debug\NVector.obj
          Debug\Physics.obj
+         Debug\PhysicsDynamic.obj
+         Debug\PhysicsStatic.obj
          ElectronsOnSphere.vcxproj -> C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.exe
      1>Построение проекта "C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\ElectronsOnSphere.vcxproj" завершено (целевые объекты Build).
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.62
+Затраченное время: 00:00:01.45
