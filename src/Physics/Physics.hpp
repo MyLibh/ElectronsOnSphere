@@ -4,21 +4,26 @@
 #include "PhysicsDynamic.hpp"
 #include "PhysicsStatic.hpp"
 
-namespace NPhysics
+namespace PHYSICS
     {
     vec Strangth(nvec v_to, nvec v_from);
 
-    class physics : protected NPhysicsDynamic::physics_dynamic, protected NPhysicsStatic::physics_static
+    class Physics : private PhysicsDynamic, private PhysicsStatic
         {
+        private:
+            double _SpeedCoefficient;
+
         public:
-            physics ()
+            Physics () :
+                _SpeedCoefficient (0.001)
                 {}
 
             void doPhysics ();
             double getPotentialEnergy ();
-            std::vector<nvec> getVector ();
-            void setVector (std::vector<nvec> positions);
-            void setVectorRandom (size_t num);
+            const std::vector<nvec>& getPositions ();
+            void setPositions (std::vector<nvec> positions);
+            void setPositionsRandom (size_t num);
+            void setSpeedCoefficient (double value);
         };
     }
 

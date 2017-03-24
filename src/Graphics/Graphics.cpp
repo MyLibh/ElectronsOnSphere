@@ -220,7 +220,8 @@ VOID Graphics::render(CONST Control &crControl, std::vector<nvec> crPositions)
 	{
 		glPushMatrix();
 		glTranslatef(static_cast<FLOAT>(pos.getX()) - ((pos.getX() < 0)? -radius : radius),
-                     static_cast<FLOAT>(pos.getY()) - ((pos.getY() < 0)? -radius : radius), 0.0f);
+                     static_cast<FLOAT>(pos.getY()) - ((pos.getY() < 0)? -radius : radius),
+                     static_cast<FLOAT>(pos.getZ()) - ((pos.getZ() < 0)? -radius : radius));
 			glColor4f(electronsColor_); // Electron
 			gluSphere(electron, radius, 100, 100);
 		glPopMatrix();
@@ -292,8 +293,8 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
 	info[1] += std::to_string(crControl.xrot);
 	info[2] += std::to_string(crControl.yrot);
 	info[3] += std::to_string(crControl.zrot);
-	info[4] += std::to_string(crControl.xtr);*/
-	info[5] += crControl.ytr;  /*
+	info[4] += std::to_string(crControl.xtr);
+	info[5] += std::to_string(crControl.ytr);
 	info[6] += std::to_string(crControl.ztr);
 	info[7] += std::to_string(0);
 	info[8] += std::to_string(num);   */

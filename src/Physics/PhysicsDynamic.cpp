@@ -1,80 +1,75 @@
 #include "PhysicsDynamic.hpp"
 
-vec Strength(nvec v_to, nvec v_from)
+namespace PHYSICS
     {
-    double module = sqrt (sqr(v_to._X - v_from._X) + sqr(v_to._Y - v_from._Y) + sqr(v_to._Z - v_from._Z))*
-                         (sqr(v_to._X - v_from._X) + sqr(v_to._Y - v_from._Y) + sqr(v_to._Z - v_from._Z)); //distanse^3
-
-    vec vec_ ((v_to._X - v_from._X), (v_to._Y - v_from._Y), (v_to._Z - v_from._Z));
-
-    if (fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
+    vec Strength(nvec v_to, nvec v_from)
         {
-        module = 1;
-        double alf = rand();
-        double btt = rand();
-        vec_ = vec (cos(alf), sin(alf)*cos(btt), sin(alf)*sin(btt));
-        vec_*=10;
+        double module = sqrt (sqr(v_to.getX() - v_from.getX()) + sqr(v_to.getY() - v_from.getY()) + sqr(v_to.getZ() - v_from.getZ()))*
+                             (sqr(v_to.getX() - v_from.getX()) + sqr(v_to.getY() - v_from.getY()) + sqr(v_to.getZ() - v_from.getZ())); //distanse^3
+
+        vec vec_ ((v_to.getX() - v_from.getX()), (v_to.getY() - v_from.getY()), (v_to.getZ() - v_from.getZ()));
+
+        if (fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
+            {
+            module = 1;
+            double alf = rand();
+            double btt = rand();
+            vec_ = vec (cos(alf), sin(alf)*cos(btt), sin(alf)*sin(btt));
+            vec_ = vec_*10;
+            }
+
+        module = 1/module;
+
+        return vec_*module;
         }
 
-    module = 1/module;
-    vec_*= module;
-
-    return vec_;
-    }
-
-namespace NPhysics
-    {
-    namespace NPhysicsDynamic
+    const std::vector<nvec>& PhysicsDynamic::PDgetVector() const
         {
-        std::vector<nvec> physics_dynamic::PDgetVector() const
+        return _Positions;
+        }
+
+    void PhysicsDynamic::PDdoPhysicsDynamic (double speed_coefficient)
+        {
+        for (size_t i = 0; i < _Positions.size(); i++)
             {
-            return _Positions;
+            _Positions[i] = _Positions[i] + PDgetSpeed(i, speed_coefficient);
+            }
+        }
+
+    vec PhysicsDynamic::PDgetSpeed (size_t num, double speed_coefficient) const
+        {
+        vec sum;
+        for (size_t j = 0; j < _Positions.size(); j++)
+            {
+            if (j != num) sum+= Strength (_Positions[num], _Positions[j]);
             }
 
-        void physics_dynamic::PDdoPhysicsDynamic ()
+        return sum*speed_coefficient;
+        }
+
+    void PhysicsDynamic::PDsetRandom (size_t num)
+        {
+        std::vector<nvec> tmp(num);
+        _Positions.swap(tmp);
+
+        for(size_t i = 0; i < num; ++i)
             {
-            for (size_t i = 0; i < _Positions.size(); i++)
-                {
-                _Positions[i] = _Positions[i] + PDgetSpeed(i);
-                }
+            Sleep(0);
+            double x = rand()%20000 - 10000;
+            Sleep(0);
+            double y = rand()%20000 - 10000;
+            Sleep(0);
+            double z = rand()%20000 - 10000;
+            double length = sqrt (sqr(x) + sqr(y) + sqr(z));
+            _Positions[i] = nvec (x/length, y/length, z/length);
+
+            Sleep (0);
             }
+        }
 
-        vec physics_dynamic::PDgetSpeed (size_t num) const
-            {
-            vec sum;
-            for (size_t j = 0; j < _Positions.size(); j++)
-                {
-                if (j != num) sum+= Strength (_Positions[num], _Positions[j]);
-                }
-
-            sum*= 0.001;
-            return sum;
-            }
-
-        void physics_dynamic::PDsetRandom (size_t num)
-            {
-            std::vector<nvec> tmp(num);
-            _Positions.swap(tmp);
-
-            for(size_t i = 0; i < num; ++i)
-                {
-                Sleep(0);
-                double x = rand()%20000 - 10000;
-                Sleep(0);
-                double y = rand()%20000 - 10000;
-                Sleep(0);
-                double z = rand()%20000 - 10000;
-                double length = sqrt (sqr(x) + sqr(y) + sqr(z));
-                _Positions[i] = nvec (x/length, y/length, z/length);
-
-                Sleep (0);
-                }
-            }
-
-        void physics_dynamic::PDset (std::vector<nvec> positions)
-            {
-            _Positions.swap(positions);
-            }
+    void PhysicsDynamic::PDset (std::vector<nvec> positions)
+        {
+        _Positions.swap(positions);
         }
     }
 

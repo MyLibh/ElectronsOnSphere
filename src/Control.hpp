@@ -7,21 +7,21 @@ struct Control
 	enum Buttons
 	{
 		XTRM = 0,
-		XTRP,
-		YTRM,
-		YTRP,
-		ZTRM,
-		ZTRP,
+		XTRP = 1,
+		YTRM = 2,
+		YTRP = 3,
+		ZTRM = 4,
+		ZTRP = 5,
 
-		XROTM,
-		XROTP,
-		YROTM,
-		YROTP,
-		ZROTM,
-		ZROTP,
+		XROTM = 6,
+		XROTP = 7,
+		YROTM = 8,
+		YROTP = 9,
+		ZROTM = 10,
+		ZROTP = 11,
 
-		ALFAM,
-		ALFAP
+		ALFAM = 12,
+		ALFAP = 13
 	};
 
 private:
@@ -42,7 +42,7 @@ public:
 
 	Control() :
 		xrot(),
-		yrot(0),
+		yrot(0.01),
 		zrot(),
 		angle(0),
 		xtr(),
