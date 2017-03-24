@@ -7,30 +7,29 @@
 
 CONST SIZE_T NUM_ELL = 5;
 
-namespace NPhysics
+namespace PHYSICS
     {
-    namespace NPhysicsDynamic
+    vec Strength (nvec, nvec);
+
+    class PhysicsDynamic
         {
-        class physics_dynamic
-            {
-            private:
-                std::vector<nvec> _Positions;
+        private:
+            std::vector<nvec> _Positions;
 
-                vec PDgetSpeed (size_t num) const;
+            vec PDgetSpeed (size_t num, double speed_coefficient) const;
 
-            protected:
-                void PDdoPhysicsDynamic ();
-                void PDset (std::vector<nvec> positions);
-                void PDsetRandom (size_t num);
-                std::vector<nvec> PDgetVector() const;
+        protected:
+            void PDdoPhysicsDynamic (double speed_coefficient);
+            void PDset (std::vector<nvec> positions);
+            void PDsetRandom (size_t num);
+            const std::vector<nvec>& PDgetVector() const;
 
-                physics_dynamic ()
-                    {PDsetRandom(11);}
+            PhysicsDynamic ()
+                {PDsetRandom(11);}
 
-                ~physics_dynamic ()
-                    {}
-            };
-        }
+            ~PhysicsDynamic ()
+                {}
+        };
     }
 
 #endif // __PHYSICS_DINAMIC_HPP_INCLUDED__ }

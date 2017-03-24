@@ -11,7 +11,7 @@ class App final : public NoncopyableFull
 {
 private:
 	Graphics graphics_;
-	NPhysics::physics  physics_;
+	PHYSICS::Physics  physics_;
 	Control control_;
 
 public:

@@ -11,31 +11,36 @@
 #endif                 //}
 
 
-namespace NPhysics
+namespace PHYSICS
     {
-    void physics::doPhysics()
+    void Physics::doPhysics()
         {
-        PDdoPhysicsDynamic ();
+        PDdoPhysicsDynamic (_SpeedCoefficient);
         }
 
-    std::vector<nvec> physics::getVector()
+    const std::vector<nvec>& Physics::getPositions()
         {
         return PDgetVector();
         }
 
-    double physics::getPotentialEnergy ()
+    double Physics::getPotentialEnergy ()
         {
         return PSgetPotentialEnergy (PDgetVector ());
         }
 
-    void physics::setVector (std::vector<nvec> positions)
+    void Physics::setPositions (std::vector<nvec> positions)
         {
         PDset (positions);
         }
 
-    void physics::setVectorRandom (size_t num)
+    void Physics::setPositionsRandom (size_t num)
         {
         PDsetRandom (num);
+        }
+
+    void Physics::setSpeedCoefficient (double value)
+        {
+        _SpeedCoefficient = value;
         }
     }
 

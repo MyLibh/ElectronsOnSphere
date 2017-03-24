@@ -5,17 +5,14 @@
 
 #include "NVector.hpp"
 
-namespace NPhysics
+namespace PHYSICS
     {
-    namespace NPhysicsStatic
+    class PhysicsStatic
         {
-        class physics_static
-            {
-            protected:
+        protected:
 
-                double PSgetPotentialEnergy (std::vector<nvec> positions) const;
-            };
-        }
+            double PSgetPotentialEnergy (std::vector<nvec> positions) const;
+        };
     }
 
 #endif // __PHYSICS_STATIC_HPP_INCLUDED__ }
