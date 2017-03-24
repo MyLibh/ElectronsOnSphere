@@ -11,7 +11,7 @@ namespace PHYSICS
         {
         protected:
 
-            double PSgetPotentialEnergy (std::vector<nvec> positions) const;
+            double getPotentialEnergyByPositions (nvector positions) const;
         };
     }
 

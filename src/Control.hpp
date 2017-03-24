@@ -4,7 +4,7 @@
 
 struct Control
 {
-	enum Buttons
+	enum Buttons : SIZE_T
 	{
 		XTRM = 0,
 		XTRP = 1,
@@ -41,13 +41,13 @@ public:
 		  ztr;
 
 	Control() :
-		xrot(),
-		yrot(0.01),
-		zrot(),
-		angle(0),
-		xtr(),
-		ytr(),
-		ztr()
+		xrot(0.0f),
+		yrot(0.0f),
+		zrot(0.0f),
+		angle(0.0f),
+		xtr(0.0f),
+		ytr(0.0f),
+		ztr(0.0f)
 	{
 		buttons_[Buttons::XTRM] = VK_LEFT;
 		buttons_[Buttons::XTRP] = VK_RIGHT;
