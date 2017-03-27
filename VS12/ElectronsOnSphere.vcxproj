@@ -19,8 +19,6 @@
     <ClInclude Include="..\src\Graphics\Graphics.hpp" />
     <ClInclude Include="..\src\Includes.hpp" />
     <ClInclude Include="..\src\Noncopyable.hpp" />
-    <ClInclude Include="..\src\Physics\Energy.h" />
-    <ClInclude Include="..\src\Physics\Energy.hpp" />
     <ClInclude Include="..\src\Physics\NVector.hpp" />
     <ClInclude Include="..\src\Physics\Physics.hpp" />
     <ClInclude Include="..\src\Physics\PhysicsDynamic.hpp" />
@@ -36,7 +34,6 @@
     <ClCompile Include="..\src\Graphics\Graphics.cpp" />
     <ClCompile Include="..\src\Includes.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Physics\Energy.cpp" />
     <ClCompile Include="..\src\Physics\NVector.cpp" />
     <ClCompile Include="..\src\Physics\Physics.cpp" />
     <ClCompile Include="..\src\Physics\PhysicsDynamic.cpp" />

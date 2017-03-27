@@ -45,7 +45,7 @@ HWND InitConsole(ConsoleMode mode)
 UINT Graphics::width_  = 900;
 UINT Graphics::height_ = 900;
 
-UINT Graphics::base_ = 0;
+CONST UINT Graphics::base_ = glGenLists(96);
 
 BOOL Graphics::visibility_[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
@@ -205,7 +205,7 @@ VOID Graphics::showFPS(FLOAT dt)
 	}
 }
 
-VOID Graphics::render(CONST Control &crControl, std::vector<nvec> crPositions)
+VOID Graphics::render(CONST Control &crControl, CRNVECTOR crPositions)
 {
 	DBG("Rendering");
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -261,11 +261,9 @@ VOID Graphics::render(CONST Control &crControl, std::vector<nvec> crPositions)
 		glEnd();
 		glPopMatrix();
 	}
-
-	Graphics::drawInfo(crControl, crPositions.size());
 }
 
-VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
+VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num, DOUBLE energy)
 {
 	glPushMatrix();
 	glLoadIdentity();
@@ -296,7 +294,7 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num)
 	info[4] += std::to_string(crControl.xtr);
 	info[5] += std::to_string(crControl.ytr);
 	info[6] += std::to_string(crControl.ztr);
-	info[7] += std::to_string(0);
+	info[7] += std::to_string(energy);
 	info[8] += std::to_string(num);   
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -322,8 +320,6 @@ VOID Graphics::drawText(CONST std::string &crText)
 
 VOID BuildFont(HDC hDC)
 {
-	Graphics::base_ = glGenLists(96);
-
 	HFONT font = CreateFont(24, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_TT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, FF_DONTCARE | DEFAULT_PITCH, "Courier New");
 
 	SelectObject(hDC, font);

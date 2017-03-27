@@ -7,21 +7,21 @@ struct Control
 	enum Buttons : SIZE_T
 	{
 		XTRM = 0,
-		XTRP = 1,
-		YTRM = 2,
-		YTRP = 3,
-		ZTRM = 4,
-		ZTRP = 5,
+		XTRP,
+		YTRM,
+		YTRP,
+		ZTRM,
+		ZTRP,
 
-		XROTM = 6,
-		XROTP = 7,
-		YROTM = 8,
-		YROTP = 9,
-		ZROTM = 10,
-		ZROTP = 11,
+		XROTM,
+		XROTP,
+		YROTM,
+		YROTP,
+		ZROTM,
+		ZROTP,
 
-		ALFAM = 12,
-		ALFAP = 13
+		ALFAM,
+		ALFAP
 	};
 
 private:
@@ -42,9 +42,9 @@ public:
 
 	Control() :
 		xrot(0.0f),
-		yrot(0.0f),
+		yrot(0.5f),
 		zrot(0.0f),
-		angle(0.0f),
+		angle(0.05f),
 		xtr(0.0f),
 		ytr(0.0f),
 		ztr(0.0f)
