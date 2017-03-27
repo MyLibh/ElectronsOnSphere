@@ -18,11 +18,6 @@ namespace PHYSICS
         doPhysicsDynamic (_SpeedCoefficient);
         }
 
-   double Physics::getPotentialEnergy ()
-        {
-        return getPotentialEnergyByPositions (getPositions ());
-        }
-
     void Physics::setSpeedCoefficient (double value)
         {
         _SpeedCoefficient = value;
