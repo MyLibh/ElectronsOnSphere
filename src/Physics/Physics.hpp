@@ -19,11 +19,13 @@ namespace PHYSICS
                 {}
 
             void doPhysics ();
+            void setSpeedCoefficient (double value);
+
             //double getPotentialEnergy ();
+
             //const nvector& getPositions ();
             //void setPositions (nvector positions);
             //void setPositionsRandom (size_t num);
-            void setSpeedCoefficient (double value);
         };
     }
 
