@@ -23,12 +23,12 @@ namespace PHYSICS
         return vec_*module;
         }
 
-    const std::vector<nvec>& PhysicsDynamic::PDgetVector() const
+    const nvector& PhysicsDynamic::getPositions() const
         {
         return _Positions;
         }
 
-    void PhysicsDynamic::PDdoPhysicsDynamic (double speed_coefficient)
+    void PhysicsDynamic::doPhysicsDynamic (double speed_coefficient)
         {
         for (size_t i = 0; i < _Positions.size(); i++)
             {
@@ -36,7 +36,7 @@ namespace PHYSICS
             }
         }
 
-    vec PhysicsDynamic::PDgetSpeed (size_t num, double speed_coefficient) const
+    vec PhysicsDynamic::getSpeed (size_t num, double speed_coefficient) const
         {
         vec sum;
         for (size_t j = 0; j < _Positions.size(); j++)
@@ -47,9 +47,9 @@ namespace PHYSICS
         return sum*speed_coefficient;
         }
 
-    void PhysicsDynamic::PDsetRandom (size_t num)
+    void PhysicsDynamic::setPositionsRandom (size_t num)
         {
-        std::vector<nvec> tmp(num);
+        nvector tmp(num);
         _Positions.swap(tmp);
 
         for(size_t i = 0; i < num; ++i)
@@ -67,7 +67,7 @@ namespace PHYSICS
             }
         }
 
-    void PhysicsDynamic::PDset (std::vector<nvec> positions)
+    void PhysicsDynamic::setPositions (nvector positions)
         {
         _Positions.swap(positions);
         }
