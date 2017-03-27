@@ -15,7 +15,7 @@ namespace PHYSICS
     {
     void Physics::doPhysics()
         {
-        PDdoPhysicsDynamic (_SpeedCoefficient);
+        doPhysicsDynamic (_SpeedCoefficient);
         }
 
    double Physics::getPotentialEnergy ()

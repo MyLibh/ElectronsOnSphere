@@ -42,6 +42,7 @@ INT App::run()
 
 			update(dt);
 			graphics_.render(control_, physics_.getPositions());
+			Graphics::drawInfo(control_, physics_.getPositions().size(), physics_.getPotentialEnergy());
 			graphics_.showFPS(dt);
 			control_.manage();
 

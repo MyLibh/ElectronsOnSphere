@@ -3,14 +3,12 @@
 
 #include "..\Includes.hpp"
 
-#include "NVector.hpp"
+#include "NVector.hpp"
+
 
 namespace PHYSICS
     {
     vec Strength (nvec, nvec);
-
-    typedef std::vector<nvec> nvector;
-    typedef const nvector& crnvector;
 
     class PhysicsDynamic
         {
