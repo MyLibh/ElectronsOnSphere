@@ -2,7 +2,7 @@
 
 namespace PHYSICS
     {
-    double PhysicsStatic::PSgetPotentialEnergy  (std::vector<nvec> positions) const
+    double PhysicsStatic::getPotentialEnergyByPositions (nvector positions) const
         {
         double energy = 0;
         for (size_t i = 0; i < positions.size(); i++)
