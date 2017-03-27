@@ -6,8 +6,6 @@
 
 namespace PHYSICS
     {
-    vec Strength(nvec v_to, nvec v_from);
-
     class Physics : public PhysicsDynamic, public PhysicsStatic
         {
         private:
@@ -21,7 +19,7 @@ namespace PHYSICS
             void doPhysics ();
             void setSpeedCoefficient (double value);
 
-            //double getPotentialEnergy ();
+            double getPotentialEnergy ();
 
             //const nvector& getPositions ();
             //void setPositions (nvector positions);
