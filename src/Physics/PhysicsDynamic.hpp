@@ -3,32 +3,30 @@
 
 #include "..\Includes.hpp"
 
-#include "NVector.hpp"
-
-CONST SIZE_T NUM_ELL = 5;
+#include "NVector.hpp"
 
 namespace PHYSICS
     {
     vec Strength (nvec, nvec);
 
+    typedef std::vector<nvec> nvector;
+    typedef const nvector& crnvector;
+
     class PhysicsDynamic
         {
         private:
-            std::vector<nvec> _Positions;
+            nvector _Positions;
 
-            vec PDgetSpeed (size_t num, double speed_coefficient) const;
+            vec getSpeed (size_t num, double speed_coefficient) const;
 
         protected:
-            void PDdoPhysicsDynamic (double speed_coefficient);
+            void doPhysicsDynamic (double speed_coefficient);
             void PDset (std::vector<nvec> positions);
             void PDsetRandom (size_t num);
-            const std::vector<nvec>& PDgetVector() const;
+            crnvector PDgetVector() const;
 
-            PhysicsDynamic ()
-                {PDsetRandom(11);}
-
-            ~PhysicsDynamic ()
-                {}
+            PhysicsDynamic () { PDsetRandom(11); }
+            ~PhysicsDynamic () { }
         };
     }
 
