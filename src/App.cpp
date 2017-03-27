@@ -3,6 +3,8 @@
 
 #include "App.hpp"
 
+#define ID_TRACKBAR 0
+
 namespace
 {
 	App *gpApp = nullptr;
@@ -24,8 +26,9 @@ INT App::run()
 	QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&prevTime));
 	__int64 cps = 0;
 	QueryPerformanceFrequency(reinterpret_cast<LARGE_INTEGER*>(&cps));
-	float spc = 1.0f / cps;
+	FLOAT spc = 1.0f / cps;
 
+	HWND hTrack = CreateTrackbar(graphics_.getHINSTANCE(), graphics_.getHWND(), 0, 10, 10, 10);
 	MSG msg = { };
 	while(msg.message != WM_QUIT && !GetAsyncKeyState(VK_ESCAPE))
 	{
@@ -39,15 +42,14 @@ INT App::run()
 			__int64 cureTime = 0;
 			QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&cureTime));
 			FLOAT dt = (cureTime - prevTime) * spc;
-
-			update(dt);
-			graphics_.render(control_, physics_.getPositions());
-			Graphics::drawInfo(control_, physics_.getPositions().size(), physics_.getPotentialEnergy());
 			graphics_.showFPS(dt);
+
+			physics_.doPhysics();
+			graphics_.render(control_, physics_.getPositions());
+			Graphics::drawInfo(control_, physics_.getPositions().size(), physics_.getPotentialEnergy());	
 			control_.manage();
 
 			SwapBuffers(graphics_.getHDC());
-
 			prevTime = cureTime;
 		}
 	}
@@ -60,15 +62,23 @@ INT App::run()
 	return static_cast<INT>(msg.wParam);
 }
 
-void App::update(FLOAT)
-{
-	physics_.doPhysics();
-}
-
 LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch(msg)
 	{
+	case WM_SIZE:
+	{
+		INT nWidth  = LOWORD(lParam);		
+		INT nHeight = HIWORD(lParam);		
+		glViewport(0, 0, nWidth, nHeight);	
+
+		glMatrixMode(GL_PROJECTION);		
+		glLoadIdentity();					
+
+		gluPerspective(45.0f, static_cast<DOUBLE>(nWidth) / static_cast<DOUBLE>(nHeight), 0.1f, 100.0f);
+
+		break;
+	}	
 	case WM_COMMAND:
 	{
 		switch(LOWORD(wParam))
@@ -157,5 +167,21 @@ LRESULT App::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 	return 0;
 }
+
+HWND CreateTrackbar(HINSTANCE hInstance, HWND hwndDlg, UINT iMin, UINT iMax, UINT iSelMin, UINT iSelMax)  
+{ 
+    //InitCommonControls();
+
+    HWND hwndTrack = CreateWindowEx( 0, TRACKBAR_CLASS, "Trackbar Control", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS | TBS_ENABLESELRANGE, 0, 0, 400, 450, hwndDlg, ID_TRACKBAR, hInstance, NULL); 
+
+    SendMessage(hwndTrack, TBM_SETRANGE,    static_cast<WPARAM>(TRUE),  static_cast<LPARAM>(MAKELONG(iMin, iMax)));      
+    SendMessage(hwndTrack, TBM_SETPAGESIZE, static_cast<WPARAM>(FALSE), static_cast<LPARAM>(4));  
+    SendMessage(hwndTrack, TBM_SETSEL,      static_cast<WPARAM>(FALSE), static_cast<LPARAM>(MAKELONG(iSelMin, iSelMax))); 
+    SendMessage(hwndTrack, TBM_SETPOS,      static_cast<WPARAM>(TRUE),  static_cast<LPARAM>(iSelMin)); 
+
+    SetFocus(hwndTrack); 
+
+    return hwndTrack; 
+} 
 
 

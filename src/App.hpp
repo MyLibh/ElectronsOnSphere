@@ -18,11 +18,11 @@ public:
 	App(HINSTANCE);
 	~App() { DBG("Closing app", DBGMODE::STATUS); }
 
-	VOID update(FLOAT);
 	INT run();
 	BOOL init() { return graphics_.init(WndProc); };
 
 	LRESULT wndProc(HWND, UINT, WPARAM, LPARAM);
 };
 
+HWND CreateTrackbar(HINSTANCE, HWND, UINT, UINT, UINT, UINT);
 

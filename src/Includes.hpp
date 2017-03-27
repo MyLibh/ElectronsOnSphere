@@ -53,6 +53,7 @@
 
 #include <ctime>
 #include <commdlg.h>
+#include <CommCtrl.h>
 
 #include <iostream>
 #include <fstream>

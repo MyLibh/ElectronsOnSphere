@@ -1,20 +1,8 @@
-﻿Построение начато 27.03.2017 18:03:22.
+﻿Построение начато 27.03.2017 21:39:59.
      1>Проект "C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\ElectronsOnSphere.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\App.cpp ..\src\Config.cpp ..\src\Graphics\Color.cpp ..\src\Graphics\Dialogs.cpp ..\src\Graphics\Graphics.cpp ..\src\Includes.cpp ..\src\Physics\Physics.cpp ..\src\Physics\PhysicsDynamic.cpp ..\src\Physics\PhysicsStatic.cpp ..\src\main.cpp
-         main.cpp
-         PhysicsStatic.cpp
-         PhysicsDynamic.cpp
-         Physics.cpp
-         Includes.cpp
-         Graphics.cpp
-         Dialogs.cpp
-         Color.cpp
-         Config.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\App.cpp
          App.cpp
-         Создание кода...
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\ElectronsOnSphere.res" ..\src\ElectronsOnSphere.rc 
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.lib" /MACHINE:X86 Debug\ElectronsOnSphere.res
          Debug\App.obj
@@ -28,10 +16,9 @@
          Debug\Physics.obj
          Debug\PhysicsDynamic.obj
          Debug\PhysicsStatic.obj
-         LINK : не найден или не выполнена сборка C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.exe при последней инкрементной компоновке; выполняется полная компоновка
          ElectronsOnSphere.vcxproj -> C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\Debug\ElectronsOnSphere.exe
      1>Построение проекта "C:\Users\Aleksei goliguzov\Documents\Github\ElectronsOnSphere\VS12\ElectronsOnSphere.vcxproj" завершено (целевые объекты Build).
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:11.05
+Затраченное время: 00:00:01.54

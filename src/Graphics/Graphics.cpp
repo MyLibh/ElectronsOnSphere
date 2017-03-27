@@ -101,7 +101,7 @@ BOOL Graphics::initWindow(WNDPROC wndFunc)
 	}
 
 	ShowWindow(hWnd_, SW_SHOW);
-
+	
 	DBG("Ending window initialization", DBGMODE::STATUS);
 
 	return TRUE;

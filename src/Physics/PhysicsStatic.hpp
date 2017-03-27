@@ -11,7 +11,7 @@ namespace PHYSICS
         {
         protected:
 
-            double getPotentialEnergyByPositions (nvector positions) const;
+            double getPotentialEnergy (nvector positions) const;
         };
     }
 
