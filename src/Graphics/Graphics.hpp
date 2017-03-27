@@ -26,6 +26,9 @@ HWND InitConsole(ConsoleMode = ConsoleMode::CM_ALL);
 
 VOID BuildFont(HDC);
 
+typedef nvector NVECTOR;
+typedef crnvector CRNVECTOR;
+
 class Graphics final : public NoncopyableFull
 {
 public:
@@ -50,11 +53,11 @@ private:
 
 	BOOL initWindow(WNDPROC);
 	BOOL initGL();
-	static VOID drawInfo(CONST Control&, SIZE_T);
+
 	static VOID drawText(CONST std::string&);
 
 public:
-	static UINT base_;
+	static CONST UINT base_;
 
 	Graphics(HINSTANCE);
 	~Graphics() { }
@@ -72,21 +75,24 @@ public:
 		COORDS
 	};
 
+	static BOOL getVisibility(SIZE_T index) { return visibility_[index]; }
+
 	CONST HWND      &getHWND()      const { return hWnd_; }
 	CONST HINSTANCE &getHINSTANCE() const { return hInstance_; }
 	CONST HDC       &getHDC()       const { return hDC_; }
 
+	static VOID setVisibility(SIZE_T index, BOOL show) { visibility_[index] = show; }
+
 	VOID setNucleusColor(CONST Color4f &crColor)   { if(crColor != DO_NOT_CHANGE_COLOR) nucleusColor_   = crColor; }
 	VOID setElectronsColor(CONST Color4f &crColor) { if(crColor != DO_NOT_CHANGE_COLOR) electronsColor_ = crColor; }
 	VOID setSphereColor(CONST Color4f &crColor)    { if(crColor != DO_NOT_CHANGE_COLOR) sphereColor_    = crColor; }
+	
+	static VOID drawInfo(CONST Control&, SIZE_T, DOUBLE);
 
 	BOOL init(WNDPROC);
-	VOID render(CONST Control&, CONST std::vector<nvec>);
+	VOID render(CONST Control&, CRNVECTOR);
 	VOID showFPS(FLOAT);
-	VOID shutdown();
-
-	static VOID setVisibility(SIZE_T index, BOOL show) { visibility_[index] = show; }
-	static BOOL getVisibility(SIZE_T index) { return visibility_[index]; }
+	VOID shutdown();	
 };
 
 VOID DeleteFont();

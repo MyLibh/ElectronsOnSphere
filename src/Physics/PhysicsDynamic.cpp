@@ -32,7 +32,7 @@ namespace PHYSICS
         {
         for (size_t i = 0; i < _Positions.size(); i++)
             {
-            _Positions[i] = _Positions[i] + PDgetSpeed(i, speed_coefficient);
+            _Positions[i] = _Positions[i] + getSpeed(i, speed_coefficient);
             }
         }
 

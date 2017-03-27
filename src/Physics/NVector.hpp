@@ -44,4 +44,7 @@ class nvec final
         double getZ () const;
     };
 
+typedef std::vector<nvec> nvector;
+typedef const nvector& crnvector;
+
 #endif // __NVECTOR_H_INCLUDED__ }
