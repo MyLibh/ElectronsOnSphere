@@ -20,7 +20,7 @@ namespace PHYSICS
             vec getSpeed (size_t num, double speed_coefficient) const;
 
         protected:
-            void doPhysicsDynamic (double speed_coefficient);
+            void PDdoPhysicsDynamic (double speed_coefficient);
             void PDset (std::vector<nvec> positions);
             void PDsetRandom (size_t num);
             crnvector PDgetVector() const;
