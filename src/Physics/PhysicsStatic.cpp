@@ -13,7 +13,7 @@ namespace PHYSICS
                 if (fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
                     {
                     module = MIN_NUM_FOR_DIVIDE;
-                    std::cerr << "ERROR";
+                    DBG("Minimal energy equal infinity", DBGMODE::FAIL);
                     }
 
                 module = 1/module;
@@ -23,3 +23,4 @@ namespace PHYSICS
         }
     }
 
+                            

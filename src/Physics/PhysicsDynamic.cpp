@@ -7,20 +7,20 @@ namespace PHYSICS
         double module = sqrt (sqr(v_to.getX() - v_from.getX()) + sqr(v_to.getY() - v_from.getY()) + sqr(v_to.getZ() - v_from.getZ()))*
                              (sqr(v_to.getX() - v_from.getX()) + sqr(v_to.getY() - v_from.getY()) + sqr(v_to.getZ() - v_from.getZ())); //distanse^3
 
-        vec vec_ ((v_to.getX() - v_from.getX()), (v_to.getY() - v_from.getY()), (v_to.getZ() - v_from.getZ()));
+        vec force ((v_to.getX() - v_from.getX()), (v_to.getY() - v_from.getY()), (v_to.getZ() - v_from.getZ()));
 
         if (fabs(module) - MIN_NUM_FOR_DIVIDE < 0)
             {
             module = 1;
             double alf = rand();
-            double btt = rand();
-            vec_ = vec (cos(alf), sin(alf)*cos(btt), sin(alf)*sin(btt));
-            vec_ = vec_*10;
+            double bet = rand();
+            force = vec (cos(alf), sin(alf)*cos(bet), sin(alf)*sin(bet));
+            force = force*10;
             }
 
         module = 1/module;
 
-        return vec_*module;
+        return force*module;
         }
 
     const nvector& PhysicsDynamic::getPositions() const
@@ -40,7 +40,7 @@ namespace PHYSICS
         {
         vec sum;
         for (size_t j = 0; j < _Positions.size(); j++)
-            {
+            {    
             if (j != num) sum+= Strength (_Positions[num], _Positions[j]);
             }
 
@@ -60,14 +60,13 @@ namespace PHYSICS
             double y = rand()%20000 - 10000;
             Sleep(0);
             double z = rand()%20000 - 10000;
+
             double length = sqrt (sqr(x) + sqr(y) + sqr(z));
             _Positions[i] = nvec (x/length, y/length, z/length);
-
-            Sleep (0);
             }
         }
 
-    void PhysicsDynamic::setPositions (nvector positions)
+    void PhysicsDynamic::setPositions (nvector& positions)
         {
         _Positions.swap(positions);
         }

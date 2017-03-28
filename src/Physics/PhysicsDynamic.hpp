@@ -21,7 +21,7 @@ namespace PHYSICS
             void doPhysicsDynamic (double speed_coefficient);
 
         public:
-            void setPositions (nvector positions);
+            void setPositions (nvector& positions);
             void setPositionsRandom (size_t num);
             const nvector& getPositions() const;
 

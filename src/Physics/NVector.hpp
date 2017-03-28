@@ -7,41 +7,42 @@
 
 double atan_ (double x, double y);
 
-double sqr (double);
+inline double sqr (double);
 
-class vec final
+class base_vector 
     {
-    private:
+    protected:
         double _X, _Y, _Z;
 
     public:
-        vec ();
-        vec (double x1, double y1, double z1);
-
-        void operator= (vec vec_);
-        vec operator* (double module);
-        void operator+= (vec vec_);
-
-        double getX();
-        double getY();
-        double getZ();
-    };
-
-class nvec final
-    {
-    private:
-        double _X, _Y, _Z;
-
-    public:
-        nvec (double x1, double y1, double z1);
-        nvec ();
-
-        nvec operator+ (vec vec_);
-        void operator= (nvec vec_);
-
+        base_vector (double x1, double y1, double z1);
+        
         double getX () const;
         double getY () const;
         double getZ () const;
+    };
+
+class vec final : public base_vector
+    {
+    public:
+        vec (double x = 0, double y = 0, double z = 0) : 
+            base_vector(x, y, z) 
+            { }
+
+        const vec& operator= (const vec& vec_);
+        vec operator* (double module) const;
+        const vec& operator+= (const vec& vec_);
+    };
+
+class nvec final : public base_vector
+    {
+    public:
+        nvec (double x = 0, double y = 0, double z = 0) : 
+            base_vector(x, y, z) 
+            { }
+
+        nvec operator+ (const vec& vec_) const;
+        const nvec& operator= (const nvec& vec_);
     };
 
 typedef std::vector<nvec> nvector;

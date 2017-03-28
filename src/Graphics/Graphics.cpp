@@ -233,6 +233,7 @@ VOID Graphics::render(CONST Control &crControl, CRNVECTOR crPositions)
 	gluSphere(nucleus, radius * 4.0f, 200, 200);
 	gluDeleteQuadric(nucleus);
 
+    glLoadIdentity();
 	GLUquadricObj *sphere = gluNewQuadric();
 	gluQuadricDrawStyle(sphere, GLU_LINE);
 	glColor4f(sphereColor_); // Sphere

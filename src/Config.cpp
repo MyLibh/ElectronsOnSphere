@@ -3,7 +3,7 @@
 
 #include "Config.hpp"
 
-BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> crPositions, double energy)
+BOOL SaveConfig(CONST CHAR filename[], crnvector crPositions, double energy)
 {
 	DBG("Start saving");
 
@@ -20,9 +20,9 @@ BOOL SaveConfig(CONST CHAR filename[], CONST std::vector<nvec> crPositions, doub
 		   << "Energy: " << energy << std::endl
 		   << "Positions:\n";
 
-	config << "X Y Z" << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
+	config << " X   Y   Z" << std::endl; // Установить выравнивание по правому + только 5 символов(мб сделать красивую табличку)
 	for(auto pos : crPositions)
-		config << pos.getX() << pos.getY() << pos.getZ() << std::endl;
+		config << pos.getX() << " " << pos.getY() << " " << pos.getZ() << std::endl;
 
 	config.close();
 
@@ -48,7 +48,7 @@ std::vector<nvec> LoadConfig(CONST std::string &crFilename)
 	do
 	{
 		config >> str;
-	} while(str != "Y");
+	} while(str != "Z");
 
 	while(!config.eof())
 	{
