@@ -143,13 +143,21 @@ BOOL Graphics::initGL()
 
     glEnable(GL_ALPHA_TEST);
     glEnable(GL_DEPTH_TEST);
+
     glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glLightfv(GL_LIGHT0, GL_POSITION, pos);
-    glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);
+    
+    glEnable(GL_LIGHTING);
+    glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
+    glEnable(GL_NORMALIZE);
+    
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
+    glLightfv(GL_LIGHT1, GL_POSITION, pos);
+    glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, dir);    
+    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, dir);
 
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
@@ -237,7 +245,7 @@ VOID Graphics::render(CONST Control &crControl, CRNVECTOR crPositions)
 	GLUquadricObj *sphere = gluNewQuadric();
 	gluQuadricDrawStyle(sphere, GLU_LINE);
 	glColor4f(sphereColor_); // Sphere
-	gluSphere(sphere, 1 - radius, 500, 500);
+	gluSphere(sphere, 1.0f - radius, 500, 500);
 	gluDeleteQuadric(sphere);
 	glPopMatrix();
 
@@ -269,9 +277,10 @@ VOID Graphics::drawInfo(CONST Control &crControl, SIZE_T num, DOUBLE energy)
 	glPushMatrix();
 	glLoadIdentity();
 
-	FLOAT x = -0.99f,
-		  y =  0.95f,
-		  z = -1.0f;
+	static FLOAT x = -0.99f, 
+                 z = -1.0f;
+
+    FLOAT        y =  0.95f;		 
 
 	static CONST FLOAT dy = 0.05f;
 
