@@ -31,12 +31,12 @@ BOOL SaveConfig(CONST CHAR filename[], crnvector crPositions, double energy)
 	return TRUE;
 }
 
-std::vector<nvec> LoadConfig(CONST std::string &crFilename)
+std::auto_ptr<nvector> LoadConfig(CONST std::string &crFilename)
 {
 	DBG("Start loading");
 
 	std::ifstream config(crFilename);
-	std::vector<nvec> positions;
+	std::auto_ptr<nvector> positions(new nvector);
 	if(!config.is_open())
 	{
 		DBG("Failed to open config file", DBGMODE::FAIL);
@@ -57,7 +57,7 @@ std::vector<nvec> LoadConfig(CONST std::string &crFilename)
 			   z = 0;
 		config >> x >> y >> z;
 
-		positions.push_back(nvec(x, y, z));
+		positions->push_back(nvec(x, y, z));
 	}
 
 	config.close();

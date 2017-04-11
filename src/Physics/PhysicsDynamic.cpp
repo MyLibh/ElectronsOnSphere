@@ -66,9 +66,9 @@ namespace PHYSICS
             }
         }
 
-    void PhysicsDynamic::setPositions (nvector& positions)
+    void PhysicsDynamic::setPositions (std::auto_ptr<nvector> positions)
         {
-        _Positions.swap(positions);
+        _Positions.swap(*positions.release());
         }
     }
 

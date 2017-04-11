@@ -40,7 +40,8 @@ public:
 		  ytr,
 		  ztr;
 
-	Control() :
+	Control() :     
+        buttons_(),
 		xrot(0.0f),
 		yrot(0.5f),
 		zrot(0.0f),
