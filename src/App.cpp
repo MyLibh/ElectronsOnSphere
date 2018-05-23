@@ -28,7 +28,7 @@ INT App::run()
 	QueryPerformanceFrequency(reinterpret_cast<LARGE_INTEGER*>(&cps));
 	FLOAT spc = 1.0f / cps;
 
-	HWND hTrack = CreateTrackbar(graphics_.getHINSTANCE(), graphics_.getHWND(), 0, 10, 10, 10);
+	//HWND hTrack = CreateTrackbar(graphics_.getHINSTANCE(), graphics_.getHWND(), 0, 10, 10, 10);
 	MSG msg = { };
 	while(msg.message != WM_QUIT && !GetAsyncKeyState(VK_ESCAPE))
 	{

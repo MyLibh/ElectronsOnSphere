@@ -3,6 +3,8 @@
 
 #include "..\Includes.hpp"
 
+#include <memory>
+
 #include "NVector.hpp"
 
 
@@ -21,7 +23,7 @@ namespace PHYSICS
             void doPhysicsDynamic (double speed_coefficient);
 
         public:
-            void setPositions (std::auto_ptr<nvector> positions);
+            void setPositions (std::unique_ptr<nvector> positions);
             void setPositionsRandom (size_t num);
             const nvector& getPositions() const;
 
